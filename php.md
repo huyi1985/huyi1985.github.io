@@ -93,7 +93,7 @@ zendlval就是我们传入的zval*，yytext指向命中的token值起始位置�
 ```
 
 ```c
-void zend_compile_expr(znode *result, zend_ast *ast) /* {{{ */
+void zend_compile_expr(znode *result, zend_ast *ast)
 {
         /* CG(zend_lineno) = ast->lineno; */
         CG(zend_lineno) = zend_ast_get_lineno(ast);
