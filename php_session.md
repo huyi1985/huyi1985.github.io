@@ -47,7 +47,7 @@ struct {
 
 close seesion tmp file
 ```c
-static PHP_RSHUTDOWN_FUNCTION(session) /* {{{ */
+static PHP_RSHUTDOWN_FUNCTION(session)
 {
 	int i;
 
