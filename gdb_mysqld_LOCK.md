@@ -98,7 +98,7 @@ mode
 3    = 3(LOCK_X)
 ```
 
-
+> ?? `lock_table`在服务器层？`lock_rec_lock`在存储引擎层？
 
 ```
 SELECT * FROM t1 WHERE user_id = 1 FOR UPDATE;

@@ -16,6 +16,10 @@ make CFLAGS='-Wno-error' CXXFLAGS="-Wno-error"
 
 cd /opt/mysql-5.6.43/scripts
 ./mysql_install_db --basedi=/opt/mysql-5.6.43 --user=root
+
+cat /opt/mysql-5.6.43/start_mysql.sh
+#!/bin/bash
+/opt/mysql-5.6.43/bin/mysqld --user=root
 ```
 
 不关闭`MYSQL_MAINTAINER_MODE` cmake会在FLAGS后加上`-Werror`
