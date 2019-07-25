@@ -1,4 +1,4 @@
-# php_seesion
+php_seesion
 
 php string interval
 smart_str_appends
@@ -47,7 +47,7 @@ struct {
 
 close seesion tmp file
 ```c
-static PHP_RSHUTDOWN_FUNCTION(session)
+static PHP_RSHUTDOWN_FUNCTION(session) /* {{{ */
 {
 	int i;
 

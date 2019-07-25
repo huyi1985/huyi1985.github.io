@@ -1,0 +1,785 @@
+{
+    "query": "打开登录跳转",
+    "debug": {
+        "bot": {
+            "id": "2e816611-d889-834c-50e0-13f2f44b9811"
+        }
+    },
+    "event": {
+        "header": {
+            "namespace": "ai.dueros.device_interface.voice_input",
+            "name": "ListenStarted",
+            "messageId": "fc8bf866-accd-11e7-b47d-f45c899f4169",
+            "dialogRequestId": "a356d290-bb2f-11e8-be39-6c92bf04afcf"
+        },
+        "payload": {
+            "format": "AUDIO_L16_RATE_16000_CHANNELS_1"
+        }
+    },
+    "clientContext": [
+        {
+            "header": {
+                "namespace": "ai.dueros.device_interface.audio_player",
+                "name": "PlaybackState"
+            },
+            "payload": {
+                "token": "",
+                "playerActivity": "IDLE",
+                "offsetInMilliseconds": 0
+            }
+        },
+        {
+            "header": {
+                "namespace": "ai.dueros.device_interface.voice_output",
+                "name": "SpeechState"
+            },
+            "payload": {
+                "token": "eyJib3RfaWQiOiJ1cyIsInJlc3VsdF90b2tlbiI6IjJiMGVmZWU1N2VmOGQxMWQwMzMzMWE3ZTY3MzdiNTBiIiwiYm90X3Rva2VuIjoibnVsbCJ9",
+                "playerActivity": "IDLE",
+                "offsetInMilliseconds": 0
+            }
+        },
+        {
+            "header": {
+                "namespace": "ai.dueros.device_interface.alerts",
+                "name": "AlertsState"
+            },
+            "payload": {
+                "allAlerts": [
+                    {
+                        "token": "YWkuZHVlcm9zLmJvdC5hbGFybStiMDMyNGZiOTM1ZWVk",
+                        "scheduledTime": "2077-08-21T07:00:00+0000",
+                        "type": "ALARM"
+                    }
+                ],
+                "activeAlerts": []
+            }
+        },
+        {
+            "header": {
+                "namespace": "ai.dueros.device_interface.speaker_controller",
+                "name": "VolumeState"
+            },
+            "payload": {
+                "volume": 5,
+                "muted": false
+            }
+        },
+        {
+            "header": {
+                "namespace": "ai.dueros.device_interface.settings",
+                "name": "SettingsState"
+            },
+            "payload": {
+                "deviceMode": "nodisturb",
+                "doNotDisturbMode": true
+            }
+        }
+    ],
+    "user": {
+        "dumi_uid": "371009868",
+        "baidu_uid": "",
+        "client_id": "gcNOwATmM0n4tAekegoROZdqkMMYA4i8",
+        "ak": "gcNOwATmM0n4tAekegoROZdqkMMYA4i8",
+        "sk": "dxEQ0jEGacGcOUDMfmMeboXQsWiK6tSv",
+        "appid": "dmC1E4BB5D281DCDD4",
+        "appkey": "9EB5ABDCE6753AACFFC878F2D7ECE38E",
+        "cuid": "tanxinyun_debug_xiaoguo_monitor",
+        "oauth_app_id": "11591248",
+        "didp": {
+            "modeType": "DEFAULT_MODE",
+            "appId": "dmC1E4BB5D281DCDD4",
+            "appKey": "9EB5ABDCE6753AACFFC878F2D7ECE38E",
+            "speechAk": "gcNOwATmM0n4tAekegoROZdqkMMYA4i8",
+            "speechSk": "dxEQ0jEGacGcOUDMfmMeboXQsWiK6tSv",
+            "speechAppId": "11591248",
+            "sceneName": "tv",
+            "osName": "Android",
+            "appName": "Max",
+            "botServiceList": "audio_news,ai.dueros.bot.video_on_demand,ai.dueros.bot.image_recognition,ai.dueros.bot.tv_control,ai.dueros.bot.ui_voice_interaction,duer_weather,ai.dueros.bot.text_joke,aries_general,doudi_server,sysprofile_service,ai.dueros.bot.app_launcher,ai.dueros.bot.faq_didp,ai.dueros.bot.short_video,ai.dueros.bot.knowledge_graph,ai.dueros.bot.knowledge_graph_general,ai.dueros.bot.input_method,ai.dueros.bot.gimi_custom_command",
+            "appControlConf": {
+                "connection": {
+                    "protocol": "HTTP2"
+                },
+                "access": {
+                    "type": "SDK",
+                    "scene": {
+                        "type": "TC",
+                        "name": ""
+                    }
+                },
+                "login": {
+                    "allowAnonymous": false
+                },
+                "capability": [
+                    {
+                        "namespace": "ai.dueros.device_interface.screen",
+                        "enable": true,
+                        "renderVoiceInputText": "INTERMEDIATE",
+                        "htmlView": false,
+                        "renderCard": true,
+                        "renderHint": true,
+                        "renderSwanView": true,
+                        "renderSwanType": "CLIENT",
+                        "renderSwanDialog": false,
+                        "enableSwanAttachment": false
+                    },
+                    {
+                        "namespace": "ai.dueros.device_interface.screen_extended_card",
+                        "enable": true,
+                        "renderDate": true,
+                        "renderWeather": true,
+                        "renderAirQuality": true,
+                        "renderTrafficRestriction": true,
+                        "renderStock": true,
+                        "renderNoticeMessage": true,
+                        "renderPlayerInfo": false,
+                        "renderAudioList": true,
+                        "renderAlbumList": true,
+                        "renderAlarmList": true,
+                        "renderActiveAlarm": true,
+                        "renderTimerList": true,
+                        "renderActiveTimer": true,
+                        "renderVideoList": true,
+                        "renderVideoPlayerInfo": true,
+                        "renderBaike": false,
+                        "renderNewsList": false,
+                        "renderSwanPlayerInfo": false,
+                        "renderStarCard": false,
+                        "renderStarPage": false
+                    },
+                    {
+                        "namespace": "ai.dueros.device_interface.voice_output",
+                        "enable": true,
+                        "volume": "5",
+                        "speed": "5",
+                        "pitch": "5",
+                        "speaker": "0",
+                        "aue": "3",
+                        "rate": "2",
+                        "textOutput": false,
+                        "ttsProgress": false,
+                        "ssmlOutput": false,
+                        "voicePrintTable": [
+                            {
+                                "type": 0,
+                                "volume": "5",
+                                "speed": "5",
+                                "pitch": "5",
+                                "speaker": "0",
+                                "aue": "3",
+                                "rate": "0"
+                            }
+                        ],
+                        "key": "",
+                        "pid": 135
+                    },
+                    {
+                        "namespace": "ai.dueros.device_interface.system",
+                        "enable": true
+                    },
+                    {
+                        "namespace": "ai.dueros.device_interface.voice_input",
+                        "enable": true,
+                        "audioDecodeMethod": "",
+                        "pid": 729,
+                        "pkey": "com.baidu.dumi.dcs",
+                        "earlyReturn": true,
+                        "punctuation": true,
+                        "needVoicePrint": false,
+                        "sendVoicePrintToClient": true,
+                        "listen": true,
+                        "saveWakeup": false,
+                        "oneshotSelf": false,
+                        "enableVoiceWave": false
+                    },
+                    {
+                        "namespace": "ai.dueros.device_interface.audio_player",
+                        "enable": false
+                    },
+                    {
+                        "namespace": "ai.dueros.device_interface.video_player",
+                        "enable": true
+                    },
+                    {
+                        "namespace": "ai.dueros.device_interface.speaker_controller",
+                        "enable": false
+                    },
+                    {
+                        "namespace": "ai.dueros.device_interface.playback_controller",
+                        "enable": false
+                    },
+                    {
+                        "namespace": "ai.dueros.device_interface.alerts",
+                        "enable": false
+                    },
+                    {
+                        "namespace": "ai.dueros.device_interface.text_input",
+                        "enable": false
+                    },
+                    {
+                        "namespace": "ai.dueros.device_interface.push_service",
+                        "enable": false
+                    },
+                    {
+                        "namespace": "ai.dueros.device_interface.extensions.emoji",
+                        "enable": false,
+                        "renderCustomEmoji": false,
+                        "renderEmojiHint": false
+                    }
+                ],
+                "authentication": {
+                    "weak": false
+                },
+                "dcsSchemaCheck": {
+                    "input": false,
+                    "output": false
+                },
+                "directiveControl": {
+                    "enable": false
+                },
+                "dci": {
+                    "enable": false,
+                    "weight": 1
+                },
+                "historyMessageConfig": {
+                    "enable": false
+                }
+            },
+            "sdkRequestInfo": {},
+            "botConfig": {
+                "ai.dueros.bot.video_on_demand": {
+                    "contentAttribute": {
+                        "search.exact_intention.providers": "iqiyi_ott",
+                        "search.not_exact_intention.providers": "iqiyi_ott",
+                        "search.vca_intention.providers": "iqiyi_ott"
+                    },
+                    "logicalBots": []
+                },
+                "ai.dueros.bot.user_guide": {
+                    "contentAttribute": {
+                        "version": "voicebar"
+                    },
+                    "logicalBots": []
+                },
+                "ai.dueros.bot.short_video": {
+                    "contentAttribute": {
+                        "is_show_hint": "1",
+                        "play_show_list": "1",
+                        "list_middle": "1",
+                        "slots_for_list_title": "1",
+                        "recommend_by_cuid": "1",
+                        "list_show_play": "1"
+                    },
+                    "logicalBots": []
+                },
+                "audio_news": {
+                    "logicalBots": [
+                        "ai.dueros.bot.news.video"
+                    ],
+                    "contentAttribute": {
+                        "tts_is_audioplayer": "0",
+                        "is_play_renderlist": "1",
+                        "video_is_autoswitch_tab": "1",
+                        "list_middle": "1",
+                        "slots_for_list_title": "1"
+                    }
+                },
+                "aries_general": {
+                    "contentAttribute": {
+                        "screen_common_mode": "1"
+                    },
+                    "logicalBots": []
+                },
+                "common": {
+                    "supported_content_type": [
+                        "audio",
+                        "speech",
+                        "view"
+                    ]
+                }
+            },
+            "wakeupWords": [],
+            "conversationFeature": {
+                "enableOnFailurePrompt": true,
+                "enableWakeupMoment": false,
+                "enableGreetingEndingAndGuideMoment": false,
+                "enableExecutionOnTimer": false,
+                "enableMultipleResults": false,
+                "enableChildrenStoryActionChain": true,
+                "AsrNoInputPromptType": "ALL",
+                "noResultPromptTypes": [
+                    "SPEECH",
+                    "VIEW"
+                ],
+                "followUpSetting": "CLOSE",
+                "enableUserInspiration": false,
+                "botResultAggregate": [],
+                "enableFavoriteListShortVideo": true,
+                "enableGoodMorningMoment": false,
+                "enableGeneralHistoryPrompt": false,
+                "enableUsScreenNavigation": false,
+                "enableMultiQuery": false,
+                "botRankModelType": "SCORE",
+                "sceneFollowUpSetting": "CLOSE",
+                "followUpPolicy": "FOLLOWUP_LOUD_SPEAKER_DEVICE",
+                "enableAuthenticateLogin": false,
+                "enableDisplayControllerContext": false,
+                "enableChildFriendlyModeGuide": false
+            },
+            "productInstalledBots": [
+                "15d0d8d4-0d84-876f-3eb1-5f1a88ab42e5",
+                "e3030712-cbc6-985a-66ae-6c5a2ac5a5a7",
+                "5fc70a46-1258-1c4c-88ec-25df1cb766ce",
+                "ce682760-bd00-be78-3e51-5fecaf9f6002",
+                "20f200ec-cd62-a885-4269-cb009057e9a2",
+                "0e3e48c4-ed4e-54dc-c2d3-d272f81def1a"
+            ],
+            "uiRenderConfig": {
+                "enableOutputProperty": false,
+                "enableGeneralRenderWeather": false,
+                "renderDomain": "",
+                "enableOutputNluList": []
+            }
+        },
+        "uic": {
+            "address": "",
+            "android_device_id": "",
+            "baidu_uid": 0,
+            "bot_list": [],
+            "car_info": "",
+            "ct_time": 0,
+            "debug_bot_list": "",
+            "deleted": 0,
+            "description": "",
+            "experience": 0,
+            "gender": 0,
+            "home_address": "",
+            "home_coordinates": "",
+            "id": 371009868,
+            "im_device_id": "",
+            "ios_device_id": "",
+            "last_app_ver": "",
+            "last_client_id": "",
+            "last_from": "",
+            "last_na_client_id": "",
+            "last_na_from": "",
+            "last_na_time": 0,
+            "last_online_ip": "",
+            "last_online_time": 0,
+            "last_open_app_time": 0,
+            "last_time": 0,
+            "latitude": 0,
+            "location_src": "",
+            "longitude": 0,
+            "movie_favor": "",
+            "nickname": "",
+            "personal_guide": "",
+            "personal_tabs": "",
+            "point": 0,
+            "private_table": [
+                {
+                    "item": [
+                        {
+                            "key": "duer_contacct",
+                            "value": ""
+                        }
+                    ],
+                    "name": "da"
+                },
+                {
+                    "item": [
+                        {
+                            "key": "moment_configure",
+                            "value": ""
+                        },
+                        {
+                            "key": "moment_state",
+                            "value": ""
+                        },
+                        {
+                            "key": "music_sheet",
+                            "value": ""
+                        },
+                        {
+                            "key": "sport_prefer",
+                            "value": ""
+                        },
+                        {
+                            "key": "user_prefer",
+                            "value": ""
+                        }
+                    ],
+                    "name": "doss"
+                },
+                {
+                    "item": [
+                        {
+                            "key": "followup_guide_times",
+                            "value": ""
+                        },
+                        {
+                            "key": "moment_configure",
+                            "value": ""
+                        },
+                        {
+                            "key": "moment_state",
+                            "value": ""
+                        },
+                        {
+                            "key": "music_sheet",
+                            "value": ""
+                        },
+                        {
+                            "key": "sport_prefer",
+                            "value": ""
+                        },
+                        {
+                            "key": "user_prefer",
+                            "value": ""
+                        }
+                    ],
+                    "name": "hodor"
+                },
+                {
+                    "item": [
+                        {
+                            "key": "homecard_info",
+                            "value": ""
+                        }
+                    ],
+                    "name": "homecard"
+                },
+                {
+                    "item": [
+                        {
+                            "key": "custom_intervene_data",
+                            "value": ""
+                        }
+                    ],
+                    "name": "miyu"
+                },
+                {
+                    "item": [
+                        {
+                            "key": "moment_configure",
+                            "value": ""
+                        },
+                        {
+                            "key": "moment_state",
+                            "value": ""
+                        },
+                        {
+                            "key": "music_sheet",
+                            "value": ""
+                        },
+                        {
+                            "key": "sport_prefer",
+                            "value": ""
+                        },
+                        {
+                            "key": "user_prefer",
+                            "value": ""
+                        }
+                    ],
+                    "name": "raven"
+                },
+                {
+                    "item": [
+                        {
+                            "key": "actor",
+                            "value": ""
+                        },
+                        {
+                            "key": "address",
+                            "value": ""
+                        },
+                        {
+                            "key": "age",
+                            "value": ""
+                        },
+                        {
+                            "key": "basketball",
+                            "value": ""
+                        },
+                        {
+                            "key": "birthday",
+                            "value": ""
+                        },
+                        {
+                            "key": "boy_friend",
+                            "value": ""
+                        },
+                        {
+                            "key": "color",
+                            "value": ""
+                        },
+                        {
+                            "key": "company",
+                            "value": ""
+                        },
+                        {
+                            "key": "constellation",
+                            "value": ""
+                        },
+                        {
+                            "key": "family_name",
+                            "value": ""
+                        },
+                        {
+                            "key": "food",
+                            "value": ""
+                        },
+                        {
+                            "key": "football",
+                            "value": ""
+                        },
+                        {
+                            "key": "game",
+                            "value": ""
+                        },
+                        {
+                            "key": "girl_friend",
+                            "value": ""
+                        },
+                        {
+                            "key": "good_at_sport",
+                            "value": ""
+                        },
+                        {
+                            "key": "grade",
+                            "value": ""
+                        },
+                        {
+                            "key": "height",
+                            "value": ""
+                        },
+                        {
+                            "key": "identity",
+                            "value": ""
+                        },
+                        {
+                            "key": "idol",
+                            "value": ""
+                        },
+                        {
+                            "key": "job",
+                            "value": ""
+                        },
+                        {
+                            "key": "like_man_star",
+                            "value": ""
+                        },
+                        {
+                            "key": "like_person",
+                            "value": ""
+                        },
+                        {
+                            "key": "like_woman_star",
+                            "value": ""
+                        },
+                        {
+                            "key": "marriage",
+                            "value": ""
+                        },
+                        {
+                            "key": "mood",
+                            "value": ""
+                        },
+                        {
+                            "key": "movie",
+                            "value": ""
+                        },
+                        {
+                            "key": "music",
+                            "value": ""
+                        },
+                        {
+                            "key": "name",
+                            "value": ""
+                        },
+                        {
+                            "key": "place_of_origin",
+                            "value": ""
+                        },
+                        {
+                            "key": "school",
+                            "value": ""
+                        },
+                        {
+                            "key": "sex",
+                            "value": ""
+                        },
+                        {
+                            "key": "sexorientation",
+                            "value": ""
+                        },
+                        {
+                            "key": "shap",
+                            "value": ""
+                        },
+                        {
+                            "key": "singer",
+                            "value": ""
+                        },
+                        {
+                            "key": "snack",
+                            "value": ""
+                        },
+                        {
+                            "key": "sport",
+                            "value": ""
+                        },
+                        {
+                            "key": "spouse",
+                            "value": ""
+                        },
+                        {
+                            "key": "star",
+                            "value": ""
+                        },
+                        {
+                            "key": "weight",
+                            "value": ""
+                        },
+                        {
+                            "key": "work",
+                            "value": ""
+                        },
+                        {
+                            "key": "zodiac",
+                            "value": ""
+                        }
+                    ],
+                    "name": "sysprofile"
+                },
+                {
+                    "item": [
+                        {
+                            "key": "custom_intervene_data",
+                            "value": ""
+                        },
+                        {
+                            "key": "first_date",
+                            "value": "1537259109"
+                        },
+                        {
+                            "key": "job_info",
+                            "value": ""
+                        },
+                        {
+                            "key": "moment_config_json",
+                            "value": ""
+                        },
+                        {
+                            "key": "opened_bot_history",
+                            "value": ""
+                        }
+                    ],
+                    "name": "us"
+                }
+            ],
+            "public_table": {
+                "attribute": [
+                    {
+                        "item": [
+                            {
+                                "tag": "sysprofile",
+                                "value": ""
+                            }
+                        ],
+                        "key": "age"
+                    },
+                    {
+                        "item": [
+                            {
+                                "tag": "sysprofile",
+                                "value": ""
+                            },
+                            {
+                                "tag": "default",
+                                "value": ""
+                            }
+                        ],
+                        "key": "gender"
+                    },
+                    {
+                        "item": [
+                            {
+                                "tag": "sysprofile",
+                                "value": ""
+                            },
+                            {
+                                "tag": "default",
+                                "value": ""
+                            }
+                        ],
+                        "key": "name"
+                    }
+                ]
+            },
+            "real_name": "",
+            "relationship": "",
+            "school_address": "",
+            "shoubai_device_id": "",
+            "status": 10,
+            "tour_favor": "",
+            "user_name": "",
+            "weixin_id": "gcnowatmm0n4taekegorozdqkmmya4i8_tanxinyun_debug_xiaoguo_monitor",
+            "work_address": "",
+            "work_coordinates": ""
+        },
+        "device_info": {},
+        "userInstalledBots": [
+            {
+                "id": "15d0d8d4-0d84-876f-3eb1-5f1a88ab42e5",
+                "name": "猜乐器"
+            },
+            {
+                "id": "e3030712-cbc6-985a-66ae-6c5a2ac5a5a7",
+                "name": "诗词大会"
+            },
+            {
+                "id": "5fc70a46-1258-1c4c-88ec-25df1cb766ce",
+                "name": "凯叔讲故事"
+            },
+            {
+                "id": "ce682760-bd00-be78-3e51-5fecaf9f6002",
+                "name": "我爱猜歌名"
+            },
+            {
+                "id": "20f200ec-cd62-a885-4269-cb009057e9a2",
+                "name": "新版我爱猜歌名"
+            },
+            {
+                "id": "0e3e48c4-ed4e-54dc-c2d3-d272f81def1a",
+                "name": "宝宝巴士"
+            }
+        ],
+        "_time": 1537267391610
+    },
+    "location": {
+        "location_type": "mockbyip",
+        "lo": 116.40387397,
+        "la": 39.91488908,
+        "bd_lo": 116.40387397,
+        "bd_la": 39.91488908,
+        "mi_lo": 12958160.970500622,
+        "mi_la": 4825907.731586119,
+        "address": "北京市东城区中华路甲10号",
+        "country": "中国",
+        "country_code": 0,
+        "province": "北京市",
+        "city": "北京市",
+        "city_code": 131,
+        "district": "东城区",
+        "street": "中华路",
+        "street_number": "甲10号",
+        "direction": "西南",
+        "distance": "85",
+        "sematic_description": "天安门内",
+        "cip_type": "default",
+        "cip": "220.181.38.119",
+        "dcs_location_filled": 1
+    }
+}
