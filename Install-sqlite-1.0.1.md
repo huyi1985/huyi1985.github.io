@@ -9,12 +9,15 @@ https://ja.stackoverflow.com/questions/54622/%EF%BC%91%EF%BC%99%E5%B9%B4%E5%89%8
 https://www.sqlite.org/src/raw/tool/lemon.c?name=14fedcde9cf70aa6040b89de164cf8f56f92a4b9
 
 
-```
+```bash
 wget "https://www.sqlite.org/src/tarball/e8521fc1/SQLite-e8521fc1.tar.gz"
 tar xzvf SQLite-e8521fc1.tar.gz
-mkdir bld && cd bld
+# mkdir bld && cd bld
+mkdir sqlite-1.0.1 && cd sqlite-1.0.1 
 ../SQLite-e8521fc1/configure --prefix=/opt/sqlite-1.0.1 --with-tcl=no
+```
 
+```
 gcc -std=c89
 
 /usr/lib/gcc/i386-redhat-linux/3.4.2/include/varargs.h:4:2: #error "GCC no longer implements <varargs.h>."
@@ -52,7 +55,65 @@ make                     ;#  Run the makefile.
 make CFLAGS=-g
 ```
 
+
+
+> Now, we compile the program using the GNU C compiler, GCC. We pass the `-gdwarf-2` *and* `-g3` flags to ensure the compiler includes information about preprocessor macros in the debugging information.
+
+https://sourceware.org/gdb/onlinedocs/gdb/Macros.html
+
+
+
+## RedHat 8
+
+OK!
+
+
+
+## RedHat 6.2
+
+http://archive.download.redhat.com/pub/redhat/linux/
+
+https://soft.lafibre.info/
+
+### Networking Config
+
+```ini
+[root@redhat62 /tmp]# tail -n +1 /etc/sysconfig/network-scripts/ifcfg-*
+==> /etc/sysconfig/network-scripts/ifcfg-eth0 <==
+DEVICE=eth0
+ONBOOT=yes
+BOOTPROTO=dhcp
+NAME=eth0
+
+==> /etc/sysconfig/network-scripts/ifcfg-eth1 <==
+DEVICE=eth1
+IPADDR=192.168.56.100
+NETMASK=255.255.255.0
+NETWORK=192.168.56.0
+BROADCAST=192.168.56.255
+ONBOOT=yes
+BOOTPROTO=dhcp
+NAME=eth1
+
+==> /etc/sysconfig/network-scripts/ifcfg-lo <==
+DEVICE=lo
+IPADDR=127.0.0.1
+NETMASK=255.0.0.0
+NETWORK=127.0.0.0
+# If you're having problems with gated making 127.0.0.0/8 a martian,
+# you can change this to something else (255.255.255.255, for example)
+BROADCAST=127.255.255.255
+ONBOOT=yes
+```
+
+
+
+rpm：http://rpm.pbone.net/index.php3
+
+
+
 ## GDB
+
 ```
 b sqlite3_exec
 ```
@@ -121,5 +182,4 @@ https://cdimage.debian.org/mirror/cdimage/archive/
 
 ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -oCiphers=+aes128-cbc huyi@192.168.58.3
 
-
-Change lemon to use <stdarg.h> instead of <varargs.h> because GCC no longer supports varargs.h. Tickets #288 and #280. Ironically, lemon originally used varargs.h because stdarg.h was not supported by the compiler I was using in 1989 (which was gcc if I recall correctly.) (CVS 905)
+> Change lemon to use <stdarg.h> instead of <varargs.h> because GCC no longer supports varargs.h. Tickets #288 and #280. Ironically, lemon originally used varargs.h because stdarg.h was not supported by the compiler I was using in 1989 (which was gcc if I recall correctly.) (CVS 905)
