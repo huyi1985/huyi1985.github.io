@@ -52,7 +52,7 @@ make                     ;#  Run the makefile.
 ```
 ../sqlite/configure --prefix=/opt/sqlite-1.0.1 --with-tcl=no
 ../SQLite-e8521fc1/configure --prefix=/opt/sqlite-1.0.1 --with-tcl=no
-make CFLAGS=-g
+make CFLAGS=-g -O0
 ```
 
 
@@ -63,19 +63,37 @@ https://sourceware.org/gdb/onlinedocs/gdb/Macros.html
 
 
 
+## 数据结构
+
+表示SQL语句中的 部分
+
+Token
+
+Expr: WHERE clause, HAVING clause
+
+ExprList: ORDER BY clause, GROUP BY clause, SELECT后面的字段列表 
+
+IdList: FROM table_list,
+
+Table
+
+Index
+
+
+
 ## RedHat 8
 
 OK!
 
 
 
-## RedHat 6.2
+RedHat 6.2
 
 http://archive.download.redhat.com/pub/redhat/linux/
 
 https://soft.lafibre.info/
 
-### Networking Config
+Networking Config
 
 ```ini
 [root@redhat62 /tmp]# tail -n +1 /etc/sysconfig/network-scripts/ifcfg-*
@@ -109,6 +127,30 @@ ONBOOT=yes
 
 
 rpm：http://rpm.pbone.net/index.php3
+
+
+
+## Lexer & Parser
+
+| nth-Byte  | 0-5    | 6    | 7    | 8    | 9-12 | 13   | 14-15 |
+| --------- | ------ | ---- | ---- | ---- | ---- | ---- | ----- |
+|           | SELECT |      | 1    |      | FROM |      | t1    |
+| TokenType | 61     | 65   | 40   | 65   | 28   | 65   | 35    |
+
+
+
+```
+Breakpoint 9, sqliteParser (yyp=0x806ede8, yymajor=61, yyminor={z = 0xbffffab7 "SELECT 1 FROM t1", n = 6}, pParse=0xbffff410) at parse.c:4685
+(gdb) c
+Breakpoint 9, sqliteParser (yyp=0x806ede8, yymajor=40, yyminor={z = 0xbffffabe "1 FROM t1", n = 1}, pParse=0xbffff410) at parse.c:4685
+(gdb) c
+Breakpoint 9, sqliteParser (yyp=0x806ede8, yymajor=28, yyminor={z = 0xbffffac0 "FROM t1", n = 4}, pParse=0xbffff410) at parse.c:4685
+(gdb) c
+Breakpoint 9, sqliteParser (yyp=0x806ede8, yymajor=35, yyminor={z = 0xbffffac5 "t1", n = 2}, pParse=0xbffff410) at parse.c:4685
+(gdb) c
+
+Breakpoint 9, sqliteParser (yyp=0x806ede8, yymajor=0, yyminor={z = 0xbffffac5 "t1", n = 2}, pParse=0xbffff410) at parse.c:4685
+```
 
 
 
@@ -183,3 +225,79 @@ https://cdimage.debian.org/mirror/cdimage/archive/
 ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -oCiphers=+aes128-cbc huyi@192.168.58.3
 
 > Change lemon to use <stdarg.h> instead of <varargs.h> because GCC no longer supports varargs.h. Tickets #288 and #280. Ironically, lemon originally used varargs.h because stdarg.h was not supported by the compiler I was using in 1989 (which was gcc if I recall correctly.) (CVS 905)
+
+### 最简单的SELECT语句
+
+`SELECT * FROM t1`
+
+
+
+
+
+## INSERT语句是如何执行的
+
+### 最简单的INSERT语句
+
+`INSERT INTO t1 VALUES (10)`
+
+no idList
+
+
+
+```c
+// INSERT INTO <table> <IdList> VALUES <ExprList>
+// 省略1、各种检查逻辑（以注释形式给出）；2、索引逻辑
+
+void sqliteInsert(
+  Parse *pParse,        /* Parser context */
+  Token *pTableName,    /* Name of table into which we are inserting */
+  ExprList *pList,      /* List of values to be inserted */
+  Select *pSelect,      /* A SELECT statement to use as the data source */
+  IdList *pColumn       /* Column names corresponding to IDLIST. */
+){
+  Table *pTab;          /* The table to insert into */
+  char *zTab;           /* Name of the table into which we are inserting */
+  int i;                /* Loop counters */
+  Vdbe *v;              /* Generate code into this virtual machine */
+  int nColumn;          /* Number of columns in the data */
+  int base;             /* First available cursor */
+
+  /* Locate the table into which we will be inserting new information. */
+  zTab = sqliteTableNameFromToken(pTableName);
+  pTab = sqliteFindTable(pParse->db, zTab);
+  sqliteFree(zTab);
+    
+  /* Allocate a VDBE */
+  v = sqliteGetVdbe(pParse);
+
+  nColumn = pList->nExpr;
+  
+  /* Make sure the number of columns in the source data matches the number
+  ** of columns to be inserted into the table.
+  */
+  if( pColumn==0 && nColumn!=pTab->nCol ) {
+      // error_string = "table <table_name> has <Num1> columns but <Num2> values were supplied"
+    pParse->nErr++;
+    goto insert_cleanup;
+  }
+
+  base = pParse->nTab;
+  sqliteVdbeAddOp(v, OP_Open, base, 1, pTab->zName, 0);
+    
+  /* Create a new entry in the table and fill it with data. */
+  sqliteVdbeAddOp(v, OP_New, 0, 0, 0, 0);
+    
+  for(i=0; i<pTab->nCol; i++) {
+    sqliteExprCode(pParse, pList->a[i].pExpr);
+  }
+    
+  sqliteVdbeAddOp(v, OP_MakeRecord, pTab->nCol, 0, 0, 0);
+  sqliteVdbeAddOp(v, OP_Put, base, 0, 0, 0);
+    
+insert_cleanup:
+  if( pList ) sqliteExprListDelete(pList);
+  if( pSelect ) sqliteSelectDelete(pSelect);
+  sqliteIdListDelete(pColumn);
+
+```
+
