@@ -6,16 +6,20 @@ https://blog.csdn.net/she_lock/article/details/82022431
 
 https://dev.mysql.com/doc/mysql-sourcebuild-excerpt/5.5/en/installing-source-distribution.html#installing-source-distribution-install-distribution
 
+ https://dev.mysql.com/doc/refman/5.6/en/installing-source-distribution.html 
+
 cmake options
 
 ```
 -DCMAKE_C_FLAGS="-g -O0" -DCMAKE_CXX_FLAGS="-g -O0" -DCMAKE_INSTALL_PREFIX="/opt/mysql-5.6.43" -DWITH_DEBUG=1 -D MYSQL_MAINTAINER_MODE=0
 
+# using-g3-or-ggdb3-or-gdwarf-4
+
 make CFLAGS='-Wno-error' CXXFLAGS="-Wno-error"
 
 
 cd /opt/mysql-5.6.43/scripts
-./mysql_install_db --basedi=/opt/mysql-5.6.43 --user=root
+./mysql_install_db --basedir=/opt/mysql-5.6.43 --user=root
 
 cat /opt/mysql-5.6.43/start_mysql.sh
 #!/bin/bash
@@ -131,3 +135,4 @@ lock_rec_lock mode=3
 #3  0x0804bfa3 in process_input	(p=0xfef3fd60, in=0x0) at ../SQLite-26a559b6/src/shell.c:1191
 #4  0x0804ca32 in main (argc=2,	argv=0xfef41314) at ../SQLite-26a559b6/src/shell.c:1472
 ```
+
