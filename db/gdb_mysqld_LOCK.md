@@ -50,11 +50,55 @@ p trx_sys->rw_trx_list->start->lock->trx_locks->start->un_member->tab_lock->tabl
 > u 表示从当前地址往后请求的字节数，如果不指定的话，GDB默认是4个bytes。u参数可以用下面的字符来代替，b表示单字节，h表示双字节，w表示四字 节，g表示八字节。当我们指定了字节长度后，GDB会从指内存定的内存地址开始，读写指定字节，并把其当作一个值取出来。
 
 ## Types
+`trx_sys`:
+
+```c++
+extern trx_sys_t *trx_sys;
+
+struct trx_sys_t {
+  trx_ut_list_t rw_trx_list; /*!< List of active and committed in
+                             memory read-write transactions, sorted
+                             on trx id, biggest first. Recovered
+                             transactions are always on this list. */
+```
+
+
+
+
+
 `trx_t`: transaction within InnoDB
 
 `trx_lock_t`: all locks associated to a given transaction
 
+```c++
+struct trx_lock_t {
+  trx_lock_list_t trx_locks;        // Locks requested by the transaction.
+  lock_pool_t table_locks;			    // All table locks requested by this transaction, including AUTOINC locks.
+  ib_vector_t *autoinc_locks;       // AUTOINC locks held by this transaction. 
+  std::atomic<ulint> n_rec_locks;   // number of rec locks in this trx 
+  ...
+      
+typedef UT_LIST_BASE_NODE_T(lock_t) trx_lock_list_t;
+```
+
+
+
 `struct lock_t`: a table lock or a row lock
+
+```c++
+struct lock_t {
+  /** transaction owning the lock */
+  trx_t *trx;
+
+  /** list of the locks of the transaction */
+  UT_LIST_NODE_T(lock_t) trx_locks;
+  
+  /** The lock type and mode bit flags.
+  LOCK_GAP or LOCK_REC_NOT_GAP, LOCK_INSERT_INTENTION, wait flag, ORed */
+  uint32_t type_mode;
+```
+
+
 
 `struct dict_table_t`: table descriptor
 
