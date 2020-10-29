@@ -38,7 +38,15 @@ shell> make install
 
 `cmake -DCMAKE_INSTALL_PREFIX=/opt/mysql-8.0.12 -DWITH_DEBUG=1 -DWITH_BOOST=../boost -DMYSQL_DATADIR=/opt/mysql-8.0.12/data ..`
 
+安装完成后
+```
+bin/mysqld --initialize --user=mysql
+bin/mysqld&
 
+bin/mysql -uroot -p -hlocalhost
+```
+
+参考
 ```
 # Postinstallation setup
 shell> cd /usr/local/mysql
