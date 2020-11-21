@@ -46,3 +46,15 @@ class Server {
 
 $server = new Server("127.0.0.1:8001", new TimeoutOption(10), new MaxConnectionsOption(1000));
 var_dump($server);
+
+
+/*
+object(Server)#1 (3) {
+  ["address":"Server":private]=>
+  string(14) "127.0.0.1:8001"
+  ["timeout"]=>
+  int(10)
+  ["maxConnections"]=>
+  int(1000)
+}
+*/
