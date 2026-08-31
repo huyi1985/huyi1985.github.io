@@ -12,8 +12,6 @@ public/
 raw_md.d/
 
 # Legacy backup: keep small images + md, skip the huge vintage manpage PNGs (~12MB)
-md.d.legacy-20260831/init_v3_man/*_vintage.png
-md.d.legacy-20260831/init_v4_man/*_vintage.png
 
 # Python
 __pycache__/
