@@ -1,7 +1,7 @@
 # 中文计算机历史知识站 — Hugo 配置
 # 域名注册后修改 baseURL；广告位默认关闭，接入联盟后启用
 
-baseURL = "https://example.com/"           # TODO: 注册域名后替换
+baseURL = "https://huyi1985.github.io/"    # GitHub Pages 根路径
 languageCode = "zh-CN"
 title = "计算机历史 · 奇闻与资料库"
 enableRobotsTXT = true
