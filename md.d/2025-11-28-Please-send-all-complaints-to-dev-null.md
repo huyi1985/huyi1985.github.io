@@ -145,7 +145,7 @@ Flag
 
 [
 
-![Michael Homer's user avatar](https://i.sstatic.net/N3V8s.png?s=64)
+![Michael Homer's user avatar](/assets/N3V8s.png)
 
 ](https://unix.stackexchange.com/users/73093/michael-homer)
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-find_duplicates.py — 检测 md.d/（或 raw_md.d/）中"可能重复的文章"与"混入的草稿"
+find_low.py — 检测 md.d/（或 raw_md.d/）中"可能重复的文章"与"混入的草稿"
 
 两种可疑文章：
   1. 重复（duplicate）：同一内容/同一标题出现多次
@@ -16,10 +16,10 @@ find_duplicates.py — 检测 md.d/（或 raw_md.d/）中"可能重复的文章"
 输出：按可疑度排序的清单（含原因，重复的对会标出与谁重复）。
 
 用法（用 config.d/openai.yaml 里的 api_key；只读，不改动任何 md）：
-    python3 scripts/find_duplicates.py                    # 扫描 md.d/
-    python3 scripts/find_duplicates.py --dir raw_md.d     # 扫别的目录
-    python3 scripts/find_duplicates.py --no-llm           # 只用本地启发式，不调 OpenAI
-    python3 scripts/find_duplicates.py --limit N          # 最多调 N 次 LLM（0=不限）
+    python3 scripts/find_low.py                    # 扫描 md.d/
+    python3 scripts/find_low.py --dir raw_md.d     # 扫别的目录
+    python3 scripts/find_low.py --no-llm           # 只用本地启发式，不调 OpenAI
+    python3 scripts/find_low.py --limit N          # 最多调 N 次 LLM（0=不限）
 """
 
 import argparse

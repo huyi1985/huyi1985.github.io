@@ -1,6 +1,7 @@
 ---
 title: Unix V1 sysfork — 空闲进程槽查找
 date: '2026-02-24'
+draft: true
 ---
 
 # Unix V1 sysfork — 空闲进程槽查找

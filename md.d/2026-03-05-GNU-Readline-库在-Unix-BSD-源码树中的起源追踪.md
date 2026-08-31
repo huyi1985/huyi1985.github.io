@@ -1,6 +1,7 @@
 ---
 title: GNU Readline 库在 Unix/BSD 源码树中的起源追踪
 date: '2026-03-05'
+draft: true
 ---
 
 # GNU Readline 库在 Unix/BSD 源码树中的起源追踪

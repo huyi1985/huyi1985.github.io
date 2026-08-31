@@ -1,6 +1,7 @@
 ---
 title: init 完整演进史：从 "BUGS none possible" 到 systemd
 date: '2026-02-09'
+draft: true
 ---
 
 # init 完整演进史：从 "BUGS none possible" 到 systemd

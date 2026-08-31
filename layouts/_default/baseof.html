@@ -18,8 +18,8 @@
     header.site{background:var(--card);border-bottom:1px solid var(--line);}
     .wrap{max-width:760px;margin:0 auto;padding:0 20px;}
     .site-top{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;padding:18px 0;}
-    .site-top h1{margin:0;font-size:20px;}
-    .site-top h1 a{color:var(--fg);text-decoration:none}
+    .site-top .brand{margin:0;font-size:20px;}
+    .site-top .brand a{color:var(--fg);text-decoration:none}
     nav.links a{margin-left:14px;color:var(--muted);text-decoration:none;font-size:15px}
     nav.links a:hover{color:var(--accent)}
     main{padding:28px 0 60px;}
@@ -41,6 +41,7 @@
       text-align:center;color:var(--muted);font-size:13px}
     .ad-slot.on{display:block}
     footer.site{border-top:1px solid var(--line);color:var(--muted);font-size:13px;padding:24px 0 40px}
+    footer.site img.qr{display:block;max-width:140px;height:auto;margin:14px 0 0;opacity:.9}
     .tag-cloud a{display:inline-block;margin:0 10px 10px 0;padding:3px 12px;background:var(--card);
       border:1px solid var(--line);border-radius:20px;color:var(--accent);text-decoration:none;font-size:14px}
     .tag-cloud a[aria-current]{background:var(--accent);color:#fff}
@@ -54,7 +55,7 @@
 <body>
   <header class="site">
     <div class="wrap site-top">
-      <h1><a href="{{ "/" | relURL }}">🖥️ {{ .Site.Title }}</a></h1>
+      <div class="brand"><a href="{{ "/" | relURL }}">🖥️ {{ .Site.Title }}</a></div>
       <nav class="links">
         <a href="{{ "/" | relURL }}">首页</a>
         <a href="{{ "/tags/" | relURL }}">标签</a>
@@ -67,6 +68,7 @@
   <footer class="site wrap footer">
     <p>{{ .Site.Title }} · {{ .Site.Params.description }}</p>
     <p>© {{ now.Year }}</p>
+    <img class="qr" alt="关注二维码" src="{{ "/assets/my_qr.opt.png" | relURL }}">
   </footer>
 </body>
 </html>

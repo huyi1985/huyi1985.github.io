@@ -1,5 +1,7 @@
 # Sensitive: never commit
 config.d/
+# 例外：blacklist.yaml 是构建依赖（build_md_d.py 读取），随代码库提交
+!config.d/blacklist.yaml
 
 # Source-of-truth originals (external, ~534M): not in repo
 tmp/
@@ -19,3 +21,7 @@ __pycache__/
 
 # macOS
 .DS_Store
+
+# Claude Code session / project docs (keep out of repo)
+.claude/
+claudedocs/

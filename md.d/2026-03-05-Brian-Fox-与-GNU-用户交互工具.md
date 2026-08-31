@@ -1,6 +1,7 @@
 ---
 title: Brian Fox 与 GNU 用户交互工具
 date: '2026-03-05'
+draft: true
 ---
 
 # Brian Fox 与 GNU 用户交互工具
