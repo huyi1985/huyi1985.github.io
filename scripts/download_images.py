@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-download_images.py — 流水线第 2 阶段：图床图片本地化 + WebP 压缩 → raw_md.d/assets/
+download_images.py — 流水线第 2 阶段：图床图片本地化 + WebP 压缩 → md.d/assets/
 
 流水线设计（用户已确认）：
   1) collect_posts.py    提取文章 md → raw_md.d/（扁平，纯 md）
   2) [本脚本] 解析 raw_md.d 里 md 的图片引用（![..](https://图床/..)），
-       下载图片 → raw_md.d/assets/，转 WebP 压缩，
+       下载图片 → md.d/assets/，转 WebP 压缩，
        并把 md 里的引用改写为绝对路径 /assets/xxx.webp
   3) [未来脚本] 生成 Hugo 可消费的 md.d/（规范 slug、frontmatter；md.d 已含改写后的引用）
 
 行为契约：
-  1. 只读 raw_md.d，绝不动源目录；产物集中在 raw_md.d/assets/
+  1. 只读 raw_md.d，绝不动源目录；产物集中在 md.d/assets/
   2. 只处理"图片链接"：正则匹配 ![alt](target)，target 为 URL 或相对路径
   3. 远程图（http/https）统一下载到 assets/；文件名用原 URL 最后一段（sanitize）
   4. 转换 WebP：优先 cwebp/sips 命令，缺失用 Pillow 兜底；转换失败保持原格式
@@ -44,8 +44,9 @@ except ImportError:
 # ── 可配置清单 ──────────────────────────────────────────────
 # 待处理的 md 根目录（raw_md.d/，纯 md 提取物）
 CONTENT_DIR = Path(__file__).resolve().parent.parent / "raw_md.d"
-# 下载后的图片集中存放目录（与 md 同根的 assets/，Hugo 挂 /assets/）
-ASSETS_DIR = CONTENT_DIR / "assets"
+# 图片输出目录（md.d/assets/，Hugo 静态挂载 /assets/）
+MD_DIR = Path(__file__).resolve().parent.parent / "md.d"
+ASSETS_DIR = MD_DIR / "assets"
 
 # 图片扩展名（决定哪些链接算"图片"，需要本地化）
 IMAGE_EXTS = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg", ".bmp", ".avif"}
@@ -240,7 +241,7 @@ def download_one(url: str, session: requests.Session) -> bytes:
 
 def main() -> int:
     parser = argparse.ArgumentParser(
-        description="流水线第 2 阶段：把图床图片下载到 raw_md.d/assets/，转 WebP，改写 md 引用"
+        description="流水线第 2 阶段：把图床图片下载到 md.d/assets/，转 WebP，改写 md 引用"
     )
     parser.add_argument("--force", "-f", action="store_true",
                         help="强制重新下载已存在的图片（默认：存在则跳过）")
@@ -292,6 +293,7 @@ def main() -> int:
             f"{stats['remote']} 个远程引用，{stats['local']} 个已是本地引用")
         return 0
 
+    MD_DIR.mkdir(parents=True, exist_ok=True)
     ASSETS_DIR.mkdir(parents=True, exist_ok=True)
 
     # ── 第一遍：下载 + 转换（不读写 md，保证 md 原子性）──
