@@ -10,11 +10,11 @@ pygmentsCodeFences = true
 # md.d/ 作为 content 目录（脚本产物直接消费）
 contentDir = "md.d"
 
-# md.d/assets/ 以静态资源挂载到站点根 /assets/
-# （md 内图片引用的是绝对路径 /assets/xxx.webp，需要它能直接访问）
-[[module.mounts]]
-  source = "md.d/assets"
-  target = "assets"
+# 文章以 page bundle 组织：md.d/posts/<文章名>/index.md + 同目录图片（相对引用）
+# permalinks 去掉 posts/ 前缀并保留完整目录名（含日期前缀），保持 URL 与旧扁平结构一致
+# （:slug 会剥离 YAML 日期前缀，故用 :filename = bundle 目录名）
+[permalinks]
+  posts = "/:filename/"
 
 [params]
   description = "中文计算机历史资料库与奇闻故事库：Unix、Windows、编程语言、老软件、人物与冷知识"

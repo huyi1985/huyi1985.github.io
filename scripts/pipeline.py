@@ -13,6 +13,8 @@ pipeline.py — 一键流水线：tmp/ → raw_md.d/ → md.d/ → hugo → publ
 默认运行【增量】：只处理 tmp/ 里"新出现的文章"（raw_md.d 目标已存在则跳过），
 已发布的文章不动；适合日常加一篇就发布一篇。
 --full 则【全量】：强制重新提取/重下/重建，全部文章重出一遍后再发布。
+--limit N 则【窗口】：只跑最后 N 篇文章（download 与 build 均传 --limit；
+  窗口外 md 在 build 里保持现状/git HEAD），并自动跳过 git push（仅构建预览）。
 
 行为契约：
   1. 只调用 scripts/ 现有脚本与 hugo/git，不复制它们的逻辑
@@ -27,6 +29,7 @@ pipeline.py — 一键流水线：tmp/ → raw_md.d/ → md.d/ → hugo → publ
 用法：
     python3.11 scripts/pipeline.py                 # 增量：处理新增文章并发布
     python3.11 scripts/pipeline.py --full          # 全量：全部重出并发布
+    python3.11 scripts/pipeline.py --limit 5       # 只处理最后 5 篇文章（不 push）
     python3.11 scripts/pipeline.py --skip-push     # 只构建，不提交不推送
     python3.11 scripts/pipeline.py --dry-run       # 预览将执行的命令
     python3.11 scripts/pipeline.py --full --skip-push --dry-run
@@ -86,19 +89,26 @@ def main() -> int:
     )
     ap.add_argument("--full", action="store_true",
                     help="全量：collect 带 --force，hugo 前清 public/")
+    ap.add_argument("--limit", type=int, default=0, metavar="N",
+                    help="只处理最后 N 篇文章（不 push，仅构建预览）")
     ap.add_argument("--skip-push", action="store_true",
                     help="只构建，不 git commit / push")
     ap.add_argument("--dry-run", action="store_true",
                     help="只打印命令，不执行不 push")
     args = ap.parse_args()
 
+    if args.full and args.limit:
+        log("✗ --full 与 --limit 互斥（全量=全部，窗口=部分），请二选一")
+        return 2
+
     HUGO_OK, HUGO = detect_hugo()
     if not HUGO_OK:
         log("✗ 未找到 hugo（PATH 里没有）；请先安装或加入 PATH")
         return 1
 
-    mode = "全量" if args.full else "增量"
-    log(f"模式：{mode} | skip-push={args.skip_push} | dry-run={args.dry_run}")
+    mode = "全量" if args.full else ("窗口" if args.limit else "增量")
+    log(f"模式：{mode}" + (f"（limit={args.limit}）" if args.limit else "")
+        + f" | skip-push={args.skip_push} | dry-run={args.dry_run}")
 
     # ── 阶段① 提取 ──
     cmd = list(STAGES["collect"])
@@ -115,16 +125,21 @@ def main() -> int:
             return r.returncode
         new_n = count_new(r.stdout)
 
-    # ── 阶段② 图片本地化 ──
+    # ── 阶段② 图片本地化（--limit 传给 download_images）──
     cmd = list(STAGES["images"])
     if args.full:
         cmd.append("--force")
+    if args.limit:
+        cmd += ["--limit", str(args.limit)]
     rc = run(cmd, args.dry_run)
     if rc:
         return rc
 
-    # ── 阶段③ 构建 md.d ──
-    rc = run(list(STAGES["build"]), args.dry_run)
+    # ── 阶段③ 构建 md.d（--limit 传给 build_md_d）──
+    cmd = list(STAGES["build"])
+    if args.limit:
+        cmd += ["--limit", str(args.limit)]
+    rc = run(cmd, args.dry_run)
     if rc:
         return rc
 
@@ -139,8 +154,8 @@ def main() -> int:
         return rc
 
     # ── 阶段⑤ 提交 + 推送 ──
-    if args.skip_push or args.dry_run:
-        log("skip-push / dry-run：不提交不推送；构建完成 ✓")
+    if args.limit or args.skip_push or args.dry_run:
+        log("limit / skip-push / dry-run：不提交不推送；构建完成 ✓")
         return 0
 
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")

@@ -5,7 +5,8 @@
     <h1>{{ .Title }}</h1>
     {{ with .Params.tags }}<div class="tags">{{ range . }}<a href="{{ "/tags/" }}{{ . | urlize }}/">#{{ . }}</a>{{ end }}</div>{{ end }}
     <div class="post-body">
-      {{ .Content }}
+      {{/* 正文里可能有 <h1>（与页面标题重复）——统一降为 h2，保持单个 h1 的语义 */}}
+      {{ replaceRE "<h1([^>]*)>" "<h2$1>" .Content | replaceRE "</h1>" "</h2>" | safeHTML }}
     </div>
     <!-- 广告位：正文下方（仅启用时显示） -->
     {{ partial "ad-slot.html" (dict "ctx" . "slot" "below_content") }}

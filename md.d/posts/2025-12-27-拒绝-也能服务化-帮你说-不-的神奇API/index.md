@@ -1,0 +1,45 @@
+---
+title: “拒绝”也能服务化，帮你说“不”的神奇API
+date: '2025-12-27'
+---
+
+# “拒绝”也能服务化，帮你说“不”的神奇API
+
+在程序员的世界里，几乎所有东西都可以被“**服务化**”，或者至少正在朝那个方向发展。
+
+从算力和存储被搬到云端的 **Infrastructure as a Service（IaaS）**，到无需关心环境、只需专注开发和部署的 **Platform as a Service（PaaS）**，再到软件本身变成服务的 **Software as a Service（SaaS）**。存储有 **Storage as a Service**，计算有 **Compute as a Service**，连 AI 也成了 **Prompt as a Service**。
+
+在 IT 圈之外，偶尔也能看到 **\* as a Service** 的影子，比如电动汽车厂商提出的 **Battery as a Service**。随着 AI 在图片和视频生成能力上的突飞猛进，我看着朋友的“作品”，忍不住调侃：“你这是在搞 HaaS 呢吧？”
+
+终于，有人意识到，一个长期被低估的刚需也值得服务化——如何拒绝别人，也就是那个看似简简单单的“不”字，也应该有 API。
+
+你是否遇到过这样的场景：
+
+* 同事问你，“能不能顺手帮忙看看这个需求？”  
+* 产品说，“就改一小点，不影响进度的。”  
+* 朋友半夜发消息，“在吗？有个事想跟你商量。”
+
+你的脑海里已经完成了完整的风险评估、时间成本计算，唯一的结论只有一个字：“不”！但如何优雅地说出这个“不”呢？总让人又为难又尴尬。
+
+于是，**No-as-a-Service** 项目诞生了。
+
+> 项目地址：https://github.com/hotheadhacker/no-as-a-service
+
+![](img1.png)
+
+现在，一个 GET 请求释放了一切说”不“时的心理负担，只需要
+
+```
+GET /no
+```
+
+就会随机得到一个理由：
+
+![](img2.png)
+
+* "I accidentally glued myself to the couch."（我不小心把自己粘在沙发上了）
+* "My goldfish is getting married that day, I have to attend."（我的金鱼那天要结婚，我必须参加婚礼）
+* "I have to return the One Ring to Mordor that day."（那天我得把至尊魔戒送回魔多）
+* ……
+
+🔚

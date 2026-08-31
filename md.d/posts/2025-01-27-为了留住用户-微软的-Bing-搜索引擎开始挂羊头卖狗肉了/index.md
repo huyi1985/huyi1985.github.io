@@ -1,0 +1,92 @@
+---
+title: 为了留住用户，微软的 Bing 搜索引擎开始挂羊头卖狗肉了
+date: '2025-01-27'
+---
+
+# 为了留住用户，微软的 Bing 搜索引擎开始挂羊头卖狗肉了
+
+Microsoft Edge 是 Windows 上的默认浏览器，而 Bing 又是 Edge 上的默认搜索引擎。当想要去谷歌搜索时，对于懒着修改这些默认设置的用户，为了少输入“.com”这么几个字母，他们可能会先在 Bing.com 中搜索“google”，然后通过点击首条搜索结果进入 Google.com 继续搜索。
+
+为了防止用户去竞争对手 Google.com 搜索，近日（2025 年 1 月 6 日左右）微软的 Bing 搜索引擎可真是想出了个挂羊头卖狗肉的“高招”。
+
+![](img1.png)
+
+用户在 Bing.com 搜索“google”后，Bing 现在​​会显示一个风格与 Google.com 非常相似的页面。
+
+这个页面完全是在模仿谷歌的首页，布局简洁，中间有一个搜索栏，搜索栏上方有类似 Google Doodle 的插图。这个页面还故意隐藏了顶部，用户需要滚动页面，才能看到 Bing 的 logo 和搜索栏。
+
+很多用户并不关心实际使用的到底是什么搜索引擎，所以微软的这个伎俩看似很愚蠢，但很可能非常有效。这种相似的风格会让部分用户感觉自己正在使用谷歌搜索。
+
+Google Chrome 的负责人 Parisa Tabriz 对这一“天才的创举”进行了尖锐的批评。她表示：模仿是最真诚的奉承，但微软仿造谷歌主页的伎俩又一次迷惑了用户并限制了用户的选择。微软在新的一年再创新低。
+
+![](img2.png)
+
+为了防止用户流失，微软此前也采取了不少骚操作，比如使用 Edge 访问 Chrome 下载网站时，弹窗提示用户继续使用 Edge、在 Microsoft Store 中难以找到 Google 应用等等。
+
+
+
+---
+
+https://www.itmedia.co.jp/news/articles/2501/07/news094.html
+
+https://www.itmedia.co.jp/news/articles/2501/07/news094.html
+https://x.com/laparisa/status/1876343944700887223?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1876343944700887223%7Ctwgr%5E009cdae9814869281c0d5d4cf183aae1ed2ea206%7Ctwcon%5Es1_&ref_url=https%3A%2F%2Fwww.itmedia.co.jp%2Fnews%2Farticles%2F2501%2F07%2Fnews094.html
+
+![](img3.png)
+
+https://www.windowslatest.com/2025/01/06/microsoft-bing-is-trying-to-spoof-google-ui-when-people-search-google-com/
+# Microsoft Bing is trying to spoof Google UI when people search Google.com
+
+By [Mayank Parmar](https://www.windowslatest.com/author/mayank/) January 6, 2025
+
+Microsoft seems to have rolled out a pretty interesting yet controversial change that spoofs Google.com UI when you try to find Google when using Bing.com. This is a genius move to keep you from Google search, which has become a synonym for search engines or finding answers online.
+
+As you probably know, [Microsoft Edge is the default browser on Windows 11](https://www.windowslatest.com/2024/12/21/microsoft-edge-wont-stop-nagging-users-to-set-itself-as-default-on-windows-11/), and it’s set to use the Bing search engine by default, just like how Chrome on Android defaults to Google.
+
+If you own a Windows PC and want to use Google, you might just tap the address bar in Microsoft Edge, search for Google in the address bar powered by Bing, then open the Google blue link from Bing, and may not go back to Bing ever again. Later, you might even figure out a way to change the default search engine to Google.com.
+
+Microsoft may have found a way, which is somewhat sneaky, to reduce the bounce rate here (the number of users going away from Bing).
+
+
+As spotted by Windows Latest, if you open Bing.com and search for Google or Google.com, you’ll now see a giant animated picture of people celebrating, along with a message.
+
+Bing’s design looks a lot like Google’s when you search for Google on Bing. The page has a clean layout, a search bar in the middle, and simple illustrations.
+
+Windows Latest observed that Microsoft is experimenting with this new design when people are logged out of their Microsoft account and search for Google on Bing.
+
+This can feel sneaky because it seems like Bing is trying to copy Google’s style to make users feel like they are using Google. It’s Google-ish because of its minimalistic design and familiar elements, which might confuse users into thinking it’s Google at first glance.
+
+In fact, if you observe the animation closely, you’ll realize that it’s really trying to fake Google UI. The top search bar of Bing is hidden unless you scroll.
+
+This is a genius move to grab your attendance.
+
+
+In the past, when you searched Google on Bing, it simply showed a small Bing search bar and then a regular link to Google.
+
+But you might wonder how effective this idea would be. Well, if you’re a tech-savvy person, you’ll probably realize what’s going on, then scroll and open Google from the link.
+
+However, this move could keep people on Bing if they just want to use a search engine.
+
+Google is the number one search engine, and there’s a large number of users who are just looking for a search engine, but they think the search engine is Google. In their mind, the two are the same. That’s because Google has become a synonym for search engines, just like Chrome is for browsers.
+
+A lot of users don’t really care what search engine they’re using, so Microsoft’s new practice, which might appear stupid to some of you, is likely very effective.
+
+On top of it, there’s also an interesting message underneath the Google-like search box that says “every search brings you closer to a free donation. Choose from over 2 million nonprofits.”
+
+This might also convince some people to keep using Bing.
+
+After Windows Latest published the article, [Parisa Tabriz](https://en.wikipedia.org/wiki/Parisa_Tabriz), head of Google Chrome, responded with sharp criticism. In a statement shared by Google, she stated: Imitation is the sincerest form of flattery, but Microsoft spoofing the Google homepage is another tactic in its long history of tricks to confuse users & limit choice. New year; new low Microsoft.
+
+What do you think about Bing’s new UI change? Let us know in the comments below.
+
+米 Microsoftの検索エンジン「Bing」で「Google」を検索すると、画面がGoogle Doodleのようなイラスト付きに変わるようになっている。米メディア[Windows Latest](https://www.windowslatest.com/2025/01/06/microsoft-bing-is-trying-to-spoof-google-ui-when-people-search-google-com/)などが1 月 6 日（現地時間）に報じた。
+
+Microsoftのロゴも表示されていないので、ユーザーによってはGoogle 検索の画面だと勘違いしてそのまま中央の検索枠にクエリを入力し、Bingを使い続けそうだ。
+
+上にスクロールすればMicrosoftのロゴが表示されるため、まだBingを使っていることに気づく可能性はある。しかし、検索結果画面で上にスクロールするユーザーは少ないだろう。
+
+米 GoogleでChrome 担当ジェネラルマネジャーを務めるパリサ・タブリズ氏はこれを受けてXに「模倣は最も誠実な賛辞だが、MicrosoftがGoogleのホームページを偽装することは、ユーザーを混乱させ選択肢を制限するという同社の長い歴史におけるもう一つの戦術だ」とポストした。
+
+Microsoftはこれまでにも、EdgeブラウザでChromeブラウザのダウンロードサイトを開いた際に、Edgeを使い続けるよう促すポップアップを表示したり、MicrosoftストアでGoogleアプリを探しにくくするなど、ユーザーのGoogle 製品への移行を阻むような施策を講じてきた。
+
+https://www.itmedia.co.jp/news/articles/2501/07/news094.html

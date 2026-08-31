@@ -15,6 +15,9 @@ raw_md.d/
 
 # Legacy backup: keep small images + md, skip the huge vintage manpage PNGs (~12MB)
 
+# 2026-09-01 page-bundle 迁移的旧扁平结构备份（一次性，验证后删除）
+md.d.flat-legacy-*/
+
 # Python
 __pycache__/
 *.pyc

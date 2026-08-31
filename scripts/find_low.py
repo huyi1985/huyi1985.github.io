@@ -201,14 +201,16 @@ def main() -> int:
         print("  [WARN] 未配置/未找到 OpenAI key → 仅本地启发式")
     print(f"模型：{cfg.get('model')}")
 
-    # 读入全部文章
+    # 读入全部文章（兼容 page bundle：md.d/posts/<文章名>/index.md）
     arts = []
-    for f in sorted(base.glob("*.md")):
+    for f in sorted(base.glob("*.md")) + sorted(base.glob("posts/*/index.md")):
         txt = f.read_text(encoding="utf-8", errors="replace")
         fm, body = strip_front(txt)
         body_clean = re.sub(r"\s+", " ", body).strip()
+        # bundle 结构下用目录名作为文章标识（md.d/posts/<文章名>/index.md）
+        display = f.parent.name if f.parent.name != base.name else f.name
         arts.append({
-            "file": f.name, "title": str(fm.get("title", "")).strip(),
+            "file": display, "title": str(fm.get("title", "")).strip(),
             "date": str(fm.get("date", "")).strip(), "body": body_clean,
             "len": len(body_clean), "fm": fm,
         })

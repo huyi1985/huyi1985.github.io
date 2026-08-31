@@ -1,0 +1,102 @@
+---
+title: 当DNS服务器变成了“十万个为什么”的百科全书
+date: '2026-03-20'
+---
+
+# 当DNS服务器变成了“十万个为什么”的百科全书
+
+**DNS 服务器**就像互联网中的“**114 查号台**”。
+
+它的存在，让我们不必记住一串串难以辨认的数字 IP 地址。只需要记住域名，就可以网上冲浪了。换句话说，DNS 的职责，就是把人类更容易记忆的名字，映射为机器能够理解和使用的地址。
+
+当你在浏览器中输入 *example.com* 时，浏览器会自动替你向 DNS 服务器发起查询：
+
+“这个域名对应的 IP 地址是什么来着？”
+
+DNS 服务器随后会返回结果：*example.com* 对应的 IP 地址是 *104.18.27.120*。
+
+![](img1.webp)
+
+从这个角度看，DNS 本质上就是一个“查地址”的系统，（似乎）只会回答“某个域名对应的 IP 是什么”这一类特定的问题。
+
+但在互联网的世界里，总是有人尝试**突破既有的边界**。一些有趣的实验正在重新定义 DNS 的能力。
+
+一台名为 `llm.pieter.com` 的 DNS 服务器，就**不再局限于返回域名对应的 IP 地址**，而是像一本“百科全书”一样，可以直接答疑解惑。
+
+比如，你想知道“生命的意义”（`what-is-the-meaning-of-life`）是什么，就可以这样提问：
+
+```bash
+$ dig TXT +short what-is-the-meaning-of-life. @llm.pieter.com
+```
+
+这条命令的意思是：用 `dig` 这个 DNS 客户端程序，向 `llm.pieter.com` 这台 DNS 服务器查询 `what-is-the-meaning-of-life.` 的答案，并以简洁格式（`+short`）输出。
+
+Windows 的用户可以使用 `nslookup` 或 PowerShell 替代：
+
+```bat
+C:> nslookup -type=TXT "what-is-the-meaning-of-life." llm.pieter.com
+
+PS C:> Resolve-DnsName -Name "what-is-the-meaning-of-life." -Type TXT -Server llm.pieter.com
+```
+
+还可以直接用网页版的工具测试：
+
+> 🔗 https://digwebinterface.com/?hostnames=what-is-the-meaning-of-life&type=TXT&short=on&useresolver=9.9.9.10&ns=self&nameservers=llm.pieter.com
+
+`llm.pieter.com` 这台 DNS 服务器告诉我们，生命的意义就是
+
+> "The meaning of life is a deeply personal and philosophical question. It can vary for each individual and may involve finding purpose, happiness, or connection with others."
+
+（生命的意义是一个非常个人且带有哲学意味的问题。对于每个人来说可能都不相同，它可能涉及寻找人生的目标、获得幸福，或与他人建立联系。）
+
+你还可以问它数学题，比如：
+
+```bash
+$ dig TXT +short what-is-e @llm.pieter.com
+```
+
+答案是“The mathematical constant e is approximately equal to **2.71828**. It is an important ...”。
+
+你还可以问它其他问题：51 区在哪里？宇宙的边界在哪里？区块链是如何工作的？……
+
+再问问它，`what-is-llm.pieter.com`，答案挺有趣的。
+
+## 背后的原理
+
+这个实验的背后原理其实并不复杂，本质上是把现有的 **DNS 能力与大语言模型（LLM）做了一次“组合创新”**。
+
+DNS 协议本身就支持一种名为 **TXT 记录**的特殊消息类型（这正是为什么前面的命令中要显式指定 `TXT`）。**TXT 记录**用于存储**任意文本信息**，这意味着 DNS 不再只能返回 IP 地址（这是最常见的是 A 记录），也可以直接返回一段文本内容。
+
+整体流程可以概括为：
+
+1️⃣ 用户发起一个 DNS 查询
+2️⃣ DNS 服务器从请求中提取出查询内容。这本该是一个域名，但现在是“十万个为什么”的问题  
+3️⃣ 将问题嵌入提示语（prompt），构造成 LLM 的输入  
+4️⃣ 调用 LLM 生成简短的答案  
+5️⃣ 将生成的结果写入 DNS 的响应中，并返回给客户端
+
+用 Wireshark 工具抓包，可以看到
+
+![](img2.webp)
+
+在（封装在 UDP 数据包的）DNS 数据包中，本该填入域名的 `Name` 字段，现在填入了问题，
+
+![](img3.webp)
+
+而本该是 IP 地址的答案 `Answers` 字段中，现在是一串文字。
+
+所以，这里只是把 DNS 当作了一层非常轻量的“传输通道”（LLM over DNS）。本质上与在网页中向 LLM 提问没有任何区别。
+
+-----
+
+从“114 查地址”，到“十万个为什么回答问题”，说明很多我们习以为常的技术，其实并没有被“用尽”（滥用）。
+
+🔚
+
+-----
+
+终结者生命的价值
+
+https://digwebinterface.com/?hostnames=what-is-51area&type=TXT&showcommand=on&colorize=on&stats=on&useresolver=9.9.9.10&ns=self&nameservers=llm.pieter.com
+
+https://pieter.com/~pieter/

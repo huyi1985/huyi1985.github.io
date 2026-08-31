@@ -13,11 +13,13 @@ download_images.py — 流水线第 2 阶段：图床图片本地化 + WebP 压�
 行为契约：
   1. 只读 raw_md.d，绝不动源目录；产物集中在 md.d/assets/
   2. 只处理"图片链接"：正则匹配 ![alt](target)，target 为 URL 或相对路径
-  3. 远程图（http/https）统一下载到 assets/；文件名用原 URL 最后一段（sanitize）
+  3. 远程图（http/https）统一下载到 assets/，文件名 = <yyyymmdd>-<当日文章序号>-img<图片序号>.<ext>
+     （<yyyymmdd> 取文件名前半段日期去横线；<当日文章序号> 该日第几篇（按文件名排序）；
+     <图片序号> 该文内第几张图 01,02,03…；无日期前缀则退化为 -img<序号>）
   4. 转换 WebP：优先 cwebp/sips 命令，缺失用 Pillow 兜底；转换失败保持原格式
   5. 重复 URL 只下载一次（md 内多处引用 → 同一个 assets 文件）
   6. 幂等：assets 文件已存在则跳过；--force 强制重下
-  7. md 内的引用被改写为 /assets/<name>.webp（本地路径引用保留不下载）
+  7. md 内的引用被改写为 /assets/<上表文件名>.webp（本地路径引用保留不下载）
   8. 失败/跳过不误改 md；改写是"整块"的——全部图就绪才替换，保证 md 原子一致
 
 用法：
@@ -62,6 +64,8 @@ HEADERS = {
 
 # 匹配 md 图片语法：![alt](target)。target 可能带标题（"url \"title\""），取 url 段。
 IMG_RE = re.compile(r"!\[([^\]]*)\]\(([^)]*)\)")
+# 文章文件名前缀的日期段（如 "2026-08-28-..." → 2026-08-28）
+DATE_RE = re.compile(r"^(\d{4}-\d{2}-\d{2})-")
 
 
 def log(msg: str) -> None:
@@ -80,20 +84,40 @@ def parse_target(raw: str) -> str:
     return raw.split()[0].strip()
 
 
-def pick_filename(url: str) -> str:
-    """由 URL 决定落盘文件名（原始文件名段，去掉 query 参数，做安全化）。
+def day_article_rank(md_name: str) -> int:
+    """同一发布日内第几篇文章：文件名按 <date>-<title>.md 排序后 1 起的序号。
 
-    图床形如 p.ipic.vip/elpjzf.png 可直接用尾段；
-    带 query（如 mmbiz.qpic.cn/.../640?wx_fmt=png）需剥掉 ? 后的部分。
+    多篇文章同一天发布时，文件名只有标题段不同（如 2026-03-06 有 4 篇），
+    排序即发布先后。无日期前缀的 md 不参与排序，一律归到第 0 号
+    （图片名退化为 -img01 形式，见 pick_asset_name；md 文件名无日期时，
+    后续改名脚本也会 SKIP）。
     """
-    path = urlparse(url).path
-    name = path.rsplit("/", 1)[-1] if "/" in path else path
-    if not name:  # URL 没有文件名段（罕见），用 md5 兜底
-        import hashlib
+    date = DATE_RE.match(md_name).group(1) if DATE_RE.match(md_name) else None
+    if not date:
+        return 0
+    n = 0
+    for x in CONTENT_DIR.glob("*.md"):
+        if x.name == md_name:
+            continue
+        xm = DATE_RE.match(x.name)
+        if xm and xm.group(1) == date and x.name < md_name:
+            n += 1
+    return n + 1
 
-        name = hashlib.md5(url.encode()).hexdigest()[:12] + ".img"
-    name = re.sub(r"[^A-Za-z0-9._-]+", "-", name).strip("-")
-    return name
+
+def pick_asset_name(md_name: str, url: str, n: int) -> str:
+    """目标 assets 文件名：<yyyymmdd>-<当日文章序号>-img<图片序号>.<ext>。
+
+    前缀 <yyyymmdd> 取文章文件名前半段的日期（YYYY-MM-DD 去横线，如 2026-08-28 → 20260828）；
+    <当日文章序号> 是该日期下第几篇文章（1,2,3…，按文件名排序）；
+    <图片序号> 是该文内第 n 张图（01, 02, 03…，按出现顺序）；
+    扩展名优先按魔数探测，其次按 URL 推导（download 阶段确定）。无日期前缀时
+    <yyyymmdd> 与 <当日文章序号> 缺省，退化为 -img<序号>（md 无日期无法归组）。
+    """
+    m = DATE_RE.match(md_name)
+    prefix = m.group(1).replace("-", "") if m else ""
+    date_part = f"{prefix}-{day_article_rank(md_name)}" if prefix else ""
+    return f"{date_part}-img{n:02d}"
 
 
 def ext_from_url(url: str) -> str:
@@ -246,9 +270,13 @@ def main() -> int:
     parser.add_argument("--force", "-f", action="store_true",
                         help="强制重新下载已存在的图片（默认：存在则跳过）")
     parser.add_argument("--dry-run", action="store_true", help="只预览，不下载/不改写")
+    parser.add_argument("--limit", type=int, default=0, metavar="N",
+                        help="只处理最后 N 篇文章（按文件名排序取尾 N 个）；默认全部")
     args = parser.parse_args()
 
     mds = sorted(CONTENT_DIR.glob("*.md"))
+    if args.limit > 0:
+        mds = mds[-args.limit:]
     if not mds:
         log(f"  [ERROR    ] {CONTENT_DIR} 下没有 md 文件")
         return 1
@@ -263,6 +291,7 @@ def main() -> int:
     for md in mds:
         text = md.read_text(encoding="utf-8", errors="replace")
         refs = []
+        img_seq = 0  # 本文内远程图片序号 01,02,03…（跳过本地/非链接引用）
         for m in IMG_RE.finditer(text):
             url = parse_target(m.group(2))
             if not url or not url.strip():
@@ -273,12 +302,9 @@ def main() -> int:
             if url.startswith("/"):  # 已是本地绝对路径（前序产物可能已改写）
                 stats["local"] += 1
                 continue
-            name = pick_filename(url)
-            if name.lower().endswith(tuple(IMAGE_EXTS)):
-                fname = name
-            else:
-                # 无扩展名 URL：先按内容探测（下载后修正 ext）
-                fname = name + ext_from_url(url)
+            img_seq += 1
+            # 目标名：<yyyymmdd>-<当日文章序号>-img<图片序号>；无扩展名，下载后按魔数定 ext
+            fname = pick_asset_name(md.name, url, img_seq)
             refs.append((m.group(0), url, fname, is_remote_url(url)))
             stats["remote"] += 1
         if refs:
@@ -305,12 +331,12 @@ def main() -> int:
                 continue
             if not is_remote_url(url):
                 continue
-            ext = Path(fname).suffix.lower()
-            stem = Path(fname).stem
+            stem = fname  # 目标名无扩展名（<date>-<rank>-img<nn>）；ext 按 URL/魔数推断
+            ext = ext_from_url(url)
 
             # 幂等跳过（assets 已存在且 --force 未开）
             existing = [
-                p for p in ASSETS_DIR.glob(f"{stem}*") if p.is_file()
+                p for p in ASSETS_DIR.glob(f"{stem}.*") if p.is_file()
             ]
             if existing and not args.force:
                 url_to_assets[url] = existing[0].name
@@ -348,7 +374,7 @@ def main() -> int:
                     stats["kept"] += 1
             else:
                 stats["kept"] += 1
-            log(f"  [OK       ] {raw_name if url_to_assets[url].endswith(raw_name) else url_to_assets[url]}  ← {url}")
+            log(f"  [OK       ] {url_to_assets[url]}  ← {url}")
 
     # ── 第二遍：改写 md（全部引用解析完毕，统一替换，未下载成功的引用保持原样）──
     for md, text, refs in tasks:
