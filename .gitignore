@@ -1,0 +1,23 @@
+# Sensitive: never commit
+config.d/
+
+# Source-of-truth originals (external, ~534M): not in repo
+tmp/
+
+# Build output (regenerable with `hugo`)
+public/
+.hugo_build.lock
+
+# Intermediate pipeline output (md.d/ is the authoritative content; raw is regenerable)
+raw_md.d/
+
+# Legacy backup: keep small images + md, skip the huge vintage manpage PNGs (~12MB)
+md.d.legacy-20260831/init_v3_man/*_vintage.png
+md.d.legacy-20260831/init_v4_man/*_vintage.png
+
+# Python
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store

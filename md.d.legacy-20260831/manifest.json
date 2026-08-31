@@ -1,0 +1,112 @@
+{
+  "generated": "2026-08-31T03:28:02+00:00",
+  "source_dirs": [
+    "/Users/huyi/Projects/unix-history-docs"
+  ],
+  "articles": [
+    {
+      "src_md": "/Users/huyi/Projects/unix-history-docs/init_v3_man.md",
+      "title": "init_v3_man",
+      "date": "2026-03-11",
+      "tags": [
+        "进程管理",
+        "Unix历史"
+      ],
+      "dest_md": "init_v3_man/init_v3_man.md",
+      "aliases": [
+        "/init_v3_man/"
+      ],
+      "images": []
+    },
+    {
+      "src_md": "/Users/huyi/Projects/unix-history-docs/init_v4_man.md",
+      "title": "init_v4_man",
+      "date": "2026-03-11",
+      "tags": [
+        "进程管理",
+        "Unix历史"
+      ],
+      "dest_md": "init_v4_man/init_v4_man.md",
+      "aliases": [
+        "/init_v4_man/"
+      ],
+      "images": []
+    },
+    {
+      "src_md": "/Users/huyi/Projects/unix-history-docs/Brian_Fox_与GNU用户交互工具.md",
+      "title": "Brian Fox 与 GNU 用户交互工具",
+      "date": "2026-03-05",
+      "tags": [
+        "终端/库",
+        "GNU工具",
+        "Unix历史",
+        "设计哲学"
+      ],
+      "dest_md": "Brian_Fox_与GNU用户交互工具/Brian_Fox_与GNU用户交互工具.md",
+      "aliases": [
+        "/Brian_Fox_与GNU用户交互工具/"
+      ],
+      "images": []
+    },
+    {
+      "src_md": "/Users/huyi/Projects/unix-history-docs/readline_lib_起源追踪.md",
+      "title": "GNU Readline 库在 Unix/BSD 源码树中的起源追踪",
+      "date": "2026-03-05",
+      "tags": [
+        "终端/库",
+        "GNU工具",
+        "Unix历史"
+      ],
+      "dest_md": "readline_lib_起源追踪/readline_lib_起源追踪.md",
+      "aliases": [
+        "/readline_lib_起源追踪/"
+      ],
+      "images": []
+    },
+    {
+      "src_md": "/Users/huyi/Projects/unix-history-docs/Unix_V1_sysfork_空闲进程槽查找.md",
+      "title": "Unix V1 sysfork — 空闲进程槽查找",
+      "date": "2026-02-24",
+      "tags": [
+        "Unix历史",
+        "进程管理"
+      ],
+      "dest_md": "Unix_V1_sysfork_空闲进程槽查找/Unix_V1_sysfork_空闲进程槽查找.md",
+      "aliases": [
+        "/Unix_V1_sysfork_空闲进程槽查找/"
+      ],
+      "images": []
+    },
+    {
+      "src_md": "/Users/huyi/Projects/unix-history-docs/1979年的多态_Unix_V7_ioctl设计分析.md",
+      "title": "1979年的多态：一行C代码里的设计哲学",
+      "date": "2026-02-09",
+      "tags": [
+        "Unix设计",
+        "Unix历史",
+        "进程管理",
+        "设计哲学"
+      ],
+      "dest_md": "1979年的多态_Unix_V7_ioctl设计分析/1979年的多态_Unix_V7_ioctl设计分析.md",
+      "aliases": [
+        "/1979年的多态_Unix_V7_ioctl设计分析/"
+      ],
+      "images": []
+    },
+    {
+      "src_md": "/Users/huyi/Projects/unix-history-docs/init完整史_从1973到systemd.md",
+      "title": "init 完整演进史：从 \"BUGS none possible\" 到 systemd",
+      "date": "2026-02-09",
+      "tags": [
+        "Unix历史",
+        "进程管理",
+        "设计哲学"
+      ],
+      "dest_md": "init完整史_从1973到systemd/init完整史_从1973到systemd.md",
+      "aliases": [
+        "/init完整史_从1973到systemd/"
+      ],
+      "images": []
+    }
+  ]
+}

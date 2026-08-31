@@ -1,0 +1,12 @@
+{{ define "main" }}
+  <h1 style="font-size:24px">全部文章 <span style="font-size:14px;color:var(--muted)">（按发布时间倒序）</span></h1>
+  {{ range .Site.RegularPages.ByDate.Reverse }}
+    <article class="posts-list">
+      <div class="date">{{ .Date.Format "2006-01-02" }}</div>
+      <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+      {{ with .Params.tags }}
+        <div class="tags">{{ range . }}<a href="{{ "/tags/" }}{{ . | urlize }}/">#{{ . }}</a>{{ end }}</div>
+      {{ end }}
+    </article>
+  {{ end }}
+{{ end }}

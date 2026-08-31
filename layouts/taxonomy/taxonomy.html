@@ -1,0 +1,10 @@
+{{ define "main" }}
+  <h1 style="font-size:24px">标签：{{ .Title }}</h1>
+  <p class="tags"><a href="{{ "/tags/" | relURL }}">← 全部标签</a></p>
+  {{ range .Pages.ByDate.Reverse }}
+    <article class="posts-list">
+      <div class="date">{{ .Date.Format "2006-01-02" }}</div>
+      <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    </article>
+  {{ end }}
+{{ end }}

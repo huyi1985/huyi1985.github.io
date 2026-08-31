@@ -1,0 +1,30 @@
+# 中文计算机历史知识站 — Hugo 配置
+# 域名注册后修改 baseURL；广告位默认关闭，接入联盟后启用
+
+baseURL = "https://example.com/"           # TODO: 注册域名后替换
+languageCode = "zh-CN"
+title = "计算机历史 · 奇闻与资料库"
+enableRobotsTXT = true
+pygmentsCodeFences = true
+
+# md.d/ 作为 content 目录（脚本产物直接消费）
+contentDir = "md.d"
+
+# md.d/assets/ 以静态资源挂载到站点根 /assets/
+# （md 内图片引用的是绝对路径 /assets/xxx.webp，需要它能直接访问）
+[[module.mounts]]
+  source = "md.d/assets"
+  target = "assets"
+
+[params]
+  description = "中文计算机历史资料库与奇闻故事库：Unix、Windows、编程语言、老软件、人物与冷知识"
+  orderBy = "date"
+  # 广告位开关：接入广告联盟后改为 true
+  [params.ads]
+    enabled = false
+    slot_below_content = ""   # 广告联盟提供的广告位 ID
+    slot_sidebar = ""
+
+# 标签筛选：Hugo taxonomy
+[taxonomies]
+  tag = "tags"

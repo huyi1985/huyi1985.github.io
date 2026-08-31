@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="{{ site.LanguageCode | default "zh-CN" }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  {{ if .Param "tags" }}<meta name="keywords" content="{{ delimit .Params.tags ", " }}">{{ end }}
+  <link rel="canonical" href="{{ .Permalink }}">
+  <style>
+    :root{
+      --bg:#faf9f7; --fg:#1e1d1b; --muted:#6b6863; --line:#e5e2dc;
+      --accent:#8a4b00; --card:#fff; --code:#f0ecdf;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--fg);
+      font:17px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;}
+    header.site{background:var(--card);border-bottom:1px solid var(--line);}
+    .wrap{max-width:760px;margin:0 auto;padding:0 20px;}
+    .site-top{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;padding:18px 0;}
+    .site-top h1{margin:0;font-size:20px;}
+    .site-top h1 a{color:var(--fg);text-decoration:none}
+    nav.links a{margin-left:14px;color:var(--muted);text-decoration:none;font-size:15px}
+    nav.links a:hover{color:var(--accent)}
+    main{padding:28px 0 60px;}
+    .date{color:var(--muted);font-size:14px}
+    article.posts-list{margin-bottom:26px;}
+    article.posts-list h2{margin:2px 0 6px;font-size:21px;}
+    article.posts-list h2 a{color:var(--fg);text-decoration:none}
+    article.posts-list h2 a:hover{color:var(--accent)}
+    .tags{color:var(--muted);font-size:13px}
+    .tags a{color:var(--accent);text-decoration:none;margin-right:8px}
+    .tags a:hover{text-decoration:underline}
+    article.entry h1{font-size:28px;line-height:1.35}
+    .post-body img{max-width:100%;height:auto}
+    .post-body pre{overflow-x:auto;background:var(--code);padding:14px;border-radius:6px;font-size:14px}
+    .post-body code{background:var(--code);padding:1px 5px;border-radius:4px}
+    .post-body blockquote{border-left:3px solid var(--line);margin-left:0;padding-left:16px;color:var(--muted)}
+    /* 广告位占位：默认隐藏，启用后显示 */
+    .ad-slot{display:none;margin:28px -20px;padding:8px;background:#f3f1ec;border:1px dashed var(--line);
+      text-align:center;color:var(--muted);font-size:13px}
+    .ad-slot.on{display:block}
+    footer.site{border-top:1px solid var(--line);color:var(--muted);font-size:13px;padding:24px 0 40px}
+    .tag-cloud a{display:inline-block;margin:0 10px 10px 0;padding:3px 12px;background:var(--card);
+      border:1px solid var(--line);border-radius:20px;color:var(--accent);text-decoration:none;font-size:14px}
+    .tag-cloud a[aria-current]{background:var(--accent);color:#fff}
+    @media (prefers-color-scheme:dark){
+      :root{--bg:#171614;--fg:#e8e5df;--muted:#9a968e;--line:#2c2a26;
+        --accent:#e0a45c;--card:#1e1d1a;--code:#26241f}
+      .ad-slot{background:#22201c}
+    }
+  </style>
+</head>
+<body>
+  <header class="site">
+    <div class="wrap site-top">
+      <h1><a href="{{ "/" | relURL }}">🖥️ {{ .Site.Title }}</a></h1>
+      <nav class="links">
+        <a href="{{ "/" | relURL }}">首页</a>
+        <a href="{{ "/tags/" | relURL }}">标签</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    {{ block "main" . }}{{ end }}
+  </main>
+  <footer class="site wrap footer">
+    <p>{{ .Site.Title }} · {{ .Site.Params.description }}</p>
+    <p>© {{ now.Year }}</p>
+  </footer>
+</body>
+</html>

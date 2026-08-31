@@ -1,0 +1,13 @@
+{{ define "title" }}{{ .Title }} · {{ .Site.Title }}{{ end }}
+{{ define "main" }}
+  <article class="entry">
+    <div class="date">{{ .Date.Format "2006-01-02" }}</div>
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.tags }}<div class="tags">{{ range . }}<a href="{{ "/tags/" }}{{ . | urlize }}/">#{{ . }}</a>{{ end }}</div>{{ end }}
+    <div class="post-body">
+      {{ .Content }}
+    </div>
+    <!-- 广告位：正文下方（仅启用时显示） -->
+    {{ partial "ad-slot.html" (dict "ctx" . "slot" "below_content") }}
+  </article>
+{{ end }}

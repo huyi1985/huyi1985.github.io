@@ -1,0 +1,16 @@
+{{/*
+  广告位占位：接入广告联盟后启用。
+  默认关闭：site.Params.ads.enabled=false 时不渲染任何内容。
+  启用后将在此处注入广告联盟代码（百度联盟/谷歌AdSense等）。
+*/}}
+{{ $ads := site.Params.ads }}
+{{ if and $ads.enabled (eq .slot "below_content") }}
+  <div class="ad-slot on" id="ad-below-content">
+    {{ with $ads.slot_below_content }}
+      <!-- 在此插入 <ins class="adsbygoogle">...</ins> 或联盟代码 -->
+      <span>广告位（正文下方）</span>
+    {{ else }}
+      <span>广告位占位：正文下方</span>
+    {{ end }}
+  </div>
+{{ end }}
