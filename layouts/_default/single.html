@@ -5,8 +5,8 @@
     <h1>{{ .Title }}</h1>
     {{ with .Params.tags }}<div class="tags">{{ range . }}<a href="{{ "/tags/" }}{{ . | urlize }}/">#{{ . }}</a>{{ end }}</div>{{ end }}
     <div class="post-body">
-      {{/* 正文里可能有 <h1>（与页面标题重复）——统一降为 h2，保持单个 h1 的语义 */}}
-      {{ replaceRE "<h1([^>]*)>" "<h2$1>" .Content | replaceRE "</h1>" "</h2>" | safeHTML }}
+      {{/* 正文首行常有与页面标题重复的 <h1>，删掉它，保持单个 h1；其余 <h1> 降为 <h2> */}}
+      {{ replaceRE "^\\s*<h1[^>]*>.*?</h1>\\s*" "" .Content | replaceRE "<h1([^>]*)>" "<h2$1>" | replaceRE "</h1>" "</h2>" | safeHTML }}
     </div>
     <!-- 广告位：正文下方（仅启用时显示） -->
     {{ partial "ad-slot.html" (dict "ctx" . "slot" "below_content") }}

@@ -4,6 +4,8 @@
     <article class="posts-list">
       <div class="date">{{ .Date.Format "2006-01-02" }}</div>
       <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+      {{/* 简介取正文前 120 字：去开头的 <h1> 标题块（与标题重复），再纯文本截断 */}}
+      <p class="excerpt">{{ .Summary | replaceRE "(?s)^<h1[^>]*>.*?</h1>" "" | plainify | truncate 120 }}</p>
       {{ with .Params.tags }}
         <div class="tags">{{ range . }}<a href="{{ "/tags/" }}{{ . | urlize }}/">#{{ . }}</a>{{ end }}</div>
       {{ end }}
