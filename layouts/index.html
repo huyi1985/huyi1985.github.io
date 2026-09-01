@@ -23,11 +23,11 @@
         <span class="page-link disabled">← 上一页</span>
       {{ end }}
 
-      {{ range $i, $p := $paginator.Pagers }}
+      {{ range $p := $paginator.Pagers }}
         {{ if eq $p.URL $paginator.URL }}
-          <span class="page-num current" aria-current="page">{{ $i }}</span>
+          <span class="page-num current" aria-current="page">{{ $p.PageNumber }}</span>
         {{ else }}
-          <a class="page-num" href="{{ $p.URL }}">{{ $i }}</a>
+          <a class="page-num" href="{{ $p.URL }}">{{ $p.PageNumber }}</a>
         {{ end }}
       {{ end }}
 
