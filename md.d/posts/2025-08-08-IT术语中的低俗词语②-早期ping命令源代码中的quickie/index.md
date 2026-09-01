@@ -51,15 +51,3 @@ Muuss 为 ping 命令设置了几种工作模式，有每隔 1 秒就�
 📖 推荐阅读
 
 ![](img5.png)
-
----
-## ping.c
-```c
-	/* fire off them quickies */
-	for(i=0; i < preload; i++)
-		pinger();
-
-// quickie
-// ① (drink) 两三口喝下的酒
-// ② (sexual act) 瞬间完事的性交
-```

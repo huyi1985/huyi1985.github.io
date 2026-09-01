@@ -82,20 +82,3 @@ date: '2025-02-20'
 ## Partition Volume Drive 混用
 
 NTFS 挂载到目录
-
----
-Drive Driver Partition Volume Block
-* OneDrive
-https://superuser.com/questions/293922/what-if-the-hard-disk-is-partitioned-into-more-than-26-sections-in-windows
-～盘
-
-在 2000 年前后，如何创建并调整硬盘分区，应该是安装 Windows 的一大门槛。那时主流的 Windows 95/98 并未提供图形化的硬盘分区工具，人们不得不先使用一个叫作**fdisk**的命令来创建分区，再格式化**C:**盘，然后才能开始安装 Windows。
-
-分区表限制
-
-![[Pasted image 20241224124036.png]]
-
-![[Pasted image 20241223233301.png]]
-
-## powershell 遍历注册表 创建特殊文件夹
-

@@ -41,7 +41,3 @@ draft: true
 🔚
 
 ![](img3.png)
-
----
-
-https://tedium.co/thank-you/

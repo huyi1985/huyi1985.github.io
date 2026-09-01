@@ -144,6 +144,3 @@ char *bp;
 
 * https://www.tuhs.org/cgi-bin/utree.pl?file=V7/usr/src/cmd/file.c Unix V7 上的 `file` 命令的源代码
 * https://copy.sh/v86/?profile=unix-v7 Unix V7 模拟器
-
----
-![](img4.png)

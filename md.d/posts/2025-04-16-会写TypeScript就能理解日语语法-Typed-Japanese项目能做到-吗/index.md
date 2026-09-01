@@ -179,7 +179,3 @@ Typed Japanese 完全是基于 TypeScript 的类型系统构建的，利用**泛
 🔚
 
 ![](img1.png)
-
----
-
-https://github.com/typedgrammar/typed-japanese/blob/main/blog.md

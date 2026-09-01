@@ -45,35 +45,3 @@ date: '2024-11-01'
 
 ![WechatIMG1281](img5.png)
   
----
-
-落后就要淘汰是任何时代都不变的真理，随着 IE6 的退场，以及的后续版本的疲软 ，加上Chrome、Firefox 等强劲对手的围剿，微软在 2022 年 6 月停止了对IE的支持，一代浏览器霸主就此陨落 。但它陪伴了无数 80、90一代度过了互联网初兴时代的美好，如今也只能轻叹一声“爷青结！”，或许这也是它最好的归宿。
-
-> 本文是 [Isword先生](https://space.bilibili.com/35181132) 创作的视频《15年前的尘封往事：一个杀死IE6的阴谋！》的脚本。请移步 🎬 https://www.bilibili.com/video/BV1HiSHYaEdu 观看视频。
-  
-
-* * *
-
-> *参考资料*
-
-**A Conspiracy To Kill IE6**
-
-https://blog.chriszacharias.com/a-conspiracy-to-kill-ie6
-
-**谷歌工程师阴谋干掉IE6的尘封往事**
-
-https://cloud.tencent.com/developer/article/1513510
-
-**前谷歌员工爆出“杀死”微软 IE6 浏览器的阴谋**
-
-https://www.sohu.com/a/312566127_354973
-
-**A Conspiracy to Kill IE6**
-
-https://css-tricks.com/a-conspiracy-to-kill-ie6/
-
-**the Internet Explorer 6 Countdown**
-
-https://web.archive.org/web/20110713003230/http://www.ie6countdown.com/#chart
-
-http://ie6countdown.com/

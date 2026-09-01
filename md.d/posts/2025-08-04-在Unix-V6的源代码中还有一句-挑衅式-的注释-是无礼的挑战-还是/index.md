@@ -44,18 +44,3 @@ Ritchie 曾坦言道：“甚至我们也都没搞明白这里“。当年他�
 ![](img7.png)
 
 推荐阅读
-
----
-
-## Ref
-
-这段代码难以理解的主要原因在于，它依赖于 PDP-11 的 C 编译器在过程调用中保存寄存器的方式。
-
-
-https://www.cloudbolt.io/blog/you-are-not-expected-to-understand-this/
-
-https://community.cadence.com/cadence_blogs_8/b/breakfast-bytes/posts/memorial-day
-
-https://community.cadence.com/cadence_blogs_8/b/breakfast-bytes/posts/memorial-day As Lion's commentary says:
-
-![[Pasted image 20250804133147.png]]

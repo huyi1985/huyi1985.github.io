@@ -88,32 +88,3 @@ model.summary()
 https://github.com/faisalsayed10/no-ghibli/tree/main
 
 https://habr.com/ru/news/895642/
----
-
-* AP ChatGPT’s viral Studio Ghibli-style images highlight AI copyright concerns
-
-https://apnews.com/article/studio-ghibli-chatgpt-images-hayao-miyazaki-openai-0f4cb487ec3042dd5b43ad47879b91f4
-
-* 宮崎駿最痛恨的「ChatGPT 吉卜力之亂」發生什麼事？
-https://www.gq.com.tw/article/%E5%AE%AE%E5%B4%8E%E9%A7%BF-%E5%90%89%E5%8D%9C%E5%8A%9B-chatgpt-ai
-
-* 吉卜力風格指令 2 分鐘就 1 張！ChatGPT 做 LINE 圖 4 步驟…宮崎駿怎麼想？曾說 AI 動畫污辱生命
-https://www.businesstoday.com.tw/article/category/183015/post/202503290014/
-
-* 用 AI 生成吉卜力繪圖爆紅！憂引發版權爭議與惹怒宮崎駿，ChatGPT 主動出手限制
-https://www.storm.mg/article/5347282
-
-* 大家都在用 AI 生成「吉卜力風格」照片，但其實這是宮崎駿最討厭的事？
-https://popbee.com/lifestyle/gadgets/gpt-4o-ai-generated-content-studio-ghibli-miyazaki-hayao
-
-* ChatGPT 掀全球「吉卜力」風格改圖熱 宮崎駿曾狠批 AI 動畫：對生命本身的侮辱
-
-https://www.stheadline.com/realtime-finance/3442472/ChatGPT%E6%8E%80%E5%85%A8%E7%90%83%E5%90%89%E5%8D%9C%E5%8A%9B%E9%A2%A8%E6%A0%BC%E6%94%B9%E5%9C%96%E7%86%B1-%E5%AE%AE%E5%B4%8E%E9%A7%BF%E6%9B%BE%E7%8B%A0%E6%89%B9AI%E5%8B%95%E7%95%AB%E5%B0%8D%E7%94%9F%E5%91%BD%E6%9C%AC%E8%BA%AB%E7%9A%84%E4%BE%AE%E8%BE%B1
-
-* ChatGPT 宮崎駿風格改圖爆熱、有人藉機出 app 圖利收吉卜力警告信?
-
-原文網址: ChatGPT 宮崎駿風格改圖爆熱、有人藉機出 app 圖利收吉卜力警告信? | 香港 01 https://www.hk01.com/article/60224190?utm_source=01articlecopy&utm_medium=referral
-
-* 吉卜力風格圖片夯 宮崎駿如何看待 AI 動畫？
-
-https://www.ctee.com.tw/news/20250331700894-430704

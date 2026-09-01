@@ -59,9 +59,3 @@ https://github.com/kiding/wanna-see-a-whiter-white 上总结了出现这种现�
 ![Pasted image 20241211181133](img6.png)
 
 而在手机上的 Safari 中，有可能一开始看不到 “White.“，直到点击下方的分享按钮，这个”白色幽灵“才会出现。
-
----
-
-## 参考资料
-
-https://github.com/kiding/wanna-see-a-whiter-white 

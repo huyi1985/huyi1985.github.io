@@ -75,13 +75,3 @@ BMP 位图文件的结构比较简单，主要由 4 部分构成：
 “现在您可以安全地关闭计算机了”，英文版 Windows 95 中的提示语是“It's now ***safe*** to turn off your computer”。总感觉这句翻译得太过生硬，“安全地”总给人一种电脑是个危险品的感觉，操作不当人身就会受到伤害。而海峡对岸翻译的”放心“就要好很多。
 
 ![](img3.webp)
-
-
-
----
-
-Windows 98 / 95® Animated Logo Screens
-
-https://russwill.com/library/computers/computer_graphics/logosys/logo_sys_animation.htm
-
-https://web.archive.org/web/20121014085944/http://annoyances.org/exec/show/article02-011

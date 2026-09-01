@@ -84,28 +84,3 @@ H RCD
 我成功地从巴黎完成了计算，毕竟，巴黎是现代科技世界的中心。
 
 > 前方阿富汗，在法国同行骂骂咧咧的抱怨声中，收工回家
-
----
-
-https://ia600103.us.archive.org/13/items/byte-magazine-1983-07-rescan/1983_07_BYTE_08-07_Videotex.pdf
-
-https://ia801605.us.archive.org/24/items/kilobaudmagazine-1982-07/Microcomputing_1982_July.pdf
-
-%%
-
-As soon as Marty answered, I set my modem to originate; he set his to answer. When I heard his carrier tone, I slammed my receiver down into the modem and punched out the command for sending a file: S B: Banisadr.Int. 
-
-Then I hit the return key and watched the machine go to work:
-
-"File Open, size 78 Sectors," declared my computer screen. Nonchalantly, it added that it was "Awaiting Initial NAK."
-
-Finally, I heard those lovely grating sounds of the Osborne disk drives in action— something like a flatulent woodpecker, actually— and I knew the acknowledgement was received. The damn thing was working! First it sent Sector #1, then Sector #2 and on and on it kept on going!
-
-Then I noticed something amiss at Sector #48:
-
-"H RCD," smirked my Osborne. "Not ACK."
-
-"Not ACK?!" I shouted back. Before I could really work myself into a frenzy, however, the problem resolved itself, whatever it was. Probably just a spike of noise in the overseas phone call.
-
-OK, so I successfully computed from Paris, a city, after all, that is very much at the center of our modern technological world. The real challenge lay ahead. It still remained to be seen whether I'd be able to use a computer as a reporter's tool from the legendary Land of the Khyber, where life has haid\y changed at all in the 25 centuries since Alexander the Great's conquering spearmen first met and fought the fierce Afghan tribes in battle.
-%%

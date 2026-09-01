@@ -152,10 +152,3 @@ So the general structure of that is:
 `g/re/p`
 
 And that's the genesis of where it came from.
-
----
-
-OK, and so this is in some ways the genius of **Ken Thompson**.  
-A beautiful program, written in no time at all, by taking some other program and just trimming it out and then giving it a name that stuck.
-
-That's the story of where **'grep'** came from.

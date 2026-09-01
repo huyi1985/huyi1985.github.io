@@ -108,11 +108,3 @@ Java 成功了。
 ![](img6.png)
 
 推荐阅读
-
-
-
----
-
-## Ref
-
-https://brainscode.github.io/java-tutorial/intro_java_history.html

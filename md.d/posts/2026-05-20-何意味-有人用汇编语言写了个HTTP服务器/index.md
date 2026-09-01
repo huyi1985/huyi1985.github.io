@@ -58,8 +58,3 @@ Server: ymawky
 某种程度上，这正是 ymawky 的全部意义所在。
 
 🔚
-
----
-
-https://imtomt.github.io/ymawky/
-https://github.com/imtomt/ymawky

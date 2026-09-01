@@ -59,30 +59,3 @@ date: '2025-03-30'
 而更安全的做法是改用 PHP 5.5+ 提供的 `password_hash()` 函数来生成哈希值，并搭配 `password_verify()` 函数进行校验，而不要使用 MD5 进行安全相关的哈希计算。
 
 总之，MD5 早已不再安全，PHP 的弱类型比较 `==` 又让这个问题雪上加霜。在实际开发中，我们应该避免使用 MD5 进行身份验证。
-
----
-
-![](img4.png)
-https://www.php.net/manual/en/function.password-hash.php
-
-```bash
-gdb --tui -q /opt/php-5.4.45/bin/php
-
-set args /home/vagrant/md50e.php
-
-b compare_function
-```
-
-```
-(gdb) info b
-Num     Type           Disp Enb Address            What
-1       breakpoint     keep y   0x0000555555a1c49c in compare_function at /home/vagrant/php-5.4.45/Zend/zend_operators.c:1408
-        breakpoint already hit 1 time
-2       breakpoint     keep y   0x0000555555a1eda9 in zendi_smart_strcmp at /home/vagrant/php-5.4.45/Zend/zend_operators.c:2045
-3       breakpoint     keep y   0x0000555555a1eef8 in zendi_smart_strcmp at /home/vagrant/php-5.4.45/Zend/zend_operators.c:2078(gdb) info b
-Num     Type           Disp Enb Address            What
-1       breakpoint     keep y   0x0000555555a1c49c in compare_function at /home/vagrant/php-5.4.45/Zend/zend_operators.c:1408
-        breakpoint already hit 1 time
-2       breakpoint     keep y   0x0000555555a1eda9 in zendi_smart_strcmp at /home/vagrant/php-5.4.45/Zend/zend_operators.c:2045
-3       breakpoint     keep y   0x0000555555a1eef8 in zendi_smart_strcmp at /home/vagrant/php-5.4.45/Zend/zend_operators.c:2078
-```

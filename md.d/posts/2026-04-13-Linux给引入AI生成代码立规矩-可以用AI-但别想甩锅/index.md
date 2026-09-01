@@ -34,23 +34,3 @@ date: '2026-04-13'
 Torvalds 的观点再一次延续了 Linux 一贯的工程现实主义：AI 本质上只是工具，和编译器、静态分析工具没有本质区别。能写好代码的开发者，不会因为用了 AI 就变差；写不好代码的人，也不会因为禁止 AI 就变好。所以与其纠结工具本身，不如把规则定清楚，把责任直接锁定在提交者身上。
 
 🔚
-
----
-
-```
-commit 93a72563cba609a414297b558cb46ddd3ce9d6b5
-Merge: 4e52425 4e3eb84
-Author: Linus Torvalds <torvalds@linux-foundation.org>
-Date:   Wed Jan 7 14:38:39 2026 -0800
-
-    Merge branch 'antigravity'
-    
-    This is Google Antigravity fixing up my visualization tool (which was
-    also generated with help from google, but of the normal kind).
-    
-    It mostly went smoothly, although I had to figure out what the problem
-    with using the builtin rectangle select was.  After telling antigravity
-    to just do a custom RectangleSelector, things went much better.
-    
-    Is this much better than I could do by hand? Sure is.
-```

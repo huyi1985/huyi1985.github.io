@@ -29,11 +29,3 @@ date: '2026-07-25'
 我突然发现，这条帖子的发布时间竟然会**因访问地区不同而有所变化**：从新加坡访问时，看到的是“穿越”到 **1992 年** 的版本；而从美国访问时，显示的则是正确的 **2011 年**。
 
 ![](img3.png)
-
----
-
-https://qiita.com/miruky/items/4be4d7e683632ba8c396
-https://x.com/grok/status/2037040362267492817
-https://singhajit.com/tools/snowflake-decoder/?id=145669840114425857&platform=twitter
-https://qiita.com/miruky/items/4be4d7e683632ba8c396
-https://x.com/anulagarwal/status/2036759558518165855

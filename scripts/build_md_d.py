@@ -61,6 +61,9 @@ FRONT_KEYS = ("title", "date", "tags", "draft")  # 只保留这些；去 source
 
 # 黑名单：filename.md → description（不发布的文章）
 BLACKLIST_PATH = BASE / "config.d" / "blacklist.yaml"
+# 冻结名单：条目 = md.d/posts 子目录名（= raw_md.d 的 md.stem）；
+# 命中即跳过图片相对化、末尾 --- 过滤、裸相对图拷贝，正文原样保留（只规整 frontmatter + 注 draft）
+FREEZE_PATH = BASE / "config.d" / "freeze.yaml"
 
 
 def log(msg: str) -> None:
@@ -85,15 +88,29 @@ def dump_front(fm: dict) -> str:
     return "---\n" + body + "---\n\n"
 
 
-def load_blacklist() -> set[str]:
-    """加载黑名单，返回文件名集合（不含目录路径）。"""
-    if not BLACKLIST_PATH.is_file():
+def _load_name_list(path: Path) -> set[str]:
+    """加载名单 yaml，返回 stem 集合（key 即 stem，不含 .md）。
+
+    通用：blacklist/freeze 同格式（dict，key=子目录名，value=描述）。
+    忽略 generated/updated 等元字段。
+    """
+    if not path.is_file():
         return set()
-    data = yaml.safe_load(BLACKLIST_PATH.read_text(encoding="utf-8")) or {}
+    data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
     if not isinstance(data, dict):
         return set()
     meta = {"generated", "updated"}
     return {k for k in data if isinstance(k, str) and k not in meta}
+
+
+def load_blacklist() -> set[str]:
+    """黑名单：命中注入 draft: true（不发布）。返回 stem 集合。"""
+    return _load_name_list(BLACKLIST_PATH)
+
+
+def load_freeze() -> set[str]:
+    """冻结名单：命中则流水线不改写正文（只规整 frontmatter + 注 draft）。返回 stem 集合。"""
+    return _load_name_list(FREEZE_PATH)
 
 
 def git_restore_bundle(stem: str) -> bool:
@@ -138,6 +155,27 @@ def distribute_images(bundle: Path, content: str) -> tuple[str, dict]:
     return content, pool_map
 
 
+# 独占一行的 ---（正文里的分隔线；frontmatter 已剥离，不会误伤 frontmatter 闭合符）
+TRAILING_SEP = re.compile(r"(?ms)^---[ \t]*\r?\n(?:(?!^---[ \t]*\r?$).)*\Z")
+
+
+def trim_trailing_sep(body: str) -> tuple[str, int]:
+    """切掉正文最后一个独占一行的 --- 及其后的所有内容。
+
+    用户要求：删末尾 --- 及之后所有（含译文/附录，即便实质内容也删）。
+    从 body 末尾反向找最后一个 ^--- 行，从该行起截断。
+    返回 (新 body, 删掉的字符数)。找不到 --- 返回原样 (body, 0)。
+    """
+    # 找所有独占一行的 --- 的位置，取最后一个
+    matches = list(re.finditer(r"(?m)^---[ \t]*\r?$", body))
+    if not matches:
+        return body, 0
+    last = matches[-1]
+    # 截断点 = 最后一个 --- 行的起始；其后（含该行）全删
+    trimmed = body[:last.start()].rstrip("\n") + "\n"
+    return trimmed, len(body) - len(trimmed)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description="raw_md.d → md.d (Hugo bundle 内容目录)")
     ap.add_argument("--dry-run", action="store_true", help="只预览，不写入")
@@ -148,7 +186,9 @@ def main() -> int:
     args = ap.parse_args()
 
     blacklist = load_blacklist()
-    log(f"黑名单：{len(blacklist)} 个文件" if blacklist else "黑名单：空")
+    freeze = load_freeze()
+    log(f"黑名单：{len(blacklist)} 个" if blacklist else "黑名单：空")
+    log(f"冻结名单：{len(freeze)} 个" if freeze else "冻结名单：空")
 
     mds = sorted(RAW_DIR.glob("*.md"))
     if not mds:
@@ -177,34 +217,56 @@ def main() -> int:
 
     moved = 0
     draft_count = 0
+    freeze_count = 0
     img_copied = 0
+    trim_total = 0
+    trim_count = 0
     pool = {p.name: p for p in POOL_DIR.iterdir()} if POOL_DIR.is_dir() else {}
     log(f"图片池：{len(pool)} 个文件（{POOL_DIR}）" if pool else "图片池：空/不存在（引用保持原样）")
 
     for md in window:
         content = md.read_text(encoding="utf-8", errors="replace")
         fm, body = parse_front(content)
-        bundle = posts_dir / md.stem
+        stem = md.stem
+        bundle = posts_dir / stem
+        is_freeze = stem in freeze
+        is_draft = stem in blacklist
+        # 末尾 --- 过滤（freeze 跳过；先切末尾再分拣图片，避免附录里的图被分拣）
+        if not is_freeze:
+            body, trimmed = trim_trailing_sep(body)
+            if trimmed:
+                trim_total += trimmed
+                trim_count += 1
         if args.dry_run:
-            n_img = len(POOL_REF.findall(content))
-            log(f"  [PLAN] {md.stem}  (tags={fm.get('tags')}, 池图{n_img})")
+            n_img = len(POOL_REF.findall(body))
+            tag = []
+            if is_draft: tag.append("draft")
+            if is_freeze: tag.append("FREEZE")
+            if not is_freeze and trimmed: tag.append(f"trim-{trimmed}")
+            log(f"  [PLAN] {stem}  (tags={fm.get('tags')}, 池图{n_img}{' ['+' '.join(tag)+']' if tag else ''})")
             moved += 1
             continue
-        if md.name in blacklist:
+        if is_draft:
             fm["draft"] = True
             draft_count += 1
+        if is_freeze:
+            freeze_count += 1
         bundle.mkdir(parents=True, exist_ok=True)
-        # 在 body 上做图片相对化（frontmatter 由 fm 重新 dump，不参与引用改写）
-        new_body, _map = distribute_images(bundle, body)
-        img_copied += len(_map)
-        # 裸相对本地图：从源查找并拷入（缺失则忽略）
-        for alt, fname in dict.fromkeys(LOCAL_REF.findall(new_body)):
-            if fname in _map.values() or NEW_IMG.match(fname):
-                continue
-            src = next((d / fname for d in LOCAL_SRC_DIRS if (d / fname).is_file()), None)
-            if src:
-                shutil.copy2(src, bundle / fname)
-                img_copied += 1
+        if is_freeze:
+            # 冻结：正文原样保留，仅规整 frontmatter（不相对化图片、不分拣）
+            new_body, _map = body, {}
+        else:
+            # 在 body 上做图片相对化（frontmatter 由 fm 重新 dump，不参与引用改写）
+            new_body, _map = distribute_images(bundle, body)
+            img_copied += len(_map)
+            # 裸相对本地图：从源查找并拷入（缺失则忽略）
+            for alt, fname in dict.fromkeys(LOCAL_REF.findall(new_body)):
+                if fname in _map.values() or NEW_IMG.match(fname):
+                    continue
+                src = next((d / fname for d in LOCAL_SRC_DIRS if (d / fname).is_file()), None)
+                if src:
+                    shutil.copy2(src, bundle / fname)
+                    img_copied += 1
         (bundle / "index.md").write_text(dump_front(fm) + new_body.lstrip("\n"), encoding="utf-8")
         moved += 1
 
@@ -214,8 +276,10 @@ def main() -> int:
         log(f"图片池已消费并删除：{POOL_DIR}")
 
     log(f"完成：{moved} 篇 md → {MD_DIR}/posts/（{draft_count} 篇 draft，"
-        f"分拣图片 {img_copied} 个）" if not args.dry_run
-        else f"dry-run：{moved} 篇将写入 {MD_DIR}/posts/")
+        f"{freeze_count} 篇 freeze，分拣图片 {img_copied} 个，"
+        f"末尾---过滤 {trim_count} 篇共 {trim_total} 字）" if not args.dry_run
+        else f"dry-run：{moved} 篇将写入 {MD_DIR}/posts/（{freeze_count} freeze，"
+        f"{trim_count} 篇将被 trim 共 {trim_total} 字）")
     return 0
 
 

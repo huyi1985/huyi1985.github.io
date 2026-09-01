@@ -24,20 +24,14 @@
     data-cf-beacon='{"token": "{{ . }}"}'></script>
   {{ end }}
 
-  {{/* GoatCount：code 形如 "myblog"（托管）或自托管域名前缀 */}}
+  {{/* GoatCounter：官方 data-goatcounter 写法。
+       填完整 endpoint（如 https://damiaozi.goatcounter.com/count）或站点 code（如 damiaozi，自动拼托管 endpoint） */}}
   {{ with .goatcount }}
-  <script>
-    (function() {
-      var gc = '{{ . }}';
-      // 自托管域名：code 含 "://" 则原样用作 endpoint，否则拼托管路径
-      var endpoint = gc.indexOf('://') !== -1 ? gc : ('https://' + gc + '.goatcounter.com/count');
-      window.goatcounter = { endpoint: endpoint };
-      var s = document.createElement('script');
-      s.async = true; s.src = 'https://gc.zgo.at/count.js';
-      var f = document.getElementsByTagName('script')[0];
-      f.parentNode.insertBefore(s, f);
-    })();
-  </script>
+    {{ $endpoint := . }}
+    {{ if not (in $endpoint "://") }}
+      {{ $endpoint = printf "https://%s.goatcounter.com/count" $endpoint }}
+    {{ end }}
+  <script data-goatcounter="{{ $endpoint }}" async src="//gc.zgo.at/count.js"></script>
   {{ end }}
 
 {{ end }}

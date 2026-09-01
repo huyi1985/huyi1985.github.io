@@ -44,22 +44,3 @@ Altair 8800 的价格比当时的商用计算机亲民多了，但它有个致�
 > 他们受到了 **《大众机械师》（Popular Mechanics）** 杂志 1975 年 1 月刊的启发，这期杂志的封面照是第一台个人计算机——阿尔泰（Altair）。阿尔泰其实没什么——只是价值 495 美元的一堆零部件，还必须被焊接到一块电路板上才能执行非常少的任务，但对于业余爱好者和黑客们来说，它预示着一个新纪元的来临。比尔•盖茨和保罗•艾伦（Paul Allen）看了那一期杂志后，就开始研发用于阿尔泰的 BASIC 语言版本。乔布斯和沃兹尼亚克也被这期杂志深深吸引了。……
 
 ![](img4.bmp)
-
----
-
-https://en.wikipedia.org/wiki/Ed_Roberts_(computer_engineer)
-
-https://en.wikipedia.org/wiki/Altair_8800
-
-https://en.wikipedia.org/wiki/Altair_BASIC
-## 《乔布斯传》的一处明显的错误
-
-文中提到的杂志并非《大众机械师》，而应该是图片中的《大众电子》（Popular Electronics）。
-
-> They were energized by the arrival of the January 1975 issue of *Popular Mechanics*, which had on its cover the first personal computer kit, the Altair. The Altair wasn’t much—just a $495 pile of parts that had to be soldered to a board that would then do little—but for hobbyists and hackers it heralded the dawn of a new era. Bill Gates and Paul Allen read the magazine and started working on a version of BASIC, an easy-to-use programming language, for the Altair. It also caught the attention of Jobs and Wozniak. ...
-
-这里是不是写错了，这本杂志应该是 
-
-http://images.computerhistory.org/revonline/images/102622635-05-01.jpg?w=600
-
-> The January 1975 issue of _Popular Electronics_ had the Altair computer on the cover and this launched the home computer revolution. (However, Walter Isaacson's biography of Steve Jobs incorrectly identified the magazine that ran the article as _[Popular Mechanics](https://en.wikipedia.org/wiki/Popular_Mechanics "Popular Mechanics")_.)

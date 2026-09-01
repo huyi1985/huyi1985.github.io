@@ -40,21 +40,3 @@ Nginx 的错误页面，就为了**要不要支持深色模式，已经争论�
 还是没有回应。依然零条回复。
 
 一年多过去了，仍然没有解决方案，也没有明确的答复。最初添加深色模式支持的 PR 仍然处于锁定状态。
-
----
-
-想想也挺有意思。一边是用户：“**就加一行 HTML 而已啊！**”的不解，另一边是维护者：“**默认页面为什么非得加这个？**”的困惑。
-
-另外，这件事突然让我想起曾经流行过的 **Word 护眼绿**。
-
-----
-https://www.phoronix.com/news/Nginx-Dark-Mode-Mystery
-https://www.phoronix.com/news/Nginx-Dark-Mode-Errors-Rejected
-https://github.com/nginx/nginx/pull/567
-https://github.com/nginx/nginx/discussions/584
-https://github.com/nginx/nginx/discussions/722
-https://github.com/nginx/nginx/discussions/759
-
-https://mailman.nginx.org/pipermail/nginx-devel/2021-August/014223.html?utm_source=chatgpt.com
-
-这不是玩笑。Nginx 官方默认的欢迎页面和 50x 页面早在 2021 年就已经加入了 Dark Mode 支持，方式也很简单：告诉浏览器，这个页面同时支持浅色和深色配色。https://mailman.nginx.org/pipermail/nginx-devel/2021-August/014226.html?utm_source=chatgpt.com

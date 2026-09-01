@@ -35,7 +35,7 @@ contentDir = "md.d"
   [params.analytics]
     google = ""
     cloudflare = ""
-    goatcount = ""
+    goatcount = "damiaozi"
 
 # 标签筛选：Hugo taxonomy
 [taxonomies]

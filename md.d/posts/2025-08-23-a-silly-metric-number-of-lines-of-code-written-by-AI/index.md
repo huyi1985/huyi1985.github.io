@@ -90,17 +90,3 @@ where developers can actually collaborate with AI agents.
 有时候是更“代理式”的工作流。  
 比如用 QCLI 或新的 IDE Kiro，  
 让开发者和 AI 代理一起协作。
-
----
-
-**English:**  
-And that number is going up every single week.  
-I may not have the latest data,  
-but it was north of 80% of developers using AI  
-to build things for Amazon customers.
-
-**中文：**  
-而且这个比例每周都在增加。  
-虽然我现在没有最新的数据，  
-但可以肯定已经有超过 80% 的开发者  
-在用 AI 为客户构建产品。

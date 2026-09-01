@@ -105,32 +105,3 @@ PDP-7 是一台借来的机器，而且性能有限。于是团队提交了另�
 在 1970 年，UNIX 被移植到了 PDP-11/20 上——这是一项不小的工程，因为整个系统都是用汇编语言编写的。像 roff（troff 的前身）和一个文本编辑器等工具也被移植到了新机器上，从而使这台机器成为一个名副其实的文本处理系统。
 
 恰好当时 贝尔实验室的专利办公室正在寻找这样一个系统，最终他们选择了基于 PDP-11/20 的 UNIX 机器，而不是商业方案——这使他们成为了第一个正式的 UNIX 用户。
-
----
-
-### 🖥 The First Production UNIX
-
-Some highlights of this first version:
-
-- Ran on a **PDP-11/20** with **no memory protection**
-- Used a **0.5 MB disk**
-- Supported **three concurrent users** editing and formatting
-- Included a team still actively developing the OS
-- The system’s documentation was titled **“First Edition”**, dated **November 1971**
-
-Since then, it has become tradition to name UNIX versions after their **manual edition** — e.g., **Version 7** is equivalent to the **7th Edition**.
-
-🖥 第一套正式发布的 UNIX 系统
-这一版本的亮点包括：
-
-运行在 PDP-11/20 上，没有内存保护
-
-使用一块 0.5 MB 的磁盘
-
-支持 三位用户同时进行编辑与排版
-
-同时还有一个团队在持续开发操作系统
-
-系统文档名为 “第一版”（First Edition），日期为 1971 年 11 月
-
-从那时起，UNIX 的版本命名就以其手册版本号为传统——例如，Version 7 就等同于 第七版手册（7th Edition）。

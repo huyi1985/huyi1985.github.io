@@ -1830,7 +1830,3 @@ systemd 都不满足
 - Devuan: https://www.devuan.org/
 - OpenRC: https://wiki.gentoo.org/wiki/OpenRC
 - systemd 批评: https://suckless.org/sucks/systemd/
-
----
-
-**END OF DOCUMENT**
