@@ -1,0 +1,43 @@
+{{/*
+  网站统计脚本：config.toml [params.analytics] 驱动，填了哪个 ID 就注入哪个。
+  三者均隐私友好可叠加；GA4 有 Cookie 需留意合规。
+  - google:    GA4 Measurement ID（G-XXXXXXX）
+  - cloudflare: Cloudflare Web Analytics beacon token
+  - goatcount: GoatCount 站点 code（自托管填 "https://你的域名/code"）
+*/}}
+{{ with .Site.Params.analytics }}
+
+  {{/* Google Analytics 4 */}}
+  {{ with .google }}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ . }}');
+  </script>
+  {{ end }}
+
+  {{/* Cloudflare Web Analytics：token 由平台后台给出 */}}
+  {{ with .cloudflare }}
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
+    data-cf-beacon='{"token": "{{ . }}"}'></script>
+  {{ end }}
+
+  {{/* GoatCount：code 形如 "myblog"（托管）或自托管域名前缀 */}}
+  {{ with .goatcount }}
+  <script>
+    (function() {
+      var gc = '{{ . }}';
+      // 自托管域名：code 含 "://" 则原样用作 endpoint，否则拼托管路径
+      var endpoint = gc.indexOf('://') !== -1 ? gc : ('https://' + gc + '.goatcounter.com/count');
+      window.goatcounter = { endpoint: endpoint };
+      var s = document.createElement('script');
+      s.async = true; s.src = 'https://gc.zgo.at/count.js';
+      var f = document.getElementsByTagName('script')[0];
+      f.parentNode.insertBefore(s, f);
+    })();
+  </script>
+  {{ end }}
+
+{{ end }}

@@ -28,6 +28,15 @@ contentDir = "md.d"
     slot_below_content = ""   # 广告联盟提供的广告位 ID
     slot_sidebar = ""
 
+  # 网站统计：三选一或多选，留空即不启用；拿到哪个的 ID 填进去即自动注入对应脚本
+  # - google:   GA4 Measurement ID，形如 "G-XXXXXXXXXX"
+  # - cloudflare: Cloudflare Web Analytics 的 beacon token（一串十六进制）
+  # - goatcount: GoatCount 站点 code（自托管则填完整域名/code，如 "myblog"）
+  [params.analytics]
+    google = ""
+    cloudflare = ""
+    goatcount = ""
+
 # 标签筛选：Hugo taxonomy
 [taxonomies]
   tag = "tags"
