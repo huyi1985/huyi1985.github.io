@@ -7,6 +7,9 @@ title = "计算机历史 · 奇闻与资料库"
 enableRobotsTXT = true
 pygmentsCodeFences = true
 
+# 首页/列表分页：每页 20 篇（228 篇 → 约 12 页）
+paginate = 20
+
 # md.d/ 作为 content 目录（脚本产物直接消费）
 contentDir = "md.d"
 

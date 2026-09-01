@@ -47,6 +47,18 @@
     .tag-cloud a{display:inline-block;margin:0 10px 10px 0;padding:3px 12px;background:var(--card);
       border:1px solid var(--line);border-radius:20px;color:var(--accent);text-decoration:none;font-size:14px}
     .tag-cloud a[aria-current]{background:var(--accent);color:#fff}
+    /* 分页导航 */
+    nav.pagination{display:flex;flex-wrap:wrap;align-items:center;gap:6px;
+      margin:36px 0 8px;padding-top:20px;border-top:1px solid var(--line);
+      font-size:15px;justify-content:center}
+    .pagination .page-link{color:var(--accent);text-decoration:none;padding:4px 10px;
+      border:1px solid var(--line);border-radius:4px;white-space:nowrap}
+    .pagination .page-link:hover:not(.disabled){background:var(--card)}
+    .pagination .page-link.disabled{color:var(--muted);opacity:.4;cursor:default}
+    .pagination .page-num{color:var(--accent);text-decoration:none;padding:4px 10px;
+      border:1px solid transparent;border-radius:4px}
+    .pagination .page-num:hover{border-color:var(--line);background:var(--card)}
+    .pagination .page-num.current{background:var(--accent);color:#fff;border-color:var(--accent)}
     @media (prefers-color-scheme:dark){
       :root{--bg:#171614;--fg:#e8e5df;--muted:#9a968e;--line:#2c2a26;
         --accent:#e0a45c;--card:#1e1d1a;--code:#26241f}

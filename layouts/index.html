@@ -1,6 +1,8 @@
 {{ define "main" }}
   <h1 style="font-size:24px">全部文章 <span style="font-size:14px;color:var(--muted)">（按发布时间倒序）</span></h1>
-  {{ range .Site.RegularPages.ByDate.Reverse }}
+  {{/* .Paginate 对 .Site.RegularPages 生成分页；首页只显示第 1 页（20 篇） */}}
+  {{ $paginator := .Paginate (where .Site.RegularPages "Type" "!=" "static") }}
+  {{ range $paginator.Pages }}
     <article class="posts-list">
       <div class="date">{{ .Date.Format "2006-01-02" }}</div>
       <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
@@ -10,5 +12,30 @@
         <div class="tags">{{ range . }}<a href="{{ "/tags/" }}{{ . | urlize }}/">#{{ . }}</a>{{ end }}</div>
       {{ end }}
     </article>
+  {{ end }}
+
+  {{/* 分页导航：多于 1 页时显示 */}}
+  {{ if gt $paginator.TotalPages 1 }}
+    <nav class="pagination" aria-label="文章分页">
+      {{ if $paginator.HasPrev }}
+        <a class="page-link prev" href="{{ $paginator.Prev.URL }}">← 上一页</a>
+      {{ else }}
+        <span class="page-link disabled">← 上一页</span>
+      {{ end }}
+
+      {{ range $i, $p := $paginator.Pagers }}
+        {{ if eq $p.URL $paginator.URL }}
+          <span class="page-num current" aria-current="page">{{ $i }}</span>
+        {{ else }}
+          <a class="page-num" href="{{ $p.URL }}">{{ $i }}</a>
+        {{ end }}
+      {{ end }}
+
+      {{ if $paginator.HasNext }}
+        <a class="page-link next" href="{{ $paginator.Next.URL }}">下一页 →</a>
+      {{ else }}
+        <span class="page-link disabled">下一页 →</span>
+      {{ end }}
+    </nav>
   {{ end }}
 {{ end }}
