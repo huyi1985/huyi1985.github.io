@@ -40,3 +40,7 @@ contentDir = "md.d"
 # 标签筛选：Hugo taxonomy
 [taxonomies]
   tag = "tags"
+
+# RSS：订阅条目上限（默认 50；中文站更新慢，30 够覆盖一两个月）
+[services.rss]
+limit = 30

@@ -9,6 +9,7 @@
   <link rel="canonical" href="{{ .Permalink }}">
   <link rel="icon" type="image/png" href="{{ "/static/favicon.png" | relURL }}">
   <link rel="apple-touch-icon" href="{{ "/static/favicon.png" | relURL }}">
+  {{ with .OutputFormats.Get "RSS" }}<link rel="alternate" type="application/rss+xml" title="{{ site.Title }} RSS" href="{{ .Permalink }}">{{ end }}
   <meta name="google-site-verification" content="59IkCkhcLqNVMd1e8PMFAKT7aWqtPoWmCkZkYzOGTaE" />
   <style>
     :root{

@@ -1,0 +1,28 @@
+{{- /* 自定义 RSS 2.0：默认模板把完整正文 HTML 塞进 description（文件巨大），
+     改为纯文本摘要，更适合订阅器和爬虫。 */ -}}
+{{- $pages := where (where site.RegularPages "Type" "!=" "static") "Draft" false -}}
+{{- $limit := site.Config.Services.RSS.Limit | default 50 -}}
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ site.Title }}</title>
+    <link>{{ .Permalink }}</link>
+    <description>{{ site.Params.description | plainify }}</description>
+    <language>{{ site.Language.LanguageCode | default site.Language.Lang }}</language>
+    {{- with .OutputFormats.Get "RSS" }}
+    <atom:link href="{{ .Permalink }}" rel="self" type="application/rss+xml" />
+    {{- end }}
+    {{- range first $limit $pages }}
+    <item>
+      <title>{{ .Title | plainify }}</title>
+      <link>{{ .Permalink }}</link>
+      <guid isPermaLink="true">{{ .Permalink }}</guid>
+      <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
+      {{- with .Params.tags }}
+      <category>{{ delimit . ", " | plainify }}</category>
+      {{- end }}
+      <description>{{ printf "%s" (.Summary | plainify | truncate 300) | html }}</description>
+    </item>
+    {{- end }}
+  </channel>
+</rss>
