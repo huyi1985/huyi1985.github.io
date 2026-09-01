@@ -199,6 +199,25 @@ def main() -> int:
         log(f"limit={args.limit}：窗口 {len(window)} 篇，另有 {len(mds) - len(window)} 篇不动"
             + ("（--revert 恢复为 git HEAD）" if args.revert else ""))
 
+    # ── 全量重建预检：图片池缺失则中止，避免清空 posts_dir 后丢图 ──
+    # 全量(不带 --limit)会清空 md.d/posts 再从 raw 重建，图片依赖 md.d/assets/ 池；
+    # 池在每次 build 后被删除、由 download_images.py 重建。池不在而 raw 有 /assets/
+    # 引用时直接清空 = 静默丢光所有图片。此处强制要求先跑 download_images.py。
+    if not args.dry_run and args.limit == 0:
+        pool_refs = 0
+        for md in window:
+            if md.stem in freeze:
+                continue  # freeze 文章不依赖池（正文原样保留，不相对化）
+            pool_refs += len(POOL_REF.findall(md.read_text(encoding="utf-8", errors="replace")))
+        pool_exists = POOL_DIR.is_dir() and any(POOL_DIR.iterdir())
+        if pool_refs > 0 and not pool_exists:
+            log(f"[ERROR] 全量重建需要图片池（raw 中有 {pool_refs} 处 /assets/ 引用），"
+                f"但 {POOL_DIR} 不存在/为空。")
+            log("        全量重建会先清空 md.d/posts 再从 raw 重建，无池则丢光所有图片。")
+            log("        请先跑： python3.11 scripts/download_images.py   重建图片池，")
+            log("        或改用增量： python3.11 scripts/build_md_d.py --limit N   只重建末尾 N 篇（不清空）。")
+            return 1
+
     posts_dir = MD_DIR / "posts"
     if not args.dry_run:
         # 全量：清空 md.d/posts（保留 static/）
