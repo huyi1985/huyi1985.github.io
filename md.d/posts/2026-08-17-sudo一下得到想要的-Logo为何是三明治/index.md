@@ -1,6 +1,7 @@
 ---
 title: sudo一下得到想要的，Logo为何是三明治
 date: '2026-08-17'
+draft: true
 ---
 
 # sudo一下得到想要的，Logo为何是三明治

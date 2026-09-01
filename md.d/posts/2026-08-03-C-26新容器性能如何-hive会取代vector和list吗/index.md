@@ -1,6 +1,7 @@
 ---
 title: C++ 26新容器性能如何？hive会取代vector和list吗？
 date: '2026-08-03'
+draft: true
 ---
 
 # C++ 26新容器性能如何？hive会取代vector和list吗？
