@@ -59,6 +59,9 @@
       border:1px solid transparent;border-radius:4px}
     .pagination .page-num:hover{border-color:var(--line);background:var(--card)}
     .pagination .page-num.current{background:var(--accent);color:#fff;border-color:var(--accent)}
+    /* 文章阅读量（GoatCounter visit_count 注入；后台开关未开则为空） */
+    .views{margin-left:12px;color:var(--muted);font-size:13px}
+    .views:empty{display:none}
     @media (prefers-color-scheme:dark){
       :root{--bg:#171614;--fg:#e8e5df;--muted:#9a968e;--line:#2c2a26;
         --accent:#e0a45c;--card:#1e1d1a;--code:#26241f}
@@ -85,5 +88,31 @@
     <p>© {{ now.Year }}</p>
     <img class="qr" alt="关注二维码" src="{{ "/static/my_qr.opt.png" | relURL }}">
   </footer>
+  {{/* GoatCounter 阅读量：纯文本数字。走 /counter/<path>.json 端点（支持 CORS），
+        visit_count 只能输出 iframe/img 不适合纯文本。
+        前置：后台 Settings 开启 "Allow adding visitor counts on your website"。
+        未开则端点 404，元素保持空（.views:empty 自动隐藏）。
+        端点缓存 4 小时，数字非实时。 */}}
+  <script>
+    (function(){
+      var els = document.querySelectorAll('[data-gc-path]');
+      if(!els.length) return;
+      var base = 'https://damiaozi.goatcounter.com/counter/';
+      els.forEach(function(el){
+        var p = el.getAttribute('data-gc-path');  // Hugo 已做 URL 编码
+        el.textContent = '…';
+        var x = new XMLHttpRequest();
+        x.onload = function(){
+          try{
+            var n = JSON.parse(x.responseText).count;
+            el.textContent = n ? ('👀 ' + n) : '';
+          }catch(e){ el.textContent = ''; }
+        };
+        x.onerror = function(){ el.textContent = ''; };
+        x.open('GET', base + p + '.json');  // p 已编码，不再 encodeURIComponent（避免双重编码）
+        x.send();
+      });
+    })();
+  </script>
 </body>
 </html>

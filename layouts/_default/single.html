@@ -1,7 +1,7 @@
 {{ define "title" }}{{ .Title }} · {{ .Site.Title }}{{ end }}
 {{ define "main" }}
   <article class="entry">
-    <div class="date">{{ .Date.Format "2006-01-02" }}</div>
+    <div class="date">{{ .Date.Format "2006-01-02" }}<span class="views" data-gc-path="{{ .RelPermalink }}"></span></div>
     <h1>{{ .Title }}</h1>
     {{ with .Params.tags }}<div class="tags">{{ range . }}<a href="{{ "/tags/" }}{{ . | urlize }}/">#{{ . }}</a>{{ end }}</div>{{ end }}
     <div class="post-body">
