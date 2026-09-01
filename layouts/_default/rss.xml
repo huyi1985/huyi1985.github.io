@@ -14,12 +14,12 @@
     {{- end }}
     {{- range first $limit $pages }}
     <item>
-      <title>{{ .Title | plainify }}</title>
+      <title>{{ .Title | plainify | html }}</title>
       <link>{{ .Permalink }}</link>
       <guid isPermaLink="true">{{ .Permalink }}</guid>
       <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
       {{- with .Params.tags }}
-      <category>{{ delimit . ", " | plainify }}</category>
+      <category>{{ delimit . ", " | plainify | html }}</category>
       {{- end }}
       <description>{{ printf "%s" (.Summary | plainify | truncate 300) | html }}</description>
     </item>
