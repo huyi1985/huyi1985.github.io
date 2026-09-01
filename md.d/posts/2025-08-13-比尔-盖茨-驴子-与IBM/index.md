@@ -1,6 +1,44 @@
 ---
 title: 比尔·盖茨、驴子🫏与IBM
 date: '2025-08-13'
+tags:
+- 操作系统
+- 命令
+- 指令
+- 文件
+- 输入
+- 输出
+- 达特茅斯
+- 达特茅斯学院
+- John G. Kemeny
+- Thomas E. Kurtz
+- BASIC
+- Beginner's All-purpose Symbolic Instruction Code
+- 编程语言
+- Go
+- 源代码
+- 代码
+- code
+- 解释器
+- 字符
+- CPU
+- 处理器
+- 计算机
+- PC
+- 设备
+- 机器
+- x86
+- HTTP
+- HTTPS
+- Web
+- cat
+- AI
+- 微软
+- Apple
+- 苹果
+- 开发
+- 软件
+- 工程师
 ---
 
 # 比尔·盖茨、驴子🫏与IBM

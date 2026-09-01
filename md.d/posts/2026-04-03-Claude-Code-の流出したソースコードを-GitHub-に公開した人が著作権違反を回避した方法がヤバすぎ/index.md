@@ -1,6 +1,36 @@
 ---
 title: Claude Code の流出したソースコードを GitHub に公開した人が著作権違反を回避した方法がヤバすぎ
 date: '2026-04-03'
+tags:
+- shell
+- pipe
+- man
+- BASIC
+- Python
+- Go
+- 源代码
+- 代码
+- code
+- include
+- main
+- HTTP
+- HTTPS
+- IP
+- Web
+- HTML
+- API
+- GitHub
+- 开源
+- 社区
+- cat
+- sed
+- find
+- nc
+- vi
+- AI
+- LLM
+- Mac
+- Git
 ---
 
 **标题**: Claude Code の流出したソースコードを GitHub に公開した人が著作権違反を回避した方法がヤバすぎ

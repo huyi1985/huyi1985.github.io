@@ -1,6 +1,19 @@
 ---
 title: init_v3_man
 date: '2026-03-11'
+tags:
+- Unix
+- shell
+- man
+- DEC
+- Go
+- main
+- IP
+- cat
+- sed
+- nc
+- vi
+- AI
 draft: true
 ---
 

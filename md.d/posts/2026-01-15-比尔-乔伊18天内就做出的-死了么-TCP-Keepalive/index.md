@@ -1,6 +1,27 @@
 ---
 title: 比尔·乔伊18天内就做出的“死了么”：TCP Keepalive
 date: '2026-01-15'
+tags:
+- Unix
+- BSD
+- 命令
+- DEC
+- 代码
+- 函数
+- 参数
+- return
+- 类型
+- 指针
+- PC
+- 互联网
+- Internet
+- 网络
+- TCP
+- Web
+- vi
+- 数据
+- 编译
+- 程序员
 ---
 
 # 比尔·乔伊18天内就做出的“死了么”：TCP Keepalive

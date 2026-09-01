@@ -1,6 +1,32 @@
 ---
 title: Nginx和Apache要退休了？PHP有了新搭档：缝合怪FrankenPHP！
 date: '2025-06-24'
+tags:
+- 进程
+- bash
+- 命令
+- 信号
+- PHP
+- Go
+- 代码
+- 解释器
+- 内存
+- 服务器
+- 性能
+- 优化
+- HTTP
+- HTTPS
+- Web
+- API
+- GitHub
+- 社区
+- nc
+- vi
+- 数据
+- Git
+- 构建
+- 开发
+- 工程师
 ---
 
 # Nginx和Apache要退休了？PHP有了新搭档：缝合怪FrankenPHP！

@@ -1,6 +1,20 @@
 ---
 title: 1个emoji符号竟然不算1个字符？！
 date: '2025-11-06'
+tags:
+- DEC
+- Java
+- JavaScript
+- 代码
+- code
+- 字符
+- 字符串
+- 存储
+- HTTP
+- HTTPS
+- IP
+- 浏览器
+- Web
 ---
 
 # 1个emoji符号竟然不算1个字符？！

@@ -1,6 +1,21 @@
 ---
 title: PHP 3是这样诞生的：2.0耽误作业得高分了
 date: '2026-08-22'
+tags:
+- man
+- PHP
+- 代码
+- 计算机
+- HTTP
+- HTTPS
+- Web
+- 网站
+- tac
+- vi
+- AI
+- 编译
+- 开发
+- 软件
 draft: true
 ---
 

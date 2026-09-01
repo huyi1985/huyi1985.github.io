@@ -1,6 +1,22 @@
 ---
 title: IT术语中的低俗词语①：promiscuous
 date: '2025-09-16'
+tags:
+- Linux
+- 内核
+- 命令
+- 源代码
+- 代码
+- 栈
+- 机器
+- 网络
+- TCP
+- Web
+- vi
+- 数据
+- Mac
+- 调试
+- 开发
 ---
 
 # IT术语中的低俗词语①：promiscuous

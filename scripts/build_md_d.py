@@ -64,6 +64,8 @@ BLACKLIST_PATH = BASE / "config.d" / "blacklist.yaml"
 # 冻结名单：条目 = md.d/posts 子目录名（= raw_md.d 的 md.stem）；
 # 命中即跳过图片相对化、末尾 --- 过滤、裸相对图拷贝，正文原样保留（只规整 frontmatter + 注 draft）
 FREEZE_PATH = BASE / "config.d" / "freeze.yaml"
+# 关键词词典：正文纯子串匹配命中即作为该篇 tag（打 tag + SEO keywords meta 用）
+KEYWORDS_PATH = BASE / "config.d" / "keywords.yaml"
 
 
 def log(msg: str) -> None:
@@ -113,6 +115,53 @@ def load_freeze() -> set[str]:
     return _load_name_list(FREEZE_PATH)
 
 
+def load_keywords() -> list[str]:
+    """关键词词典：正文纯子串匹配命中即作为 tag。返回有序词列表（顺序即 tag 优先级）。"""
+    if not KEYWORDS_PATH.is_file():
+        return []
+    data = yaml.safe_load(KEYWORDS_PATH.read_text(encoding="utf-8")) or {}
+    if not isinstance(data, dict):
+        return []
+    kws = data.get("keywords") or []
+    if not isinstance(kws, list):
+        return []
+    # 元素可能是 "词" 或 "词: 别名"，取冒号前
+    # 大小写不敏感去重：仅大小写不同的词条只保留首次出现者（= 用户词典里的规范写法）
+    out = []
+    seen_lower = set()
+    for k in kws:
+        if not isinstance(k, str):
+            continue
+        word = k.split(":", 1)[0].strip().strip('"').strip("'")
+        if not word:
+            continue
+        low = word.lower()
+        if low in seen_lower:
+            continue
+        seen_lower.add(low)
+        out.append(word)
+    return out
+
+
+def match_keywords(body: str, keywords: list[str]) -> list[str]:
+    """正文纯子串匹配词典（大小写不敏感），返回命中的 tag 列表（按词典顺序，去重）。
+
+    返回的 tag 用词典里的规范写法（首现者）。匹配基于 body 的小写形式。
+    """
+    if not keywords:
+        return []
+    body_low = body.lower()
+    tags = []
+    seen = set()
+    for kw in keywords:
+        if kw in seen:
+            continue
+        if kw.lower() in body_low:
+            tags.append(kw)
+            seen.add(kw)
+    return tags
+
+
 def git_restore_bundle(stem: str) -> bool:
     """把 md.d/posts/<stem>/ 整个 bundle 恢复为 git HEAD 版本。
 
@@ -129,6 +178,47 @@ def git_restore_bundle(stem: str) -> bool:
         return r.returncode == 0
     except Exception:
         return False
+
+
+def restore_pool_from_bundles(window: list[Path], freeze: set[str]) -> int:
+    """从现有 md.d/posts/<stem>/ 的 imgN.ext 还原图片池到 md.d/assets/。
+
+    全量重建时若图片池（md.d/assets/）缺失，直接清空 md.d/posts 再从 raw 重建
+    会丢光所有图片——因为 distribute_images 从池里拷贝图片进 bundle。
+    本函数在清空前先把每个 bundle 已有的图片还原回池（imgN.ext → 原 assets 名），
+    使全量重建可安全进行，无需先跑 download_images.py 重下远程图。
+
+    映射推导：distribute_images 对 raw body 的 POOL_REF 按出现顺序给每个唯一
+    assets 名分配 img{seq}.ext（seq = 已见 assets 数 +1）。此处复刻同一逻辑得到
+    assets→imgN 映射，再把 bundle/imgN.ext 拷回 POOL_DIR/assetsname。
+
+    返回还原的图片文件数。
+    """
+    restored = 0
+    POOL_DIR.mkdir(parents=True, exist_ok=True)
+    for md in window:
+        stem = md.stem
+        if stem in freeze:
+            continue  # freeze 文章正文原样，其 bundle 图引用未相对化，跳过
+        bundle = MD_DIR / "posts" / stem
+        body = parse_front(md.read_text(encoding="utf-8", errors="replace"))[1]
+        # 复刻 distribute_images 的 assets→imgN 顺序映射
+        pool_map: dict[str, str] = {}
+        for m in POOL_REF.finditer(body):
+            fname = m.group(2)
+            if fname not in pool_map:
+                pool_map[fname] = f"img{len(pool_map) + 1}{(Path(fname).suffix or '.webp')}"
+        # 从 bundle 拷回池（池里已存在则跳过，避免覆盖较新的下载版）
+        for assets_name, bundle_name in pool_map.items():
+            src = bundle / bundle_name
+            if not src.is_file():
+                continue  # bundle 里没有这张图（可能下载失败/冻结改动）→ 无法还原
+            dst = POOL_DIR / assets_name
+            if dst.is_file():
+                continue
+            shutil.copy2(src, dst)
+            restored += 1
+    return restored
 
 
 def distribute_images(bundle: Path, content: str) -> tuple[str, dict]:
@@ -187,8 +277,10 @@ def main() -> int:
 
     blacklist = load_blacklist()
     freeze = load_freeze()
+    keywords = load_keywords()
     log(f"黑名单：{len(blacklist)} 个" if blacklist else "黑名单：空")
     log(f"冻结名单：{len(freeze)} 个" if freeze else "冻结名单：空")
+    log(f"关键词词典：{len(keywords)} 个" if keywords else "关键词词典：空")
 
     mds = sorted(RAW_DIR.glob("*.md"))
     if not mds:
@@ -199,24 +291,29 @@ def main() -> int:
         log(f"limit={args.limit}：窗口 {len(window)} 篇，另有 {len(mds) - len(window)} 篇不动"
             + ("（--revert 恢复为 git HEAD）" if args.revert else ""))
 
-    # ── 全量重建预检：图片池缺失则中止，避免清空 posts_dir 后丢图 ──
+    # ── 全量重建图片保护：池缺失则从现有 bundle 还原，避免清空 posts_dir 后丢图 ──
     # 全量(不带 --limit)会清空 md.d/posts 再从 raw 重建，图片依赖 md.d/assets/ 池；
-    # 池在每次 build 后被删除、由 download_images.py 重建。池不在而 raw 有 /assets/
-    # 引用时直接清空 = 静默丢光所有图片。此处强制要求先跑 download_images.py。
+    # 池在每次 build 后被删除、由 download_images.py 重建。若池不在而 raw 有 /assets/
+    # 引用，直接清空 = 静默丢光所有图片。此处先从现有 bundle 的 imgN.ext 还原池，
+    # 使全量重建可安全进行。仅当无任何 bundle 可还原（首次构建）才中止。
     if not args.dry_run and args.limit == 0:
-        pool_refs = 0
-        for md in window:
-            if md.stem in freeze:
-                continue  # freeze 文章不依赖池（正文原样保留，不相对化）
-            pool_refs += len(POOL_REF.findall(md.read_text(encoding="utf-8", errors="replace")))
         pool_exists = POOL_DIR.is_dir() and any(POOL_DIR.iterdir())
-        if pool_refs > 0 and not pool_exists:
-            log(f"[ERROR] 全量重建需要图片池（raw 中有 {pool_refs} 处 /assets/ 引用），"
-                f"但 {POOL_DIR} 不存在/为空。")
-            log("        全量重建会先清空 md.d/posts 再从 raw 重建，无池则丢光所有图片。")
-            log("        请先跑： python3.11 scripts/download_images.py   重建图片池，")
-            log("        或改用增量： python3.11 scripts/build_md_d.py --limit N   只重建末尾 N 篇（不清空）。")
-            return 1
+        if not pool_exists:
+            n = restore_pool_from_bundles(window, freeze)
+            if n > 0:
+                log(f"图片池缺失：从现有 bundle 还原 {n} 个图片到 {POOL_DIR}")
+            else:
+                # 无 bundle 可还原：raw 里有 /assets/ 引用但池空且 bundle 也没图
+                pool_refs = sum(
+                    len(POOL_REF.findall(md.read_text(encoding="utf-8", errors="replace")))
+                    for md in window if md.stem not in freeze
+                )
+                if pool_refs > 0:
+                    log(f"[ERROR] 全量重建需要图片池（raw 有 {pool_refs} 处 /assets/ 引用），"
+                        f"但 {POOL_DIR} 空且现有 bundle 无图可还原。")
+                    log("        请先跑： python3.11 scripts/download_images.py   重建图片池，")
+                    log("        或改用增量： python3.11 scripts/build_md_d.py --limit N   只重建末尾 N 篇（不清空）。")
+                    return 1
 
     posts_dir = MD_DIR / "posts"
     if not args.dry_run:
@@ -239,6 +336,7 @@ def main() -> int:
     freeze_count = 0
     img_copied = 0
     trim_total = 0
+    kw_count = 0
     trim_count = 0
     pool = {p.name: p for p in POOL_DIR.iterdir()} if POOL_DIR.is_dir() else {}
     log(f"图片池：{len(pool)} 个文件（{POOL_DIR}）" if pool else "图片池：空/不存在（引用保持原样）")
@@ -262,6 +360,10 @@ def main() -> int:
             if is_draft: tag.append("draft")
             if is_freeze: tag.append("FREEZE")
             if not is_freeze and trimmed: tag.append(f"trim-{trimmed}")
+            if not is_freeze and keywords:
+                kw_hit = len(match_keywords(body, keywords))
+                if kw_hit:
+                    tag.append(f"kw{kw_hit}")
             log(f"  [PLAN] {stem}  (tags={fm.get('tags')}, 池图{n_img}{' ['+' '.join(tag)+']' if tag else ''})")
             moved += 1
             continue
@@ -275,6 +377,12 @@ def main() -> int:
             # 冻结：正文原样保留，仅规整 frontmatter（不相对化图片、不分拣）
             new_body, _map = body, {}
         else:
+            # 关键词打 tag：正文纯子串匹配（大小写不敏感）。已有 tags 则不覆盖。
+            if not fm.get("tags") and keywords:
+                matched = match_keywords(body, keywords)
+                if matched:
+                    fm["tags"] = matched
+                    kw_count += len(matched)
             # 在 body 上做图片相对化（frontmatter 由 fm 重新 dump，不参与引用改写）
             new_body, _map = distribute_images(bundle, body)
             img_copied += len(_map)
@@ -296,9 +404,9 @@ def main() -> int:
 
     log(f"完成：{moved} 篇 md → {MD_DIR}/posts/（{draft_count} 篇 draft，"
         f"{freeze_count} 篇 freeze，分拣图片 {img_copied} 个，"
-        f"末尾---过滤 {trim_count} 篇共 {trim_total} 字）" if not args.dry_run
+        f"末尾---过滤 {trim_count} 篇共 {trim_total} 字，关键词打 tag {kw_count} 个）" if not args.dry_run
         else f"dry-run：{moved} 篇将写入 {MD_DIR}/posts/（{freeze_count} freeze，"
-        f"{trim_count} 篇将被 trim 共 {trim_total} 字）")
+        f"{trim_count} 篇将被 trim 共 {trim_total} 字，关键词打 tag {kw_count} 个）")
     return 0
 
 

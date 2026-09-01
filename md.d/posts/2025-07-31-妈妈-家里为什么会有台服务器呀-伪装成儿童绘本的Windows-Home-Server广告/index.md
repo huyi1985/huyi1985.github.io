@@ -1,6 +1,22 @@
 ---
 title: 妈妈，家里为什么会有台服务器呀？——伪装成儿童绘本的Windows Home Server广告
 date: '2025-07-31'
+tags:
+- 操作系统
+- 文件
+- 文件系统
+- 存储
+- 服务器
+- 互联网
+- HTTP
+- HTTPS
+- Web
+- 数据
+- Windows
+- Microsoft
+- 微软
+- 开发
+- 软件
 ---
 
 https://habr.com/ru/companies/ru_mts/articles/928850/

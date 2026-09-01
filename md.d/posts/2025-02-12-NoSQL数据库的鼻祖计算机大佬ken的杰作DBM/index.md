@@ -1,6 +1,22 @@
 ---
 title: NoSQL数据库的鼻祖计算机大佬ken的杰作DBM
 date: '2025-02-12'
+tags:
+- Unix
+- 操作系统
+- man
+- Ken Thompson
+- C语言
+- Go
+- 存储
+- 计算机
+- 互联网
+- 数据库
+- SQL
+- MySQL
+- Redis
+- 数据
+- 开发
 ---
 
 # NoSQL数据库的鼻祖计算机大佬ken的杰作DBM

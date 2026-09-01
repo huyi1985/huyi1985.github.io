@@ -1,0 +1,287 @@
+# keywords.yaml
+# 计算机 / 编程 / Unix / 互联网 / 计算机史关键词
+# 注意：build_md_d.py 当前采用纯子串匹配，因此英文名、中文译名、常见变体分别列出。
+
+keywords:
+
+  # ─────────────────────────────
+  # 操作系统 / Unix / Linux
+  # ─────────────────────────────
+  - "Unix"
+  - "Linux"
+  - "BSD"
+  - "操作系统"
+  - "内核"
+  - "kernel"
+  - "进程"
+  - "线程"
+  - "终端"
+  - "terminal"
+  - "shell"
+  - "bash"
+  - "命令"
+  - "命令行"
+  - "指令"
+  - "文件"
+  - "文件系统"
+  - "路径"
+  - "标准输入"
+  - "标准输出"
+  - "输入"
+  - "输出"
+  - "管道"
+  - "pipe"
+  - "man"
+  - "POSIX"
+  - "信号"
+  - "signal"
+  - "系统调用"
+  - "system call"
+
+  # ─────────────────────────────
+  # Unix / 贝尔实验室人物与历史
+  # ─────────────────────────────
+  - "Bell Labs"
+  - "Bell Laboratories"
+  - "贝尔实验室"
+  - "AT&T"
+
+  - "Ken Thompson"
+  - "Kenneth Thompson"
+  - "肯·汤普森"
+  - "肯汤普森"
+  - "汤普森"
+
+  - "Dennis Ritchie"
+  - "Dennis M. Ritchie"
+  - "丹尼斯·里奇"
+  - "丹尼斯里奇"
+  - "里奇"
+
+  - "Brian Kernighan"
+  - "Brian W. Kernighan"
+  - "布莱恩·柯尼汉"
+  - "布莱恩柯尼汉"
+  - "柯尼汉"
+
+  - "Douglas McIlroy"
+  - "Doug McIlroy"
+  - "道格拉斯·麦克罗伊"
+  - "麦克罗伊"
+
+  - "Joe Ossanna"
+  - "Joseph Ossanna"
+  - "乔·奥桑纳"
+  - "奥桑纳"
+
+  - "Multics"
+  - "PDP-7"
+  - "PDP-11"
+  - "DEC"
+  - "Digital Equipment Corporation"
+  - "Research Unix"
+  - "Version 7 Unix"
+  - "V7"
+
+  # ─────────────────────────────
+  # DTSS / BASIC / Dartmouth
+  # ─────────────────────────────
+  - "DTSS"
+  - "Dartmouth Time-Sharing System"
+  - "达特茅斯分时系统"
+  - "分时系统"
+  - "time-sharing"
+  - "time sharing"
+  - "Dartmouth"
+  - "Dartmouth College"
+  - "达特茅斯"
+  - "达特茅斯学院"
+
+  - "John Kemeny"
+  - "John G. Kemeny"
+  - "John George Kemeny"
+  - "约翰·凯梅尼"
+  - "约翰凯梅尼"
+  - "凯梅尼"
+
+  - "Thomas Kurtz"
+  - "Thomas E. Kurtz"
+  - "Thomas Eugene Kurtz"
+  - "托马斯·库尔茨"
+  - "托马斯库尔茨"
+  - "库尔茨"
+
+  - "BASIC"
+  - "Beginner's All-purpose Symbolic Instruction Code"
+  - "GE-225"
+  - "GE-235"
+  - "Datanet-30"
+  - "General Electric"
+
+  # ─────────────────────────────
+  # 编程语言
+  # ─────────────────────────────
+  - "编程语言"
+  - "C语言"
+  - "C++"
+  - "Python"
+  - "PHP"
+  - "Go"
+  - "Java"
+  - "JavaScript"
+  - "汇编语言"
+  - "Assembly"
+  - "源代码"
+  - "代码"
+  - "code"
+  - "编译器"
+  - "compiler"
+  - "解释器"
+  - "interpreter"
+  - "函数"
+  - "参数"
+  - "return"
+  - "include"
+  - "main"
+  - "语法"
+  - "类型"
+  - "整数"
+  - "字符"
+  - "字符串"
+  - "ASCII"
+  - "二进制"
+  - "字节"
+  - "指针"
+  - "内存"
+  - "堆"
+  - "栈"
+  - "算法"
+  - "循环"
+  - "递归"
+
+  # ─────────────────────────────
+  # CPU / 硬件 / 计算机体系结构
+  # ─────────────────────────────
+  - "CPU"
+  - "处理器"
+  - "存储"
+  - "计算机"
+  - "PC"
+  - "服务器"
+  - "设备"
+  - "机器"
+  - "性能"
+  - "优化"
+  - "指令集"
+  - "x86"
+  - "ARM"
+
+  # ─────────────────────────────
+  # 网络 / Web / Internet
+  # ─────────────────────────────
+  - "互联网"
+  - "Internet"
+  - "网络"
+  - "HTTP"
+  - "HTTPS"
+  - "TCP"
+  - "UDP"
+  - "IP"
+  - "DNS"
+  - "浏览器"
+  - "Web"
+  - "HTML"
+  - "API"
+  - "URL"
+  - "网站"
+  - "页面"
+  - "GitHub"
+  - "开源"
+  - "社区"
+
+  # ─────────────────────────────
+  # 常见 Unix / Linux 工具
+  # ─────────────────────────────
+  - "cat"
+  - "tac"
+  - "tail"
+  - "head"
+  - "grep"
+  - "sed"
+  - "awk"
+  - "find"
+  - "strings"
+  - "netcat"
+  - "nc"
+  - "kafkacat"
+  - "kcat"
+  - "zcat"
+  - "bzcat"
+  - "xzcat"
+  - "lolcat"
+  - "bat"
+  - "batcat"
+  - "curl"
+  - "wget"
+  - "ssh"
+  - "vi"
+  - "vim"
+  - "emacs"
+
+  # ─────────────────────────────
+  # 数据库 / 数据 / 分布式
+  # ─────────────────────────────
+  - "数据库"
+  - "SQL"
+  - "MySQL"
+  - "PostgreSQL"
+  - "Redis"
+  - "Elasticsearch"
+  - "Kafka"
+  - "数据"
+  - "索引"
+
+  # ─────────────────────────────
+  # AI
+  # ─────────────────────────────
+  - "AI"
+  - "人工智能"
+  - "机器学习"
+  - "深度学习"
+  - "神经网络"
+  - "大模型"
+  - "LLM"
+  - "模型"
+
+  # ─────────────────────────────
+  # Windows / Microsoft
+  # ─────────────────────────────
+  - "Windows"
+  - "Microsoft"
+  - "微软"
+  - "Windows XP"
+  - "Windows 7"
+  - "Win32"
+
+  # ─────────────────────────────
+  # Apple
+  # ─────────────────────────────
+  - "Apple"
+  - "苹果"
+  - "Mac"
+  - "Macintosh"
+  - "macOS"
+
+  # ─────────────────────────────
+  # 软件工程 / 开源
+  # ─────────────────────────────
+  - "Git"
+  - "版本控制"
+  - "调试"
+  - "debug"
+  - "编译"
+  - "构建"
+  - "开发"
+  - "软件"
+  - "程序员"
+  - "工程师"

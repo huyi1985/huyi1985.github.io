@@ -1,6 +1,24 @@
 ---
 title: IT术语中的低俗词语②：早期ping命令源代码中的quickie
 date: '2025-08-08'
+tags:
+- Unix
+- Linux
+- BSD
+- 操作系统
+- 内核
+- 命令
+- man
+- 源代码
+- 代码
+- 网络
+- Web
+- vi
+- 数据
+- Windows
+- Mac
+- macOS
+- 编译
 ---
 
 # IT术语中的低俗词语②：早期ping命令源代码中的quickie

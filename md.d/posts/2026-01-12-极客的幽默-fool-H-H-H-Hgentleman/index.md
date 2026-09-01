@@ -1,6 +1,17 @@
 ---
 title: 极客的幽默：fool^H^H^H\^Hgentleman
 date: '2026-01-12'
+tags:
+- 终端
+- 命令
+- 输入
+- man
+- 编程语言
+- 字符
+- ASCII
+- 设备
+- HTML
+- vi
 ---
 
 # 极客的幽默：fool^H^H^H\^Hgentleman

@@ -1,6 +1,28 @@
 ---
 title: Paper Clip/Transcript
 date: '2025-09-30'
+tags:
+- man
+- Go
+- code
+- return
+- main
+- ARM
+- HTTP
+- HTTPS
+- IP
+- API
+- cat
+- tac
+- head
+- sed
+- find
+- nc
+- vi
+- AI
+- Windows
+- Mac
+- Git
 ---
 
 # Paper Clip/Transcript

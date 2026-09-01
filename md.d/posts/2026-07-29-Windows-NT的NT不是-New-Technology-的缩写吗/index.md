@@ -1,6 +1,17 @@
 ---
 title: Windows NT的NT不是“New Technology”的缩写吗？
 date: '2026-07-29'
+tags:
+- 代码
+- 处理器
+- 性能
+- x86
+- Windows
+- 微软
+- 调试
+- 构建
+- 开发
+- 工程师
 ---
 
 # Windows NT的NT不是“New Technology”的缩写吗？

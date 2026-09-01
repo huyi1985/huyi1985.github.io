@@ -1,6 +1,26 @@
 ---
 title: 一对if-return语句创造出的计算机文化符号：dev/null
 date: '2025-11-28'
+tags:
+- Unix
+- kernel
+- 文件
+- 输出
+- man
+- V7
+- Go
+- 源代码
+- 代码
+- return
+- 字符
+- 计算机
+- 设备
+- 性能
+- IP
+- Web
+- vi
+- AI
+- 苹果
 ---
 
 # 一对if-return语句创造出的计算机文化符号：dev/null

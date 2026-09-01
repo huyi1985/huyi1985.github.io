@@ -1,6 +1,19 @@
 ---
 title: 跨越数百年的巧合：Python 选中 @ 符号表示矩阵乘法
 date: '2025-05-23'
+tags:
+- 输入
+- Python
+- PHP
+- 代码
+- code
+- 函数
+- 类型
+- 网络
+- Web
+- nc
+- 神经网络
+- 程序员
 draft: true
 ---
 

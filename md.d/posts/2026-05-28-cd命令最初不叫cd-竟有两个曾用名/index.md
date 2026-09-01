@@ -1,6 +1,30 @@
 ---
 title: cd命令最初不叫cd，竟有两个曾用名
 date: '2026-05-28'
+tags:
+- Unix
+- Linux
+- BSD
+- 操作系统
+- 内核
+- shell
+- 命令
+- 系统调用
+- Ken Thompson
+- Dennis Ritchie
+- Multics
+- PDP-7
+- PDP-11
+- DEC
+- V7
+- 字符
+- 计算机
+- 机器
+- Web
+- nc
+- 开发
+- 软件
+- 工程师
 ---
 
 # cd命令最初不叫cd，竟有两个曾用名

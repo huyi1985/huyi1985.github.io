@@ -1,6 +1,8 @@
 ---
 title: 术语趣谈00：从酉矩阵到无限的 Ctrl-Z-huyi-MacBook-home
 date: '2025-02-11'
+tags:
+- 计算机
 draft: true
 ---
 

@@ -1,6 +1,15 @@
 ---
 title: Ref
 date: '2025-12-01'
+tags:
+- Go
+- HTTP
+- HTTPS
+- IP
+- HTML
+- tail
+- nc
+- AI
 draft: true
 ---
 

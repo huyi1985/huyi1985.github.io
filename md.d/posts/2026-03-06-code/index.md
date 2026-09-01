@@ -1,6 +1,11 @@
 ---
 title: code
 date: '2026-03-06'
+tags:
+- man
+- main
+- sed
+- AI
 ---
 
 ```rust

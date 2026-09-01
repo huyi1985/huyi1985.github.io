@@ -1,6 +1,34 @@
 ---
 title: TENEX 的遗产：从命令补全到系统负载
 date: '2025-05-12'
+tags:
+- Unix
+- Linux
+- BSD
+- 操作系统
+- 进程
+- 终端
+- shell
+- bash
+- 命令
+- 命令行
+- 文件
+- man
+- 内存
+- 栈
+- 算法
+- CPU
+- 计算机
+- 设备
+- 页面
+- vi
+- AI
+- 模型
+- Windows
+- Mac
+- macOS
+- 调试
+- 开发
 ---
 
 # TENEX 的遗产：从命令补全到系统负载

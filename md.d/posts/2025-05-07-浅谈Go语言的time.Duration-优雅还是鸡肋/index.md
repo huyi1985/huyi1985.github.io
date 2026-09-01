@@ -1,6 +1,10 @@
 ---
 title: 浅谈Go语言的time.Duration：优雅还是鸡肋？
 date: '2025-05-07'
+tags:
+- Go
+- 代码
+- 整数
 ---
 
 # 浅谈Go语言的time.Duration：优雅还是鸡肋？

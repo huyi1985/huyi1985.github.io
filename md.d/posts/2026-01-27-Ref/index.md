@@ -1,6 +1,10 @@
 ---
 title: Ref
 date: '2026-01-27'
+tags:
+- HTTP
+- HTTPS
+- vi
 ---
 
 https://www.mondo2000.com/the-inspiration-for-hypercard/ The Psychedelic Inspiration For Hypercard

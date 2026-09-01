@@ -1,6 +1,11 @@
 ---
 title: AI Agent为了帮我抢到健身课，踢掉了别人的预约
 date: '2026-08-13'
+tags:
+- API
+- nc
+- AI
+- 软件
 draft: true
 ---
 

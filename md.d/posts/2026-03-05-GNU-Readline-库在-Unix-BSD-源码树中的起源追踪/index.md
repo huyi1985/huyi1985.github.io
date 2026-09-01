@@ -1,6 +1,28 @@
 ---
 title: GNU Readline 库在 Unix/BSD 源码树中的起源追踪
 date: '2026-03-05'
+tags:
+- Unix
+- Linux
+- BSD
+- 操作系统
+- 内核
+- terminal
+- bash
+- 文件
+- 路径
+- man
+- Go
+- code
+- API
+- cat
+- nc
+- vi
+- emacs
+- AI
+- LLM
+- Mac
+- 开发
 draft: true
 ---
 

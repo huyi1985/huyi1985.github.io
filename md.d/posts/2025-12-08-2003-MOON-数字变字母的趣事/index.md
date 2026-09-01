@@ -1,6 +1,13 @@
 ---
 title: 2003=MOON：数字变字母的趣事
 date: '2025-12-08'
+tags:
+- Unix
+- 命令
+- Brian Kernighan
+- 代码
+- Web
+- grep
 ---
 
 # 2003=MOON：数字变字母的趣事

@@ -1,6 +1,55 @@
 ---
 title: The Evolution of the Unix Time-sharing System*
 date: '2026-05-27'
+tags:
+- Unix
+- kernel
+- terminal
+- shell
+- bash
+- pipe
+- man
+- system call
+- Bell Labs
+- Bell Laboratories
+- AT&T
+- Dennis M. Ritchie
+- Brian Kernighan
+- Multics
+- PDP-7
+- PDP-11
+- DEC
+- Dartmouth Time-Sharing System
+- time-sharing
+- time sharing
+- Dartmouth
+- Dartmouth College
+- BASIC
+- Go
+- Assembly
+- code
+- compiler
+- interpreter
+- return
+- main
+- CPU
+- ARM
+- HTTP
+- IP
+- HTML
+- cat
+- tac
+- tail
+- head
+- sed
+- find
+- nc
+- bat
+- vi
+- AI
+- Mac
+- Git
+- debug
 ---
 
 # The Evolution of the Unix Time-sharing System*

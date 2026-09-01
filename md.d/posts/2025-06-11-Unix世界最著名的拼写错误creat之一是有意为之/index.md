@@ -1,6 +1,23 @@
 ---
 title: Unix世界最著名的拼写错误creat之一是有意为之？
 date: '2025-06-11'
+tags:
+- Unix
+- Linux
+- 内核
+- 命令
+- man
+- 系统调用
+- PDP-7
+- PDP-11
+- V7
+- 源代码
+- 代码
+- 字节
+- 内存
+- Mac
+- macOS
+- 程序员
 ---
 
 # Unix世界最著名的拼写错误creat之一是有意为之？

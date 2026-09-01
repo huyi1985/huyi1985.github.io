@@ -1,6 +1,19 @@
 ---
 title: Unix V1 sysfork — 空闲进程槽查找
 date: '2026-02-24'
+tags:
+- Unix
+- 进程
+- 系统调用
+- PDP-11
+- 代码
+- return
+- 字节
+- 循环
+- PC
+- sed
+- nc
+- 索引
 draft: true
 ---
 

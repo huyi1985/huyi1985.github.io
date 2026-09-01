@@ -1,6 +1,75 @@
 ---
 title: init 完整演进史：从 "BUGS none possible" 到 systemd
 date: '2026-02-09'
+tags:
+- Unix
+- Linux
+- BSD
+- 进程
+- 终端
+- terminal
+- shell
+- bash
+- 命令
+- 文件
+- 文件系统
+- 路径
+- man
+- POSIX
+- 信号
+- signal
+- 系统调用
+- Bell Labs
+- PDP-11
+- DEC
+- Research Unix
+- V7
+- Go
+- 代码
+- code
+- main
+- 语法
+- 二进制
+- 内存
+- CPU
+- 存储
+- 计算机
+- PC
+- 服务器
+- 设备
+- 性能
+- 优化
+- 网络
+- HTTP
+- HTTPS
+- IP
+- DNS
+- Web
+- 网站
+- GitHub
+- 社区
+- cat
+- grep
+- sed
+- awk
+- nc
+- ssh
+- vi
+- SQL
+- PostgreSQL
+- Redis
+- 数据
+- AI
+- 微软
+- Apple
+- Mac
+- macOS
+- Git
+- 调试
+- 构建
+- 开发
+- 软件
+- 工程师
 draft: true
 ---
 

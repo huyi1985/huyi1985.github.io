@@ -1,6 +1,31 @@
 ---
 title: 早期Unix开发者一夜间能产出多少成绩和Bug？
 date: '2025-12-22'
+tags:
+- Unix
+- 命令
+- 文件
+- 输入
+- man
+- Ken Thompson
+- Dennis Ritchie
+- Brian Kernighan
+- Doug McIlroy
+- V7
+- 源代码
+- 代码
+- 编译器
+- compiler
+- 参数
+- 语法
+- 算法
+- 循环
+- 计算机
+- 机器
+- 性能
+- Web
+- 编译
+- 开发
 ---
 
 # 早期Unix开发者一夜间能产出多少成绩和Bug？

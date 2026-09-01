@@ -1,6 +1,18 @@
 ---
 title: computer culture
 date: '2025-11-27'
+tags:
+- Unix
+- man
+- Go
+- HTTP
+- HTTPS
+- IP
+- sed
+- nc
+- vi
+- AI
+- Mac
 ---
 
 ## References in computer culture

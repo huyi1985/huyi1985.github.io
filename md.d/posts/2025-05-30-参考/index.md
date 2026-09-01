@@ -1,6 +1,20 @@
 ---
 title: 参考
 date: '2025-05-30'
+tags:
+- bash
+- code
+- compiler
+- 函数
+- 类型
+- HTTP
+- HTTPS
+- IP
+- cat
+- sed
+- nc
+- vi
+- Microsoft
 draft: true
 ---
 

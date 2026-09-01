@@ -1,6 +1,11 @@
 ---
 title: 《疯狂动物城2》还藏着码农才懂的For Dummies的梗
 date: '2026-01-02'
+tags:
+- 堆
+- 计算机
+- IP
+- Web
 ---
 
 # 《疯狂动物城2》还藏着码农才懂的For Dummies的梗

@@ -1,6 +1,57 @@
 ---
 title: History
 date: '2025-06-17'
+tags:
+- Unix
+- 操作系统
+- 进程
+- shell
+- 命令
+- 文件
+- 文件系统
+- man
+- 系统调用
+- Bell Labs
+- 贝尔实验室
+- Ken Thompson
+- Dennis Ritchie
+- Brian Kernighan
+- Joseph Ossanna
+- Multics
+- PDP-7
+- PDP-11
+- DEC
+- 分时系统
+- time-sharing
+- Go
+- 汇编语言
+- 代码
+- code
+- 解释器
+- interpreter
+- 函数
+- 类型
+- 内存
+- 计算机
+- 设备
+- 机器
+- 性能
+- HTTP
+- HTTPS
+- IP
+- cat
+- tac
+- sed
+- awk
+- nc
+- bat
+- vi
+- 索引
+- AI
+- Mac
+- Git
+- 编译
+- 开发
 ---
 
 有人曾问 Ken Thompson：“如果能重来一次，你会怎么重新设计 UNIX？”  

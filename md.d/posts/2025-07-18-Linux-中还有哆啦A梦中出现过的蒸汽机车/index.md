@@ -1,6 +1,18 @@
 ---
 title: Linux 中还有哆啦A梦中出现过的蒸汽机车
 date: '2025-07-18'
+tags:
+- Linux
+- 终端
+- 命令
+- 输入
+- code
+- HTTP
+- HTTPS
+- Web
+- HTML
+- GitHub
+- Git
 ---
 
 # Linux 中还有哆啦A梦中出现过的蒸汽机车

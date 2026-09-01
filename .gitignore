@@ -1,5 +1,6 @@
-# Sensitive: never commit（blacklist.yaml / freeze.yaml / openai.yaml 均只存本地）
-config.d/
+# config.d：黑名单/冻结名单/openai 密钥只存本地；keywords.yaml 是构建依赖，入 git
+config.d/*
+!config.d/keywords.yaml
 
 # Source-of-truth originals (external, ~534M): not in repo
 tmp/

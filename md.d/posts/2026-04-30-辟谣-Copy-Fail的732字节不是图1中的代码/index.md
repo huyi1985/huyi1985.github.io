@@ -1,6 +1,13 @@
 ---
 title: 辟谣：Copy Fail的732字节不是图1中的代码
 date: '2026-04-30'
+tags:
+- Linux
+- 内核
+- Python
+- 代码
+- 字节
+- AI
 ---
 
 # 辟谣：Copy Fail的732字节不是图1中的代码

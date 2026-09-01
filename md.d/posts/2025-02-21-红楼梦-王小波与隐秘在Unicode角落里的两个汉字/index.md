@@ -1,6 +1,31 @@
 ---
 title: 《红楼梦》、王小波与隐秘在Unicode角落里的两个汉字
 date: '2025-02-21'
+tags:
+- 输入
+- DEC
+- C++
+- PHP
+- code
+- 字符
+- ASCII
+- 计算机
+- 设备
+- HTTP
+- HTTPS
+- IP
+- 浏览器
+- HTML
+- GitHub
+- nc
+- vi
+- Windows
+- Microsoft
+- Mac
+- macOS
+- Git
+- 软件
+- 程序员
 ---
 
 # 《红楼梦》、王小波与隐秘在Unicode角落里的两个汉字

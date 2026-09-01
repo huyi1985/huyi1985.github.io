@@ -1,6 +1,16 @@
 ---
 title: pip install mahjong
 date: '2025-07-01'
+tags:
+- 输出
+- man
+- Python
+- 代码
+- IP
+- 开源
+- tail
+- sed
+- AI
 ---
 
 如果你喜欢打麻将🀄️，又刚好学了一点Python编程🐍，那说不定会对“mahjong”这个开源项目感兴趣。

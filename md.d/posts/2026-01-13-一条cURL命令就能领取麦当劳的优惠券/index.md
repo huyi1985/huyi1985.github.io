@@ -1,6 +1,25 @@
 ---
 title: 一条cURL命令就能领取麦当劳的优惠券
 date: '2026-01-13'
+tags:
+- bash
+- 命令
+- man
+- PC
+- HTTP
+- HTTPS
+- 浏览器
+- Web
+- HTML
+- API
+- URL
+- 页面
+- cat
+- curl
+- AI
+- LLM
+- 软件
+- 程序员
 ---
 
 # 一条cURL命令就能领取麦当劳的优惠券

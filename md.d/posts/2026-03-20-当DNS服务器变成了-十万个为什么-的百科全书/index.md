@@ -1,6 +1,32 @@
 ---
 title: 当DNS服务器变成了“十万个为什么”的百科全书
 date: '2026-03-20'
+tags:
+- shell
+- bash
+- 命令
+- 输入
+- 输出
+- man
+- 类型
+- 存储
+- 服务器
+- 机器
+- 互联网
+- HTTP
+- HTTPS
+- UDP
+- IP
+- DNS
+- 浏览器
+- Web
+- find
+- bat
+- vi
+- 数据
+- LLM
+- 模型
+- Windows
 ---
 
 # 当DNS服务器变成了“十万个为什么”的百科全书

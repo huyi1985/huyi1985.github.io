@@ -1,6 +1,15 @@
 ---
 title: IT术语趣谈：“新适配旧”是“向前”兼容还是“向后”兼容？
 date: '2025-12-04'
+tags:
+- 文件
+- 浏览器
+- Web
+- HTML
+- 数据
+- Windows
+- Windows 7
+- 软件
 ---
 
 你真的分得清**向前兼容**（forward compatibility）和**向后兼容** (backward compatibility) 吗？

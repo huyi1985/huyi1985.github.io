@@ -1,6 +1,17 @@
 ---
 title: Ref
 date: '2026-04-13'
+tags:
+- Linux
+- kernel
+- man
+- code
+- main
+- HTTP
+- HTTPS
+- bat
+- AI
+- Mac
 ---
 
 https://www.tomshardware.com/software/linux/linux-lays-down-the-law-on-ai-generated-code-yes-to-copilot-no-to-ai-slop-and-humans-take-the-fall-for-mistakes-after-months-of-fierce-debate-torvalds-and-maintainers-come-to-an-agreement

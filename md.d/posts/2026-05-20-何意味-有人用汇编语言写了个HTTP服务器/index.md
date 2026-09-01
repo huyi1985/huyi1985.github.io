@@ -1,6 +1,38 @@
 ---
 title: 何意味？有人用汇编语言写了个HTTP服务器
 date: '2026-05-20'
+tags:
+- 指令
+- 文件
+- 输出
+- Python
+- Go
+- Java
+- 汇编语言
+- 代码
+- 整数
+- 字符
+- 字符串
+- 内存
+- 堆
+- 服务器
+- 设备
+- 机器
+- 指令集
+- ARM
+- 网络
+- HTTP
+- HTTPS
+- Web
+- URL
+- GitHub
+- head
+- awk
+- curl
+- 数据
+- AI
+- Apple
+- Git
 ---
 
 # 何意味？有人用汇编语言写了个HTTP服务器

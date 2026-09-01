@@ -1,6 +1,9 @@
 ---
 title: Kubernetes v1.36 logo中的日本元素
 date: '2026-04-23'
+tags:
+- Go
+- Web
 ---
 
 # Kubernetes v1.36 logo中的日本元素

@@ -1,6 +1,26 @@
 ---
 title: at符号
 date: '2025-05-20'
+tags:
+- man
+- DEC
+- Python
+- Go
+- code
+- include
+- ASCII
+- 互联网
+- HTTP
+- HTTPS
+- IP
+- API
+- cat
+- sed
+- nc
+- vi
+- AI
+- Mac
+- Git
 ---
 
 从宗教，到大航海贸易，互联网时代，社交媒体时代，到AI时代

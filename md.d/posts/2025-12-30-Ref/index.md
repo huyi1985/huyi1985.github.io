@@ -1,6 +1,11 @@
 ---
 title: Ref
 date: '2025-12-30'
+tags:
+- PHP
+- HTTP
+- HTTPS
+- bat
 draft: true
 ---
 

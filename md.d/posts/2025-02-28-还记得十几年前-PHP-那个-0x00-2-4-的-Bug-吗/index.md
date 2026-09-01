@@ -1,6 +1,41 @@
 ---
 title: 还记得十几年前 PHP 那个 0x00+2=4 的 Bug 吗
 date: '2025-02-28'
+tags:
+- Linux
+- 文件
+- 标准输入
+- 输入
+- man
+- PHP
+- Go
+- 代码
+- code
+- include
+- main
+- 整数
+- 字符
+- 字符串
+- 二进制
+- 指针
+- 算法
+- 循环
+- 计算机
+- PC
+- HTTP
+- HTTPS
+- Web
+- HTML
+- cat
+- sed
+- nc
+- 数据库
+- Redis
+- 数据
+- AI
+- 构建
+- 开发
+- 工程师
 ---
 
 # 还记得十几年前 PHP 那个 0x00+2=4 的 Bug 吗

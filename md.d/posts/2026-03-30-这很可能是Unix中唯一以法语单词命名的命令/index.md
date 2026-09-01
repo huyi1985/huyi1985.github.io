@@ -1,6 +1,30 @@
 ---
 title: 这很可能是Unix中唯一以法语单词命名的命令
 date: '2026-03-30'
+tags:
+- Unix
+- Linux
+- BSD
+- 内核
+- bash
+- 命令
+- 路径
+- 输入
+- man
+- POSIX
+- 贝尔实验室
+- Research Unix
+- 源代码
+- 代码
+- 字符
+- 互联网
+- Internet
+- 网络
+- TCP
+- Web
+- grep
+- awk
+- vi
 ---
 
 # 这很可能是Unix中唯一以法语单词命名的命令

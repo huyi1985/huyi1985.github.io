@@ -1,6 +1,22 @@
 ---
 title: 30行C代码、2个小时实现正则表达式匹配
 date: '2026-08-05'
+tags:
+- Unix
+- 操作系统
+- 贝尔实验室
+- Brian Kernighan
+- Go
+- 代码
+- code
+- 字符
+- 内存
+- 递归
+- HTTP
+- HTTPS
+- IP
+- grep
+- vi
 ---
 
 # 30行C代码、2个小时实现正则表达式匹配

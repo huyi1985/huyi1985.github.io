@@ -1,6 +1,18 @@
 ---
 title: moricons.dll：一扇通往Windows 3.0时代PC软件世界的窗口
 date: '2025-12-10'
+tags:
+- 文件
+- man
+- Python
+- 计算机
+- PC
+- Web
+- Windows
+- 微软
+- 开发
+- 软件
+- 工程师
 ---
 
 # moricons.dll：一扇通往Windows 3.0时代PC软件世界的窗口

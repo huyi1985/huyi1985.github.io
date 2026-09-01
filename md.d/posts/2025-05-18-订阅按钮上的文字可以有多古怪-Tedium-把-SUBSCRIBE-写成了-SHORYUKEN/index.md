@@ -1,6 +1,19 @@
 ---
 title: 订阅按钮上的文字可以有多古怪？Tedium 把“SUBSCRIBE”写成了“SHORYUKEN!”
 date: '2025-05-18'
+tags:
+- 输入
+- 算法
+- 循环
+- 性能
+- 互联网
+- 网络
+- HTTP
+- HTTPS
+- 浏览器
+- Web
+- 网站
+- AI
 draft: true
 ---
 

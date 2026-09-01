@@ -1,6 +1,16 @@
 ---
 title: Linus Torvalds 公开吐槽
 date: '2026-06-26'
+tags:
+- 代码
+- 编译器
+- Web
+- 网站
+- 开源
+- AI
+- 编译
+- 开发
+- 程序员
 ---
 
 # Linus Torvalds 公开吐槽

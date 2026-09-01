@@ -1,6 +1,40 @@
 ---
 title: 你可能不知道的cd命令的两个小秘密
 date: '2026-05-28'
+tags:
+- Unix
+- Linux
+- BSD
+- 内核
+- 进程
+- shell
+- 命令
+- 文件
+- 路径
+- 输入
+- man
+- 系统调用
+- Ken Thompson
+- Dennis Ritchie
+- PDP-7
+- V7
+- 编程语言
+- 源代码
+- 代码
+- 解释器
+- 函数
+- 参数
+- 语法
+- 字符
+- 字符串
+- 内存
+- 机器
+- HTTP
+- HTTPS
+- GitHub
+- nc
+- AI
+- Git
 ---
 
 # 你可能不知道的cd命令的两个小秘密

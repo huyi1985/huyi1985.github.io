@@ -7,6 +7,8 @@
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
   {{ if .Param "tags" }}<meta name="keywords" content="{{ delimit .Params.tags ", " }}">{{ end }}
   <link rel="canonical" href="{{ .Permalink }}">
+  <link rel="icon" type="image/png" href="{{ "/static/favicon.png" | relURL }}">
+  <link rel="apple-touch-icon" href="{{ "/static/favicon.png" | relURL }}">
   <meta name="google-site-verification" content="59IkCkhcLqNVMd1e8PMFAKT7aWqtPoWmCkZkYzOGTaE" />
   <style>
     :root{

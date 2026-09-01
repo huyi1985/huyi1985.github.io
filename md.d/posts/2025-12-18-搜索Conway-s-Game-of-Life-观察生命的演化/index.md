@@ -1,6 +1,16 @@
 ---
 title: 搜索Conway's Game of Life，观察生命的演化
 date: '2025-12-18'
+tags:
+- 输入
+- Go
+- 浏览器
+- Web
+- HTML
+- 页面
+- 索引
+- 模型
+- 调试
 ---
 
 # 搜索Conway's Game of Life，观察生命的演化

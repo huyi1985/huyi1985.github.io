@@ -1,6 +1,20 @@
 ---
 title: 便携式电脑Osborne 1的几则传奇故事
 date: '2026-03-02'
+tags:
+- 操作系统
+- BASIC
+- 计算机
+- 设备
+- Web
+- vi
+- 微软
+- Apple
+- 苹果
+- Mac
+- Macintosh
+- 软件
+- 工程师
 ---
 
 # 便携式电脑Osborne 1的几则传奇故事

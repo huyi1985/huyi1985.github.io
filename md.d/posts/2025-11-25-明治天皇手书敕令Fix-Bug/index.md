@@ -1,6 +1,14 @@
 ---
 title: 明治天皇手书敕令Fix Bug
 date: '2025-11-25'
+tags:
+- 操作系统
+- Go
+- HTTP
+- HTTPS
+- Web
+- HTML
+- Git
 ---
 
 # 明治天皇手书敕令Fix Bug

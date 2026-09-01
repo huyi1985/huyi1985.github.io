@@ -1,6 +1,20 @@
 ---
 title: Ref
 date: '2026-03-23'
+tags:
+- 路径
+- 输入
+- 信号
+- 算法
+- 循环
+- 计算机
+- 优化
+- HTTP
+- HTTPS
+- IP
+- AI
+- 模型
+- 构建
 ---
 
 https://www-cs-faculty.stanford.edu/~knuth/papers/claude-cycles.pdf

@@ -1,6 +1,23 @@
 ---
 title: _OXO_ (video game)
 date: '2025-12-09'
+tags:
+- man
+- DEC
+- include
+- main
+- PC
+- HTTP
+- HTTPS
+- IP
+- Web
+- cat
+- tac
+- sed
+- nc
+- vi
+- AI
+- Mac
 ---
 
 ![](img1.webp)

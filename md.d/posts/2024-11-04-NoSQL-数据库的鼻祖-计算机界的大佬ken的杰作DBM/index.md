@@ -1,6 +1,40 @@
 ---
 title: NoSQL 数据库的鼻祖——计算机界的大佬ken的杰作DBM
 date: '2024-11-04'
+tags:
+- Unix
+- 操作系统
+- bash
+- 命令
+- 文件
+- man
+- Ken Thompson
+- C语言
+- PHP
+- Go
+- 代码
+- 函数
+- 参数
+- return
+- main
+- 存储
+- 计算机
+- 互联网
+- HTTP
+- HTTPS
+- API
+- cat
+- strings
+- nc
+- 数据库
+- SQL
+- MySQL
+- Redis
+- 数据
+- AI
+- 模型
+- 开发
+- 程序员
 ---
 
 # NoSQL 数据库的鼻祖——计算机界的大佬ken的杰作DBM

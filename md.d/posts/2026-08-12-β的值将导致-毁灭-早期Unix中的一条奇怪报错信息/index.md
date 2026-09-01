@@ -1,6 +1,32 @@
 ---
 title: β的值将导致“毁灭”：早期Unix中的一条奇怪报错信息
 date: '2026-08-12'
+tags:
+- Unix
+- Linux
+- 终端
+- 命令
+- 文件
+- 输出
+- 贝尔实验室
+- Ken Thompson
+- Dennis Ritchie
+- PDP-7
+- PDP-11
+- 源代码
+- 代码
+- 字符
+- ASCII
+- 服务器
+- 机器
+- 性能
+- HTTP
+- HTTPS
+- IP
+- vi
+- AI
+- 开发
+- 程序员
 ---
 
 # β的值将导致“毁灭”：早期Unix中的一条奇怪报错信息

@@ -1,6 +1,35 @@
 ---
 title: Osborne —— Behind Guerrilla Lines
 date: '2025-08-25'
+tags:
+- 终端
+- terminal
+- man
+- DEC
+- Go
+- main
+- 处理器
+- 计算机
+- 设备
+- 机器
+- ARM
+- HTTP
+- HTTPS
+- IP
+- cat
+- tac
+- tail
+- head
+- sed
+- find
+- nc
+- bat
+- vi
+- 数据
+- AI
+- Mac
+- 开发
+- 软件
 ---
 
 https://archive.org/details/kilobaudmagazine-1982-07/page/n43/mode/2up?view=theater

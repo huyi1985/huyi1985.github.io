@@ -1,6 +1,14 @@
 ---
 title: a silly metric number of lines of code written by AI
 date: '2025-08-23'
+tags:
+- man
+- 代码
+- code
+- ARM
+- nc
+- AI
+- 开发
 ---
 
 AWS CEO：AI写了多少行代码是个愚蠢的指标

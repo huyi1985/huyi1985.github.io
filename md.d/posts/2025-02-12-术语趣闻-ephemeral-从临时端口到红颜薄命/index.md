@@ -1,6 +1,29 @@
 ---
 title: 术语趣闻 ephemeral 从临时端口到红颜薄命
 date: '2025-02-12'
+tags:
+- Linux
+- 操作系统
+- 命令
+- 文件
+- 输出
+- Go
+- main
+- 语法
+- 循环
+- 存储
+- 计算机
+- 服务器
+- 网络
+- TCP
+- UDP
+- IP
+- sed
+- nc
+- 数据
+- AI
+- Windows
+- 苹果
 ---
 
 今天来说一说 **ephemeral** 这个术语。

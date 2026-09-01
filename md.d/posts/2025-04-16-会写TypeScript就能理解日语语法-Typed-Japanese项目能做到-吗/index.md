@@ -1,6 +1,30 @@
 ---
 title: 会写TypeScript就能理解日语语法——Typed Japanese项目能做到（吗？）
 date: '2025-04-16'
+tags:
+- 命令
+- Go
+- 代码
+- 函数
+- 参数
+- main
+- 语法
+- 类型
+- 字符
+- 字符串
+- 计算机
+- HTTP
+- HTTPS
+- IP
+- GitHub
+- 开源
+- nc
+- AI
+- 模型
+- Git
+- 构建
+- 开发
+- 程序员
 ---
 
 # 会写TypeScript就能理解日语语法——Typed Japanese项目能做到（吗？）

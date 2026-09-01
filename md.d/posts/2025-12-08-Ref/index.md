@@ -1,6 +1,27 @@
 ---
 title: Ref
 date: '2025-12-08'
+tags:
+- Unix
+- 命令
+- 文件
+- AT&T
+- code
+- 类型
+- 字符
+- 字符串
+- ASCII
+- 计算机
+- ARM
+- HTTP
+- HTTPS
+- IP
+- Web
+- GitHub
+- 开源
+- 社区
+- grep
+- Git
 draft: true
 ---
 

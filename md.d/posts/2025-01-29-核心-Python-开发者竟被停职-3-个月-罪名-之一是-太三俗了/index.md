@@ -1,6 +1,24 @@
 ---
 title: 核心 Python 开发者竟被停职 3 个月，“罪名”之一是“太三俗了”
 date: '2025-01-29'
+tags:
+- 输入
+- Python
+- Java
+- JavaScript
+- 代码
+- 算法
+- 网络
+- HTTP
+- HTTPS
+- IP
+- Web
+- API
+- 社区
+- tac
+- nc
+- 开发
+- 软件
 ---
 
 # 核心 Python 开发者竟被停职 3 个月，“罪名”之一是“太三俗了”

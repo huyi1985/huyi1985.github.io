@@ -1,6 +1,21 @@
 ---
 title: Backspace 键和 Delete 键的一些冷知识
 date: '2026-01-12'
+tags:
+- Unix
+- 终端
+- man
+- 字符
+- ASCII
+- 计算机
+- HTTP
+- HTTPS
+- IP
+- 浏览器
+- HTML
+- sed
+- nc
+- Mac
 ---
 
 https://en.wikipedia.org/wiki/Backspace

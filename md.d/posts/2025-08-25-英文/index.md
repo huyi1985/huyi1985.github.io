@@ -1,6 +1,31 @@
 ---
 title: 英文
 date: '2025-08-25'
+tags:
+- terminal
+- man
+- signal
+- DEC
+- Go
+- code
+- return
+- include
+- main
+- ASCII
+- ARM
+- IP
+- API
+- cat
+- tac
+- tail
+- head
+- sed
+- find
+- nc
+- bat
+- vi
+- AI
+- Mac
 ---
 
 This freelance journalist reported on the Afghan rebels' resistance to the Soviet-backed regime in their country and filed his stories back to the U.S. using an Osborne computer.

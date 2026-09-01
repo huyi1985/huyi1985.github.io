@@ -1,6 +1,26 @@
 ---
 title: 15年前的尘封往事：一个杀死IE6的阴谋！
 date: '2024-11-01'
+tags:
+- 操作系统
+- Java
+- JavaScript
+- 代码
+- 互联网
+- Internet
+- HTTP
+- HTTPS
+- IP
+- 浏览器
+- Web
+- 网站
+- 页面
+- vi
+- 数据
+- Windows
+- 微软
+- 开发
+- 程序员
 ---
 
 # 15年前的尘封往事：一个杀死IE6的阴谋！

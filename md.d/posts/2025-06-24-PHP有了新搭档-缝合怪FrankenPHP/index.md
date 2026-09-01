@@ -1,6 +1,21 @@
 ---
 title: PHP有了新搭档：缝合怪FrankenPHP！
 date: '2025-06-24'
+tags:
+- PHP
+- Go
+- 代码
+- 解释器
+- 内存
+- 服务器
+- 性能
+- 优化
+- HTTP
+- Web
+- API
+- vi
+- 数据
+- 开发
 ---
 
 # PHP有了新搭档：缝合怪FrankenPHP！

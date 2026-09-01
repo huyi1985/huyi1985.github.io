@@ -1,6 +1,47 @@
 ---
 title: 1979年的多态：一行C代码里的设计哲学
 date: '2026-02-09'
+tags:
+- Unix
+- Linux
+- BSD
+- 内核
+- 命令
+- 指令
+- 文件
+- 系统调用
+- Bell Laboratories
+- 贝尔实验室
+- Ken Thompson
+- Dennis Ritchie
+- PDP-11
+- V7
+- time-sharing
+- C语言
+- C++
+- Go
+- Java
+- 代码
+- code
+- 函数
+- 参数
+- 语法
+- 类型
+- 指针
+- 设备
+- 性能
+- IP
+- sed
+- nc
+- vi
+- 数据
+- 索引
+- AI
+- 模型
+- Windows
+- 编译
+- 构建
+- 工程师
 draft: true
 ---
 

@@ -1,6 +1,11 @@
 ---
 title: 草稿
 date: '2025-05-21'
+tags:
+- Python
+- 互联网
+- 社区
+- nc
 draft: true
 ---
 

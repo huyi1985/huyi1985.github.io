@@ -1,6 +1,17 @@
 ---
 title: C++ 26新容器性能如何？hive会取代vector和list吗？
 date: '2026-08-03'
+tags:
+- C++
+- 编译器
+- 指针
+- 内存
+- CPU
+- 存储
+- 性能
+- 优化
+- 数据
+- 编译
 draft: true
 ---
 

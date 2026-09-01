@@ -1,6 +1,31 @@
 ---
 title: 日本中学生创造了一门“类似中文”的编程语言
 date: '2025-08-13'
+tags:
+- 命令
+- 文件
+- 输入
+- 输出
+- 编程语言
+- C++
+- Python
+- PHP
+- Go
+- Java
+- 源代码
+- 代码
+- 函数
+- 参数
+- return
+- 整数
+- 存储
+- HTTP
+- HTTPS
+- GitHub
+- SQL
+- MySQL
+- Git
+- 编译
 ---
 
 https://zenn.dev/natsuakane/articles/c7ad7c7bb5bf1b

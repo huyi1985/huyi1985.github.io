@@ -1,6 +1,21 @@
 ---
 title: Ref
 date: '2025-06-12'
+tags:
+- Unix
+- man
+- PDP-11
+- DEC
+- Go
+- HTTP
+- HTTPS
+- IP
+- GitHub
+- tac
+- nc
+- vi
+- AI
+- Git
 draft: true
 ---
 

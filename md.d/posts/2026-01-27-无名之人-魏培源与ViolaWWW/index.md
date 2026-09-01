@@ -1,6 +1,28 @@
 ---
 title: 无名之人：魏培源与ViolaWWW
 date: '2026-01-27'
+tags:
+- Unix
+- 编程语言
+- Java
+- JavaScript
+- 代码
+- 互联网
+- Internet
+- 网络
+- IP
+- 浏览器
+- Web
+- 网站
+- 开源
+- cat
+- vi
+- AI
+- Windows
+- 微软
+- Apple
+- 构建
+- 开发
 ---
 
 # 无名之人：魏培源与ViolaWWW

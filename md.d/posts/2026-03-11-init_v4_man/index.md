@@ -1,6 +1,17 @@
 ---
 title: init_v4_man
 date: '2026-03-11'
+tags:
+- Unix
+- shell
+- man
+- Go
+- main
+- IP
+- sed
+- nc
+- vi
+- AI
 draft: true
 ---
 

@@ -1,6 +1,16 @@
 ---
 title: Python 3.14 版本的彩蛋
 date: '2025-03-17'
+tags:
+- bash
+- 文件
+- Python
+- code
+- 计算机
+- IP
+- 社区
+- vi
+- 软件
 ---
 
 # Python 3.14 版本的彩蛋

@@ -1,6 +1,23 @@
 ---
 title: 达特茅斯学院曾“打着添置家具的幌子”，偷偷购买了台计算机
 date: '2025-09-11'
+tags:
+- 输入
+- 输出
+- DTSS
+- Dartmouth Time-Sharing System
+- time-sharing
+- Dartmouth
+- 达特茅斯
+- 达特茅斯学院
+- John Kemeny
+- Thomas Kurtz
+- BASIC
+- 二进制
+- 计算机
+- 性能
+- Web
+- 数据
 ---
 
 # 达特茅斯学院曾“打着添置家具的幌子”，偷偷购买了台计算机

@@ -1,6 +1,35 @@
 ---
 title: Please send all complaints to /dev/null
 date: '2025-11-28'
+tags:
+- Unix
+- Linux
+- BSD
+- kernel
+- shell
+- bash
+- man
+- POSIX
+- signal
+- system call
+- AT&T
+- DEC
+- Go
+- code
+- HTTP
+- HTTPS
+- IP
+- Web
+- HTML
+- cat
+- tac
+- sed
+- find
+- nc
+- vi
+- AI
+- Windows
+- Mac
 ---
 
 Game

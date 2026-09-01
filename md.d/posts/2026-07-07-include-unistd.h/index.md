@@ -1,6 +1,39 @@
 ---
 title: include <unistd.h>
 date: '2026-07-07'
+tags:
+- Linux
+- man
+- system call
+- DEC
+- Go
+- code
+- compiler
+- return
+- include
+- main
+- PC
+- HTTP
+- HTTPS
+- IP
+- HTML
+- API
+- GitHub
+- cat
+- tail
+- head
+- sed
+- find
+- nc
+- vi
+- SQL
+- AI
+- Windows
+- Microsoft
+- Win32
+- Apple
+- Mac
+- Git
 ---
 
 35% Faster Than The Filesystem

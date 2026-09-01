@@ -1,6 +1,22 @@
 ---
 title: “拒绝”也能服务化，帮你说“不”的神奇API
 date: '2025-12-27'
+tags:
+- Go
+- return
+- 存储
+- HTTP
+- HTTPS
+- API
+- GitHub
+- head
+- bat
+- vi
+- AI
+- Git
+- 开发
+- 软件
+- 程序员
 ---
 
 # “拒绝”也能服务化，帮你说“不”的神奇API

@@ -1,6 +1,16 @@
 ---
 title: Tart——适用于 Apple Silicon 处理器的虚拟化工具
 date: '2024-08-16'
+tags:
+- Linux
+- bash
+- 命令
+- 处理器
+- vi
+- Apple
+- Mac
+- macOS
+- 软件
 ---
 
 前一阵，单位好不容易“开恩”，给我把使用了多年的 Intel MacBook 换成了 M3 的 MacBook。

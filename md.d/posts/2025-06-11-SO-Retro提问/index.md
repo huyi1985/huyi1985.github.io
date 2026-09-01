@@ -1,6 +1,20 @@
 ---
 title: SO Retro提问
 date: '2025-06-11'
+tags:
+- Unix
+- 命令
+- 文件
+- man
+- 系统调用
+- system call
+- Go
+- Java
+- 代码
+- cat
+- sed
+- nc
+- AI
 ---
 
 %% Unix上的touch命令为什么叫touch，与new/create/update有什么联系

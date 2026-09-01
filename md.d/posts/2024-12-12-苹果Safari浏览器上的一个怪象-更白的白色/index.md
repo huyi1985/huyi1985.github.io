@@ -1,6 +1,21 @@
 ---
 title: 苹果Safari浏览器上的一个怪象——更白的白色
 date: '2024-12-12'
+tags:
+- 源代码
+- 代码
+- 处理器
+- 设备
+- HTTP
+- HTTPS
+- 浏览器
+- 页面
+- GitHub
+- vi
+- 苹果
+- Mac
+- macOS
+- Git
 ---
 
 # 苹果Safari浏览器上的一个怪象——更白的白色

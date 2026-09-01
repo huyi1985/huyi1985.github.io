@@ -1,6 +1,11 @@
 ---
 title: Ref 太空旅行 Wiki
 date: '2025-06-27'
+tags:
+- HTTP
+- HTTPS
+- IP
+- vi
 ---
 
 https://en.wikipedia.org/wiki/Space_Travel_(video_game)#cite_note-Hist-2

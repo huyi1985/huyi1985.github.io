@@ -1,6 +1,34 @@
 ---
 title: AI画疯了，扛着AI反AI的也来了！开发Chrome插件专门屏蔽吉卜力风格的图片
 date: '2025-04-01'
+tags:
+- 指令
+- 输入
+- 输出
+- Python
+- Go
+- 函数
+- 参数
+- include
+- main
+- 服务器
+- 设备
+- 网络
+- HTTP
+- HTTPS
+- URL
+- GitHub
+- cat
+- tac
+- head
+- nc
+- AI
+- 深度学习
+- 神经网络
+- 模型
+- Git
+- 开发
+- 程序员
 ---
 
 # AI画疯了，扛着AI反AI的也来了！开发Chrome插件专门屏蔽吉卜力风格的图片

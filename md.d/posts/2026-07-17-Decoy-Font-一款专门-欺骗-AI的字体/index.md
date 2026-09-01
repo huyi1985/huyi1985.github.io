@@ -1,6 +1,17 @@
 ---
 title: Decoy Font：一款专门“欺骗”AI的字体
 date: '2026-07-17'
+tags:
+- man
+- DEC
+- Go
+- 字符
+- Web
+- 开源
+- AI
+- 大模型
+- 模型
+- 开发
 ---
 
 # Decoy Font：一款专门“欺骗”AI的字体

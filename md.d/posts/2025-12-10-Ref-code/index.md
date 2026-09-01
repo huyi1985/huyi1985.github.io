@@ -1,6 +1,20 @@
 ---
 title: Ref code
 date: '2025-12-10'
+tags:
+- shell
+- 文件
+- Go
+- 类型
+- 递归
+- HTTP
+- HTTPS
+- IP
+- HTML
+- tac
+- nc
+- Windows
+- Git
 ---
 
 https://gigazine.net/news/20250524-windows-moricons-dll/?utm_source=chatgpt.com

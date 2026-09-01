@@ -1,6 +1,39 @@
 ---
 title: grep命令真的是一夜间就写好了？grep为什么叫grep？
 date: '2025-09-24'
+tags:
+- Unix
+- 终端
+- 命令
+- 文件
+- 管道
+- pipe
+- man
+- Ken Thompson
+- Doug McIlroy
+- PDP-11
+- Go
+- Assembly
+- 代码
+- code
+- include
+- 内存
+- 堆
+- 计算机
+- HTTP
+- HTTPS
+- IP
+- Web
+- grep
+- sed
+- find
+- nc
+- vi
+- AI
+- Windows
+- Mac
+- 开发
+- 程序员
 ---
 
 # grep命令真的是一夜间就写好了？grep为什么叫grep？

@@ -1,6 +1,25 @@
 ---
 title: 悼念BASIC语言之父：ART.BAS与City Pop
 date: '2024-11-18'
+tags:
+- 输入
+- John Kemeny
+- Thomas Kurtz
+- Thomas E. Kurtz
+- BASIC
+- C语言
+- Go
+- 代码
+- code
+- 计算机
+- PC
+- 性能
+- x86
+- HTTP
+- HTTPS
+- 社区
+- 微软
+- 程序员
 ---
 
 # 悼念BASIC语言之父：ART.BAS与City Pop

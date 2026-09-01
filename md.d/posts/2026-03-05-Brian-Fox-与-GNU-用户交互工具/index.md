@@ -1,6 +1,24 @@
 ---
 title: Brian Fox 与 GNU 用户交互工具
 date: '2026-03-05'
+tags:
+- Unix
+- BSD
+- 终端
+- shell
+- bash
+- 命令
+- 命令行
+- 输入
+- man
+- Web
+- 页面
+- nc
+- vi
+- emacs
+- 索引
+- LLM
+- Mac
 draft: true
 ---
 

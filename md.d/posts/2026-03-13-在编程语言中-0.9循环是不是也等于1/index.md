@@ -1,6 +1,27 @@
 ---
 title: 在编程语言中，0.9循环是不是也等于1？
 date: '2026-03-13'
+tags:
+- Unix
+- Linux
+- bash
+- 输出
+- 编程语言
+- Python
+- PHP
+- Java
+- JavaScript
+- 代码
+- 类型
+- 内存
+- 堆
+- 循环
+- 存储
+- 计算机
+- IP
+- Web
+- cat
+- Mac
 ---
 
 # 在编程语言中，0.9循环是不是也等于1？

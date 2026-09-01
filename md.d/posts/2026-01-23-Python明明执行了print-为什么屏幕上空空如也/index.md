@@ -1,6 +1,21 @@
 ---
 title: Python明明执行了print，为什么屏幕上空空如也
 date: '2026-01-23'
+tags:
+- 终端
+- bash
+- 命令
+- 文件
+- 标准输出
+- 输入
+- 输出
+- 管道
+- Python
+- PHP
+- 代码
+- 参数
+- grep
+- 程序员
 ---
 
 # Python明明执行了print，为什么屏幕上空空如也
