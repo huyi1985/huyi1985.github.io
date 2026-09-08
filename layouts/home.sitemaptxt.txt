@@ -1,0 +1,7 @@
+{{- /* 纯文本 sitemap：每行一个绝对 URL（Google 接受的 .txt 格式）
+   顺序：首页 → 文章（按日期倒序）→ 标签页 → 标签聚合页
+   与 sitemap.xml 范围保持一致（不含分页 URL） */ -}}
+{{ .Permalink }}
+{{ range where .Site.RegularPages "Section" "==" "posts" }}{{ .Permalink }}
+{{ end }}{{ range .Site.Taxonomies.tags }}{{ .Page.Permalink }}
+{{ end }}{{ (.Site.GetPage "tags").Permalink }}

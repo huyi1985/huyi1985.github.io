@@ -44,3 +44,13 @@ contentDir = "md.d"
 # RSS：订阅条目上限（默认 50；中文站更新慢，30 够覆盖一两个月）
 [services.rss]
 limit = 30
+
+# 纯文本 sitemap（Google 也接受每行一个 URL 的 .txt 格式）
+# build 后产出 public/sitemap.txt，在 robots.txt 里声明，可直接提交给 Google Search Console
+[outputFormats.sitemaptxt]
+mediaType = "text/plain"
+baseName = "sitemap"
+isPlainText = true
+
+[outputs]
+home = ["html", "rss", "sitemaptxt"]
