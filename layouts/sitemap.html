@@ -1,0 +1,39 @@
+{{ define "title" }}站点地图 · {{ .Site.Title }}{{ end }}
+{{ define "main" }}
+  <h1 style="font-size:24px">站点地图 <span style="font-size:14px;color:var(--muted)">（{{ len (where .Site.RegularPages "Section" "==" "posts") }} 篇）</span></h1>
+
+  <p style="font-size:14px;color:var(--muted);margin:4px 0 22px">
+    <a href="{{ "/" | relURL }}">← 返回首页</a> · 按发布年份分组
+  </p>
+
+  <style>
+    .sm-year{font-size:18px;margin:26px 0 10px;padding-bottom:4px;border-bottom:1px solid var(--line)}
+    .sm-list{list-style:none;padding:0;margin:0}
+    .sm-list li{padding:4px 0;display:flex;gap:10px;align-items:baseline}
+    .sm-list .d{color:var(--muted);font-size:13px;flex:0 0 64px;font-variant-numeric:tabular-nums}
+    .sm-list a{color:var(--fg);text-decoration:none}
+    .sm-list a:hover{color:var(--accent)}
+    .sm-tags{margin-top:26px;padding-top:14px;border-top:1px solid var(--line)}
+    .sm-tags h2{font-size:18px;margin:0 0 10px}
+  </style>
+
+  {{/* 文章按年份分组（倒序） */}}
+  {{ range (where .Site.RegularPages "Section" "==" "posts").ByDate.Reverse.GroupByDate "2006" }}
+    <div class="sm-year">{{ .Key }}</div>
+    <ul class="sm-list">
+      {{ range .Pages }}
+        <li>
+          <span class="d">{{ .Date.Format "01-02" }}</span>
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </li>
+      {{ end }}
+    </ul>
+  {{ end }}
+
+  <div class="sm-tags">
+    <h2>标签</h2>
+    <p class="tag-cloud">
+      {{ range .Site.Taxonomies.tags }}<a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}<sup>{{ len .Pages }}</sup></a> {{ end }}
+    </p>
+  </div>
+{{ end }}
