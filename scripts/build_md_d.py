@@ -66,6 +66,12 @@ BLACKLIST_PATH = BASE / "config.d" / "blacklist.yaml"
 FREEZE_PATH = BASE / "config.d" / "freeze.yaml"
 # 关键词词典：正文纯子串匹配命中即作为该篇 tag（打 tag + SEO keywords meta 用）
 KEYWORDS_PATH = BASE / "config.d" / "keywords.yaml"
+# 参考资料笔记过滤：标题为 "Ref" 或以 "Ref " 开头（不区分大小写）→ 注入 draft，不发布
+REF_TITLE = re.compile(r'^\s*ref(?:\s|$)', re.I)
+
+
+def is_ref_title(title) -> bool:
+    return bool(REF_TITLE.match(str(title or "")))
 
 
 def log(msg: str) -> None:
@@ -347,7 +353,7 @@ def main() -> int:
         stem = md.stem
         bundle = posts_dir / stem
         is_freeze = stem in freeze
-        is_draft = stem in blacklist
+        is_draft = stem in blacklist or is_ref_title(fm.get("title"))
         # 末尾 --- 过滤（freeze 跳过；先切末尾再分拣图片，避免附录里的图被分拣）
         if not is_freeze:
             body, trimmed = trim_trailing_sep(body)

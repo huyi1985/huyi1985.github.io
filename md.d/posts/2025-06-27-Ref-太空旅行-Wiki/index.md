@@ -6,6 +6,7 @@ tags:
 - HTTPS
 - IP
 - vi
+draft: true
 ---
 
 https://en.wikipedia.org/wiki/Space_Travel_(video_game)#cite_note-Hist-2

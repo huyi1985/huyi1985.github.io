@@ -15,6 +15,7 @@ tags:
 - nc
 - Windows
 - Git
+draft: true
 ---
 
 https://gigazine.net/news/20250524-windows-moricons-dll/?utm_source=chatgpt.com

@@ -5,6 +5,7 @@ tags:
 - HTTP
 - HTTPS
 - vi
+draft: true
 ---
 
 https://www.mondo2000.com/the-inspiration-for-hypercard/ The Psychedelic Inspiration For Hypercard
