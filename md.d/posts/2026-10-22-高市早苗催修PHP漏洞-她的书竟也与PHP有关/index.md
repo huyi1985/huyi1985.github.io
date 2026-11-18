@@ -6,6 +6,7 @@ tags:
 - PHP
 - 网络
 - 网站
+draft: true
 ---
 
 # 高市早苗催修PHP漏洞，她的书竟也与PHP有关
